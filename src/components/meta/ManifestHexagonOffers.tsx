@@ -17,7 +17,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     variant: "dark",
     titlePrimary: "ГРУППОВОЙ ТРЕК",
     titleSecondary: "challenge",
-    priceAmount: "35k",
+    priceAmount: "30k",
     pricePeriod: "/3mo",
     moreHref: "/challenge",
   },
