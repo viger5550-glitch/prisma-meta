@@ -23,6 +23,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ## Documentation
 
 - [Product Concept](docs/product-concept.md)
+- [Навигация со страниц из хедера (назад)](docs/navigation-from-header.md)
 
 ## Railway: staging и production
 

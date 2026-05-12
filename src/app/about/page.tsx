@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BackButton } from "@/components/meta/BackButton";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
@@ -15,7 +16,8 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white text-zinc-900">
       <MetaSiteHeader />
       <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-14 sm:px-8 lg:pt-20">
-        <h1 className="font-serif text-4xl leading-tight tracking-tight text-zinc-900 sm:text-5xl lg:text-[56px]">
+        <BackButton fallbackHref="/challenge" />
+        <h1 className="mt-4 font-serif text-4xl leading-tight tracking-tight text-zinc-900 sm:text-5xl lg:text-[56px]">
           Об авторе
         </h1>
 

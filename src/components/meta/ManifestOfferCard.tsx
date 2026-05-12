@@ -15,6 +15,8 @@ export type ManifestOfferCardProps = {
   pricePeriod: string;
   moreHref?: string;
   hidePrice?: boolean;
+  /** Метка «NEW» под подзаголовком (titleSecondary) */
+  newBadge?: boolean;
   /** Если передано — кнопка MORE становится button и вызывает обработчик вместо перехода */
   onMore?: () => void;
 };
@@ -31,6 +33,7 @@ export function ManifestOfferCard({
   pricePeriod,
   moreHref,
   hidePrice = false,
+  newBadge = false,
   onMore,
 }: ManifestOfferCardProps) {
   const isDark = variant === "dark";
@@ -65,6 +68,14 @@ export function ManifestOfferCard({
             >
               {titleSecondary}
             </p>
+          ) : null}
+          {newBadge ? (
+            <span
+              className="mt-2 rounded-sm px-2 py-0.5 text-[8px] font-semibold uppercase leading-none tracking-[0.14em] text-black"
+              style={{ backgroundColor: "#0CDA76" }}
+            >
+              New
+            </span>
           ) : null}
         </div>
 

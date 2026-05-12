@@ -61,6 +61,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
+    newBadge: true,
     detail: {
       modalLayout: "radialCover",
       eyebrow: "Ускоряет процесс разработки",
@@ -375,7 +376,7 @@ export default function ChallengePage() {
 
         <section className="bg-white">
           <div className="mx-auto max-w-[1280px] px-6 pb-14 pt-12 md:px-12 md:pb-20 md:pt-16 lg:px-[96px] lg:pb-24 lg:pt-[110px]">
-            <p className={`text-[10px] uppercase tracking-[0.4em] text-black/50 ${interSans}`}>CHALLENGE</p>
+            <p className={`text-[10px] uppercase tracking-[0.4em] text-black/50 ${interSans}`}>CHALLENGE 4.0</p>
             <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-serif text-[48px] leading-[0.95] tracking-[-0.03em] text-black md:text-[62px]">
               <span className="flex items-start">
                 <span className="mr-1 -translate-x-[0.1em]">|</span>

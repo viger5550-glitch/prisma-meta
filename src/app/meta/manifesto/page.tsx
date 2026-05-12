@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BackButton } from "@/components/meta/BackButton";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
@@ -51,8 +52,9 @@ export default function ManifestoPage() {
       <main
         className={`mx-auto max-w-[720px] px-6 py-14 md:px-12 md:py-20 lg:px-[96px] lg:py-24 ${interSans}`}
       >
+        <BackButton fallbackHref="/" />
         <h1
-          className="text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-[1.15] text-black"
+          className="mt-4 text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-[1.15] text-black"
           style={{ fontFamily: "var(--font-manifest-newsreader), ui-serif, Georgia, serif" }}
         >
           Манифест продуктового автора
