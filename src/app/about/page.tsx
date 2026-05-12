@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 export const metadata: Metadata = {
-  title: "Слово автора | PRISMA",
-  description: "Слово автора проекта Prisma.",
+  title: "Об авторе | PRISMA",
+  description: "Об авторе проекта Prisma.",
 };
+
+const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 
 export default function AboutPage() {
   return (
@@ -15,53 +16,56 @@ export default function AboutPage() {
       <MetaSiteHeader />
       <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-14 sm:px-8 lg:pt-20">
         <h1 className="font-serif text-4xl leading-tight tracking-tight text-zinc-900 sm:text-5xl lg:text-[56px]">
-          Слово автора
+          Об авторе
         </h1>
 
         <section className="mt-12 flex flex-col gap-8 lg:mt-16 lg:flex-row lg:items-stretch lg:gap-10">
           <div className="relative aspect-[3/4] w-full max-w-[430px] overflow-hidden bg-zinc-100 lg:h-[573px] lg:aspect-auto">
-            <Image
-              src="/avatar-author.png"
-              alt="Виктория Герман"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 430px"
+            <video
+              src="/author-portrait.mp4"
+              poster="/avatar-author.png"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Виктория Герман"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
           </div>
-          <div className="flex w-full flex-1 flex-col items-start gap-6 border-l border-black pl-10 text-[18px] font-light leading-[1.85] tracking-[0.2em] text-zinc-500 sm:pl-10 lg:h-[573px]">
-            <p>
-              Впервые осознание того, что я автор, пришло ко мне в проекте «Продуктоделы», в
-              котором мы создаём «своё». Именно там я написала свою базу знаний. Она основана на
-              простой идее: продукты можно создавать из своего опыта и интереса.
-            </p>
-            <p>
-              В этой базе знаний нет ни одной статьи, которую бы я не прожила на собственном опыте.
-              А опыт у меня разнообразный — от предпринимателя в ритейле до продакта в IT. Сейчас я
-              ушла из найма, чтобы делать своё. И это оказалось для меня большой радостью. Эта база
-              знаний создана для того, чтобы поделиться радостью создания своего.
-            </p>
-            <p className="text-[18px] tracking-[0.22em] text-zinc-500">@ Виктория Герман</p>
-          </div>
-        </section>
-
-        <section className="mt-16 w-full border border-zinc-200 bg-zinc-100/40 px-6 py-12 sm:px-10">
-          <div className="flex flex-col items-center gap-5">
-            <p className="flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.22em] text-zinc-500">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden>
-                <path
-                  d="M4 4h16v11H8l-4 5V4z"
-                  stroke="currentColor"
-                  strokeWidth="1.7"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Индивидуальный разбор
-            </p>
+          <div
+            className={`flex w-full flex-1 flex-col text-[15px] leading-[1.7] text-black/85 sm:text-[16px] lg:h-[573px] ${interSans}`}
+          >
+            <div className="flex flex-1 flex-col items-start gap-4 lg:overflow-y-auto">
+              <p>Осознание того, что я автор, пришло ко мне через работу с продуктами.</p>
+              <p>
+                У меня 6 лет опыта в IT как продуктолога и бэкграунд предпринимателя в ритейле. Я
+                пробовала разные роли, но в какой-то момент стало понятно: мне важно не просто делать
+                продукты, а создавать своё.
+              </p>
+              <p>
+                Сейчас я ушла из найма и строю продукты из своей экспертизы, опыта и интереса. За это
+                время я запустила несколько потоков челленджа «Продуктовые авторы» и разработала свою
+                методологию Prisma.
+              </p>
+              <p>
+                Она строится на простой идее: продукт можно создавать из себя — из своего опыта,
+                мышления и того, как ты видишь мир.
+              </p>
+              <p>
+                Моя задача — помочь другим прийти к этому же: делать свои продукты, выстраивать из
+                них систему и зарабатывать на этом, не копируя чужие модели, а опираясь на своё
+                авторство.
+              </p>
+              <p className="mt-2 text-[12px] uppercase tracking-[0.22em] text-black/60">
+                @ Виктория Герман
+              </p>
+            </div>
             <Link
               href="https://cal.com/vika-german/консультация"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center bg-black px-8 text-sm font-medium text-white transition-opacity hover:opacity-90"
+              className={`mt-6 inline-flex h-11 w-fit items-center justify-center bg-black px-8 text-[15px] font-medium text-white transition-opacity hover:opacity-90 sm:text-[16px] ${interSans}`}
             >
               Записаться на консультацию
             </Link>

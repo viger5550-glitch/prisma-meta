@@ -14,11 +14,15 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+После запуска открой в браузере **локальный адрес из терминала** (порт см. в выводе `npm run dev`). **Главная мета-страница:** **`/`** (hero |PRISMA и блок офферов). Короткая ссылка **`/meta`** перенаправляет на **`/`**. Текст «THE MANIFESTO» живёт отдельно: **`/meta/manifesto`**.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Documentation
+
+- [Product Concept](docs/product-concept.md)
 
 ## Learn More
 

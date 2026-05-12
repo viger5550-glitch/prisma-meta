@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 import styles from "./manifestRadialHoverScale.module.css";
@@ -11,7 +13,10 @@ export type ManifestOfferCardProps = {
   titleSecondary: string;
   priceAmount: string;
   pricePeriod: string;
-  moreHref: string;
+  moreHref?: string;
+  hidePrice?: boolean;
+  /** Если передано — кнопка MORE становится button и вызывает обработчик вместо перехода */
+  onMore?: () => void;
 };
 
 /**
@@ -25,6 +30,8 @@ export function ManifestOfferCard({
   priceAmount,
   pricePeriod,
   moreHref,
+  hidePrice = false,
+  onMore,
 }: ManifestOfferCardProps) {
   const isDark = variant === "dark";
 
@@ -54,7 +61,7 @@ export function ManifestOfferCard({
           </p>
           {titleSecondary ? (
             <p
-              className={`mt-1 w-full text-[9px] font-medium uppercase leading-[1.25] tracking-[0.2em] ${titleSecondaryCls}`}
+              className={`mt-1 w-full whitespace-pre-line text-[9px] font-medium uppercase leading-[1.25] tracking-[0.2em] ${titleSecondaryCls}`}
             >
               {titleSecondary}
             </p>
@@ -62,24 +69,36 @@ export function ManifestOfferCard({
         </div>
 
         <div className="flex w-full flex-1 flex-col items-center justify-center">
-          <p className={`flex items-baseline justify-center gap-1 ${amountCls}`}>
-            <span className="text-[30px] font-normal leading-none tracking-tight" style={serif}>
-              {priceAmount}
-            </span>
-            <span className={`text-[11px] font-normal leading-none tracking-wide ${periodCls}`}>
-              {pricePeriod}
-            </span>
-          </p>
+          {!hidePrice ? (
+            <p className={`flex items-baseline justify-center gap-1 ${amountCls}`}>
+              <span className="text-[30px] font-normal leading-none tracking-tight" style={serif}>
+                {priceAmount}
+              </span>
+              <span className={`text-[11px] font-normal leading-none tracking-wide ${periodCls}`}>
+                {pricePeriod}
+              </span>
+            </p>
+          ) : null}
         </div>
 
-        <Link
-          href={moreHref}
-          target={moreHref.startsWith("/") ? undefined : "_blank"}
-          rel={moreHref.startsWith("/") ? undefined : "noopener noreferrer"}
-          className={`flex h-9 w-full items-center justify-center text-[10px] font-bold uppercase tracking-[0.22em] transition-colors ${moreSurface}`}
-        >
-          MORE
-        </Link>
+        {onMore ? (
+          <button
+            type="button"
+            onClick={onMore}
+            className={`flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${moreSurface}`}
+          >
+            MORE
+          </button>
+        ) : moreHref ? (
+          <Link
+            href={moreHref}
+            target={moreHref.startsWith("/") ? undefined : "_blank"}
+            rel={moreHref.startsWith("/") ? undefined : "noopener noreferrer"}
+            className={`flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${moreSurface}`}
+          >
+            MORE
+          </Link>
+        ) : null}
       </article>
     </div>
   );

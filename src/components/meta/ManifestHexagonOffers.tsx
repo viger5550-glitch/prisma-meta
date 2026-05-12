@@ -1,24 +1,25 @@
 import { ManifestAuthorHub } from "./ManifestAuthorHub";
 import { ManifestOfferCard, type ManifestOfferCardProps } from "./ManifestOfferCard";
+import { RadialCardsLayout, type RadialLayoutItem } from "./RadialCardsLayout";
 import {
   cardRotationDegForAzimuth,
   HEX_AZIMUTHS_DEG,
-  hexPixelOffsets,
 } from "./hexagonLayout";
 
 const PRODUCTODELS_URL = "https://productodels.figma.site/";
 const TELEGRAM_URL = "https://t.me/vigerman";
 const CAL_MENTORSHIP = "https://cal.com/vika-german/консультация";
+const KNOWLEDGE_PRODUCTODEL_URL = "https://knowledge.productodel.ru/";
 
 /** Контент карточек в том же порядке, что и `HEX_AZIMUTHS_DEG` */
 const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
   {
     variant: "dark",
     titlePrimary: "ГРУППОВОЙ ТРЕК",
-    titleSecondary: "COMMUNITY",
+    titleSecondary: "challenge",
     priceAmount: "35k",
     pricePeriod: "/3mo",
-    moreHref: PRODUCTODELS_URL,
+    moreHref: "/challenge",
   },
   {
     variant: "light",
@@ -30,24 +31,24 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "dark",
-    titlePrimary: "TRIZ design solution",
-    titleSecondary: "",
+    titlePrimary: "ТРИЗ",
+    titleSecondary: "design solution",
     priceAmount: "2k",
     pricePeriod: "/test",
     moreHref: PRODUCTODELS_URL,
   },
   {
     variant: "light",
-    titlePrimary: "БАЗА ЗНАНИЙ",
+    titlePrimary: "МЕТОДОЛОГИЯ",
     titleSecondary: "KNOWLEDGE",
     priceAmount: "5k",
     pricePeriod: "/3mo",
-    moreHref: "/kb",
+    moreHref: KNOWLEDGE_PRODUCTODEL_URL,
   },
   {
     variant: "dark",
     titlePrimary: "ЗАКРЫТЫЙ КАНАЛ",
-    titleSecondary: "COMMUNITY",
+    titleSecondary: "backstage",
     priceAmount: "1k",
     pricePeriod: "/mo",
     moreHref: TELEGRAM_URL,
@@ -62,17 +63,27 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
   },
 ];
 
-const HEX_CARDS = HEX_AZIMUTHS_DEG.map((azimuthDeg, i) => ({
-    azimuthDeg,
-    props: HEX_CARD_PROPS[i]!,
-  }));
-
 type ManifestHexagonOffersProps = {
   /** Радиус R: расстояние от центра композиции до центра каждой карточки */
   radiusPx?: number;
+  cards?: ManifestOfferCardProps[];
+  centerLabel?: string;
+  centerHref?: string;
 };
 
-export function ManifestHexagonOffers({ radiusPx = 290 }: ManifestHexagonOffersProps) {
+export function ManifestHexagonOffers({
+  radiusPx = 290,
+  cards,
+  centerLabel = "ОБ АВТОРЕ",
+  centerHref = "/about",
+}: ManifestHexagonOffersProps) {
+  const sourceCards = cards ?? HEX_CARD_PROPS;
+  const radialCards: RadialLayoutItem<ManifestOfferCardProps>[] = HEX_AZIMUTHS_DEG.map((azimuthDeg, i) => ({
+    id: `hex-${azimuthDeg}`,
+    angleDeg: azimuthDeg,
+    rotationDeg: cardRotationDegForAzimuth(azimuthDeg),
+    data: sourceCards[i]!,
+  }));
   const cardReach = Math.hypot(170 / 2, 250 / 2);
   const boxSize = Math.ceil(2 * (radiusPx + cardReach) + 24);
 
@@ -80,40 +91,23 @@ export function ManifestHexagonOffers({ radiusPx = 290 }: ManifestHexagonOffersP
     <section className="bg-[#F2F2F2]">
       <div className="mx-auto box-border w-full max-w-[1280px] px-6 py-16 md:px-12 md:py-24 lg:px-[96px] lg:py-[160px]">
         {/* Десктоп: шестиугольник по окружности; центр (0,0) — середина квадрата */}
-        <div
-          className="relative mx-auto hidden aspect-square lg:block"
+        <RadialCardsLayout
+          items={radialCards}
+          radiusPx={radiusPx}
+          center={<ManifestAuthorHub label={centerLabel} href={centerHref} />}
           style={{
             width: `min(${boxSize}px, 92vmin, 920px)`,
             height: `min(${boxSize}px, 92vmin, 920px)`,
           }}
-        >
-          <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <ManifestAuthorHub />
-          </div>
-
-          {HEX_CARDS.map(({ azimuthDeg, props }) => {
-            const { x, y } = hexPixelOffsets(azimuthDeg, radiusPx);
-            const rot = cardRotationDegForAzimuth(azimuthDeg);
-            return (
-              <div
-                key={azimuthDeg}
-                className="absolute left-1/2 top-1/2 z-[5] hover:z-[35]"
-                style={{
-                  transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) rotate(${rot}deg)`,
-                }}
-              >
-                <ManifestOfferCard {...props} />
-              </div>
-            );
-          })}
-        </div>
+          renderCard={(item) => <ManifestOfferCard {...item.data} />}
+        />
 
         {/* Узкие экраны: сетка без геометрического шестиугольника */}
         <div className="flex flex-col items-center gap-10 lg:hidden">
-          <ManifestAuthorHub />
+          <ManifestAuthorHub label={centerLabel} href={centerHref} />
           <div className="grid w-full max-w-[380px] grid-cols-1 gap-6 sm:grid-cols-2">
-            {HEX_CARDS.map(({ azimuthDeg, props }) => (
-              <ManifestOfferCard key={`m-${azimuthDeg}`} {...props} />
+            {radialCards.map((item) => (
+              <ManifestOfferCard key={`m-${item.id}`} {...item.data} />
             ))}
           </div>
         </div>

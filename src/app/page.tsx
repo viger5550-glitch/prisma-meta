@@ -1,5 +1,17 @@
-import { redirect } from "next/navigation";
+import type { Metadata } from "next";
+import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
+import { MetaHomePage } from "@/components/meta/MetaHomePage";
+
+export const metadata: Metadata = {
+  title: "PRISMA — мета",
+  description:
+    "Место, где мы делаем свои авторские продукты: сообщество, наставничество, игра, база знаний, решения.",
+};
 
 export default function Home() {
-  redirect("/meta");
+  return (
+    <ManifestFontVars>
+      <MetaHomePage />
+    </ManifestFontVars>
+  );
 }
