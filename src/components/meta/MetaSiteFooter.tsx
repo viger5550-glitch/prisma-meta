@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const PRIVACY_URL = "https://knowledge.productodel.ru/legal/privacy";
 const OFFER_URL = "https://knowledge.productodel.ru/legal/offer";
 const SUPPORT_TG_URL = "https://t.me/vigerman";
@@ -67,9 +65,6 @@ export function MetaSiteFooter() {
           >
             написать в поддержку
           </a>
-          <Link href="/" className="text-black hover:opacity-70">
-            PRISMA
-          </Link>
           <a
             href={CHANNEL_TG_URL}
             target="_blank"
