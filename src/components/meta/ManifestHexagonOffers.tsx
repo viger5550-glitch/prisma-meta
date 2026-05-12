@@ -36,7 +36,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titlePrimary: "ТРИЗ",
     titleSecondary: "design solution",
     priceAmount: "2k",
-    pricePeriod: "/test",
+    pricePeriod: "/one",
     moreHref: TRIZ_URL,
   },
   {
@@ -59,8 +59,8 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     variant: "light",
     titlePrimary: "СОЛО ТРЕК",
     titleSecondary: "GAME",
-    priceAmount: "5k",
-    pricePeriod: "/2mo",
+    priceAmount: "3k",
+    pricePeriod: "/3mo",
     moreHref: GAME_URL,
   },
 ];

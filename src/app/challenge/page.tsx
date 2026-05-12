@@ -408,10 +408,7 @@ export default function ChallengePage() {
                 />
               </span>
               <span>
-                Автор и ведущая челленджа{" "}
-                <span className="text-black underline-offset-4 group-hover:underline">
-                  Виктория Герман
-                </span>
+                Автор и ведущая челленджа Виктория Герман
               </span>
             </Link>
           </div>
