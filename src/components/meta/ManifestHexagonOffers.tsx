@@ -6,9 +6,10 @@ import {
   HEX_AZIMUTHS_DEG,
 } from "./hexagonLayout";
 
-const PRODUCTODELS_URL = "https://productodels.figma.site/";
-const TELEGRAM_URL = "https://t.me/vigerman";
-const CAL_MENTORSHIP = "https://cal.com/vika-german/консультация";
+const MENTORSHIP_URL = "https://t.me/vigerman";
+const TRIZ_URL = "https://aitriz.figma.site/";
+const BACKSTAGE_URL = "https://t.me/tribute/app?startapp=sIPX";
+const GAME_URL = "https://t.me/zzzzzzz5550bot";
 const KNOWLEDGE_PRODUCTODEL_URL = "https://knowledge.productodel.ru/";
 
 /** Контент карточек в том же порядке, что и `HEX_AZIMUTHS_DEG` */
@@ -28,7 +29,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "MENTORSHIP",
     priceAmount: "60k",
     pricePeriod: "/3mo",
-    moreHref: CAL_MENTORSHIP,
+    moreHref: MENTORSHIP_URL,
   },
   {
     variant: "dark",
@@ -36,7 +37,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "design solution",
     priceAmount: "2k",
     pricePeriod: "/test",
-    moreHref: PRODUCTODELS_URL,
+    moreHref: TRIZ_URL,
   },
   {
     variant: "light",
@@ -52,7 +53,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "backstage",
     priceAmount: "1k",
     pricePeriod: "/mo",
-    moreHref: TELEGRAM_URL,
+    moreHref: BACKSTAGE_URL,
   },
   {
     variant: "light",
@@ -60,7 +61,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "GAME",
     priceAmount: "5k",
     pricePeriod: "/2mo",
-    moreHref: PRODUCTODELS_URL,
+    moreHref: GAME_URL,
   },
 ];
 
