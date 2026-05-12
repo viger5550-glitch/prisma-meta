@@ -24,6 +24,29 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 - [Product Concept](docs/product-concept.md)
 
+## Railway: staging и production
+
+В репозитории две ветки: **`main`** (прод) и **`staging`** (стейдж). Они уже есть на GitHub.
+
+### 1. Production (у вас уже настроен)
+
+- Сервис в окружении **Production** (или дефолтное окружение проекта).
+- В настройках сервиса → **Source** / **GitHub**: ветка **`main`**.
+- **Networking** → **Generate domain** — публичный URL продакшена.
+
+### 2. Staging
+
+1. В том же **проекте** Railway откройте переключатель окружений (часто **Production** вверху слева) → **Create environment** → имя, например **`staging`**.
+2. В окружении **staging** добавьте сервис: **GitHub** → репозиторий **`prisma-meta`** (дайте Railway доступ к репо, если спросит).
+3. У нового сервиса в **Settings** / **Source** укажите ветку **`staging`** (не `main`).
+4. **Networking** → **Generate domain** — отдельный URL для стейджа (например `prisma-meta-staging.up.railway.app`).
+
+Итог: два URL — один с билдами с **`main`**, второй с **`staging`**. Пуш в соответствующую ветку пересобирает только свой деплой.
+
+### 3. Переменные (по желанию)
+
+В каждом окружении можно задать свои **Variables** (ключи API и т.д.), они не пересекаются между окружениями.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
