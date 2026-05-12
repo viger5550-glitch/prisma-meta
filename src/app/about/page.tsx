@@ -23,12 +23,11 @@ export default function AboutPage() {
           <div className="relative aspect-[3/4] w-full max-w-[430px] overflow-hidden bg-zinc-100 lg:h-[573px] lg:aspect-auto">
             <video
               src="/author-portrait.mp4"
-              poster="/avatar-author.png"
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               aria-label="Виктория Герман"
               className="absolute inset-0 h-full w-full object-cover object-center"
             />
