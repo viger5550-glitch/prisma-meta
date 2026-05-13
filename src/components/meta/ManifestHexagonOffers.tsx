@@ -6,7 +6,6 @@ import {
   HEX_AZIMUTHS_DEG,
 } from "./hexagonLayout";
 
-const MENTORSHIP_URL = "https://t.me/vigerman";
 const TRIZ_URL = "https://aitriz.figma.site/";
 const BACKSTAGE_URL = "https://t.me/tribute/app?startapp=sIPX";
 const GAME_URL = "https://t.me/zzzzzzz5550bot";
@@ -29,7 +28,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "MENTORSHIP",
     priceAmount: "60k",
     pricePeriod: "/3mo",
-    moreHref: MENTORSHIP_URL,
+    moreHref: "/mentorship",
   },
   {
     variant: "dark",
