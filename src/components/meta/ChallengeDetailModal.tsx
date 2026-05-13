@@ -8,6 +8,10 @@ const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-s
 export type ChallengeDetailBlock =
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] }
+  | {
+      type: "numberedList";
+      items: Array<{ text: string; badge?: string }>;
+    }
   | { type: "speaker"; name: string; description: string; avatarSrc: string; href?: string };
 
 export type ChallengeDetail = {
@@ -125,6 +129,26 @@ export function ChallengeDetailModal({
                 <p key={`p-${index}`} className="whitespace-pre-line">
                   {block.text}
                 </p>
+              );
+            }
+            if (block.type === "numberedList") {
+              return (
+                <ol key={`ol-${index}`} className="space-y-1.5">
+                  {block.items.map((item, i) => (
+                    <li key={`oli-${index}-${i}`} className="flex flex-wrap items-baseline gap-x-2">
+                      <span>
+                        {i + 1}. {item.text}
+                      </span>
+                      {item.badge ? (
+                        <span
+                          className={`inline-flex items-center rounded-full bg-emerald-500/15 px-2 py-[1px] text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-600 ${interSans}`}
+                        >
+                          {item.badge}
+                        </span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ol>
               );
             }
             if (block.type === "speaker") {

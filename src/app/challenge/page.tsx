@@ -316,8 +316,8 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
           type: "list",
           items: [
             "автор со своей картиной мира",
-            "аудитория со своей картиной мира",
-            "поле, в котором автор и аудитория взаимодействуют через продукт",
+            "пользователь со своей картиной мира",
+            "поле, в котором автор и пользователь взаимодействуют через продукт",
           ],
         },
         {
@@ -327,8 +327,16 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
         },
         {
           type: "paragraph",
-          text:
-            "Поэтому вся методология включает четыре этапа: Search, Build, Sale, Lean.",
+          text: "Поэтому вся методология включает четыре этапа:",
+        },
+        {
+          type: "numberedList",
+          items: [
+            { text: "Search" },
+            { text: "Create" },
+            { text: "Sale", badge: "new" },
+            { text: "Lean" },
+          ],
         },
       ],
     },
