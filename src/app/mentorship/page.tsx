@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
-const MENTORSHIP_INTRO_URL = "https://cal.com/vika-german/консультация";
+const MENTORSHIP_INTRO_URL = "https://cal.com/vika-german/1-1-встречи";
 
 export const metadata: Metadata = {
   title: "Персональный трек — mentorship | PRISMA",
@@ -71,21 +69,6 @@ export default function MentorshipPage() {
             >
               3 месяца совместной работы один на один с автором
             </p>
-            <Link
-              href="/about"
-              className={`group mt-6 inline-flex items-center gap-3 text-[12px] leading-[1.6] text-black/65 ${interSans}`}
-            >
-              <span className="relative inline-block size-9 overflow-hidden rounded-full bg-zinc-200">
-                <Image
-                  src="/avatar-vika.png"
-                  alt="Виктория Герман"
-                  fill
-                  sizes="36px"
-                  className="object-cover object-[center_30%]"
-                />
-              </span>
-              <span>Автор и ведущая трека Виктория Герман</span>
-            </Link>
           </div>
         </section>
 
