@@ -1,18 +1,25 @@
 import { ManifestAuthorHub } from "./ManifestAuthorHub";
 import { ManifestOfferCard, type ManifestOfferCardProps } from "./ManifestOfferCard";
 import { RadialCardsLayout, type RadialLayoutItem } from "./RadialCardsLayout";
-import {
-  cardRotationDegForAzimuth,
-  HEX_AZIMUTHS_DEG,
-} from "./hexagonLayout";
 
-const TRIZ_URL = "https://aitriz.figma.site/";
 const BACKSTAGE_URL = "https://t.me/tribute/app?startapp=sIPX";
 const GAME_URL = "https://t.me/zzzzzzz5550bot";
-const KNOWLEDGE_PRODUCTODEL_URL = "https://knowledge.productodel.ru/";
 
-/** Контент карточек в том же порядке, что и `HEX_AZIMUTHS_DEG` */
-const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
+/**
+ * Раскладка четырёх карточек по сторонам света (top, right, bottom, left).
+ * Центр композиции: (0, 0); ось X — вправо, ось Y — вниз (как в CSS).
+ *
+ *   top    = (0, −R) → θ = −90°
+ *   right  = (R,  0) → θ =   0°
+ *   bottom = (0,  R) → θ =  90°
+ *   left   = (−R, 0) → θ = 180°
+ *
+ * Все карточки рисуются без поворота, чтобы текст читался слева направо.
+ */
+const CROSS_AZIMUTHS_DEG = [-90, 0, 90, 180] as const;
+
+/** Контент карточек в том же порядке, что и `CROSS_AZIMUTHS_DEG`: top → right → bottom → left. */
+const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   {
     variant: "dark",
     titlePrimary: "ГРУППОВОЙ ТРЕК",
@@ -24,7 +31,7 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "light",
-    titlePrimary: "ПЕРСОНАЛЬНЫЙ ТРЕК",
+    titlePrimary: "1-1 ТРЕК",
     titleSecondary: "MENTORSHIP",
     priceAmount: "60k",
     pricePeriod: "/3mo",
@@ -32,24 +39,8 @@ const HEX_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "dark",
-    titlePrimary: "ТРИЗ",
-    titleSecondary: "design solution",
-    priceAmount: "2k",
-    pricePeriod: "/one",
-    moreHref: TRIZ_URL,
-  },
-  {
-    variant: "light",
-    titlePrimary: "МЕТОДОЛОГИЯ",
-    titleSecondary: "KNOWLEDGE",
-    priceAmount: "5k",
-    pricePeriod: "/3mo",
-    moreHref: KNOWLEDGE_PRODUCTODEL_URL,
-  },
-  {
-    variant: "dark",
-    titlePrimary: "ЗАКРЫТЫЙ КАНАЛ",
-    titleSecondary: "backstage",
+    titlePrimary: "БЕКСТЕЙДЖ ТРЕК",
+    titleSecondary: "Закрытый канал с отчётами челленджа",
     priceAmount: "1k",
     pricePeriod: "/mo",
     moreHref: BACKSTAGE_URL,
@@ -78,20 +69,22 @@ export function ManifestHexagonOffers({
   centerLabel = "ОБ АВТОРЕ",
   centerHref = "/about",
 }: ManifestHexagonOffersProps) {
-  const sourceCards = cards ?? HEX_CARD_PROPS;
-  const radialCards: RadialLayoutItem<ManifestOfferCardProps>[] = HEX_AZIMUTHS_DEG.map((azimuthDeg, i) => ({
-    id: `hex-${azimuthDeg}`,
-    angleDeg: azimuthDeg,
-    rotationDeg: cardRotationDegForAzimuth(azimuthDeg),
-    data: sourceCards[i]!,
-  }));
+  const sourceCards = cards ?? CROSS_CARD_PROPS;
+  const radialCards: RadialLayoutItem<ManifestOfferCardProps>[] = CROSS_AZIMUTHS_DEG.map(
+    (azimuthDeg, i) => ({
+      id: `cross-${azimuthDeg}`,
+      angleDeg: azimuthDeg,
+      rotationDeg: 0,
+      data: sourceCards[i]!,
+    }),
+  );
   const cardReach = Math.hypot(170 / 2, 250 / 2);
   const boxSize = Math.ceil(2 * (radiusPx + cardReach) + 24);
 
   return (
     <section className="bg-[#F2F2F2]">
       <div className="mx-auto box-border w-full max-w-[1280px] px-6 py-16 md:px-12 md:py-24 lg:px-[96px] lg:py-[160px]">
-        {/* Десктоп: шестиугольник по окружности; центр (0,0) — середина квадрата */}
+        {/* Десктоп: четыре карточки по top/right/bottom/left, центр (0,0) — середина квадрата */}
         <RadialCardsLayout
           items={radialCards}
           radiusPx={radiusPx}
@@ -103,7 +96,7 @@ export function ManifestHexagonOffers({
           renderCard={(item) => <ManifestOfferCard {...item.data} />}
         />
 
-        {/* Узкие экраны: сетка без геометрического шестиугольника */}
+        {/* Узкие экраны: сетка без геометрической раскладки */}
         <div className="flex flex-col items-center gap-10 lg:hidden">
           <ManifestAuthorHub label={centerLabel} href={centerHref} />
           <div className="grid w-full max-w-[380px] grid-cols-1 gap-6 sm:grid-cols-2">

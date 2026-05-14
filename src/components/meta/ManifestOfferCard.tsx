@@ -19,6 +19,8 @@ export type ManifestOfferCardProps = {
   newBadge?: boolean;
   /** Если передано — кнопка MORE становится button и вызывает обработчик вместо перехода */
   onMore?: () => void;
+  /** Подпись на кнопке (по умолчанию «MORE») */
+  actionLabel?: string;
 };
 
 /**
@@ -35,6 +37,7 @@ export function ManifestOfferCard({
   hidePrice = false,
   newBadge = false,
   onMore,
+  actionLabel = "MORE",
 }: ManifestOfferCardProps) {
   const isDark = variant === "dark";
 
@@ -98,7 +101,7 @@ export function ManifestOfferCard({
             onClick={onMore}
             className={`flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${moreSurface}`}
           >
-            MORE
+            {actionLabel}
           </button>
         ) : moreHref ? (
           <Link
@@ -107,7 +110,7 @@ export function ManifestOfferCard({
             rel={moreHref.startsWith("/") ? undefined : "noopener noreferrer"}
             className={`flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors ${moreSurface}`}
           >
-            MORE
+            {actionLabel}
           </Link>
         ) : null}
       </article>

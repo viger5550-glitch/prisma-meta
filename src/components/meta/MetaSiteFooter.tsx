@@ -63,7 +63,7 @@ export function MetaSiteFooter() {
             rel="noopener noreferrer"
             className="hover:text-black"
           >
-            написать в поддержку
+            есть контакт
           </a>
           <a
             href={CHANNEL_TG_URL}

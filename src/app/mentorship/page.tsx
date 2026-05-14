@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
+import { ManifestOfferCard } from "@/components/meta/ManifestOfferCard";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
@@ -33,17 +34,6 @@ const STAGES: Array<{ name: string; text: string }> = [
     text:
       "Интегрируем все этапы и примем решения о дальнейшей стратегии продукта.",
   },
-];
-
-const INCLUDED: string[] = [
-  "Методология по созданию авторских продуктов",
-  "Дизайн концепции продукта",
-  "Сопровождение разработки продукта",
-];
-
-const VALUE: string[] = [
-  "Получаешь фокус и ясность",
-  "Внешняя оптика на проект",
 ];
 
 export default function MentorshipPage() {
@@ -107,8 +97,8 @@ export default function MentorshipPage() {
               Как мы работаем
             </h2>
             <p className="mt-6">
-              Это большая совместная работа, которая выходит за рамки одной консультации. Мы встречаемся 2 раза в
-              неделю и общаемся асинхронно в чате. Длительность трека — 3 месяца.
+              Это большая совместная работа, которая выходит за рамки одной консультации. Мы встречаемся 1 раз в
+              неделю на 1,5 часа и общаемся асинхронно в чате. Длительность трека — 3 месяца.
             </p>
 
             <h2 className="mt-14 font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
@@ -127,84 +117,32 @@ export default function MentorshipPage() {
             <p className="mt-6">
               Вы уйдёте с продуктом, а главное — с воспроизводимым навыком создавать свои продукты.
             </p>
-
-            <div className="mt-14 grid gap-10 md:grid-cols-2">
-              <div>
-                <h3
-                  className={`text-[11px] font-medium uppercase tracking-[0.32em] text-black/55 ${interSans}`}
-                >
-                  Что входит
-                </h3>
-                <ul className="mt-5 space-y-3">
-                  {INCLUDED.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span aria-hidden className="mt-[2px] text-[14px] text-emerald-600">
-                        ✓
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3
-                  className={`text-[11px] font-medium uppercase tracking-[0.32em] text-black/55 ${interSans}`}
-                >
-                  Ценность
-                </h3>
-                <ul className="mt-5 space-y-3">
-                  {VALUE.map((item) => (
-                    <li key={item} className="flex gap-3">
-                      <span aria-hidden className="mt-[2px] text-[14px] text-black/70">
-                        →
-                      </span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </section>
 
         <section className="bg-white">
-          <div className="mx-auto flex max-w-[1280px] flex-col items-center px-6 py-20 text-center md:px-12 md:py-24 lg:px-[96px] lg:py-24">
-            <h2 className="font-serif text-[30px] leading-[0.98] tracking-[-0.02em] text-black md:text-[34px]">
-              Стоимость
+          <div
+            className={`mx-auto max-w-[820px] px-6 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 text-[16px] leading-[1.75] text-black/85 ${interSans}`}
+          >
+            <h2 className="text-center font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
+              Подписка на 1-1 трек
             </h2>
-            <p
-              className={`mt-5 max-w-[520px] text-[13px] leading-[1.7] text-black/55 ${interSans}`}
-            >
-              3-месячный трек — по сути подписка на меня.
-            </p>
 
-            <div
-              className={`mt-12 grid w-full max-w-[760px] grid-cols-1 gap-6 sm:grid-cols-2 ${interSans}`}
-            >
-              <div className="flex flex-col items-start bg-black px-8 py-10 text-left text-white">
-                <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-white/75">
-                  Весь трек
-                </p>
-                <p className="mt-1 text-[12px] uppercase tracking-[0.24em] text-white/55">
-                  3 месяца
-                </p>
-                <p className="mt-8 font-serif text-[40px] leading-none tracking-tight text-white">
-                  60 000 ₽
-                </p>
-                <p className="mt-4 text-[12px] text-white/70">оплата одним платежом</p>
-              </div>
-              <div className="flex flex-col items-start border border-black/[0.08] bg-white px-8 py-10 text-left">
-                <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-black/55">
-                  Помесячно
-                </p>
-                <p className="mt-1 text-[12px] uppercase tracking-[0.24em] text-black/40">
-                  за месяц
-                </p>
-                <p className="mt-8 font-serif text-[40px] leading-none tracking-tight text-black">
-                  25 000 ₽
-                </p>
-                <p className="mt-4 text-[12px] text-black/55">удобный вход в работу</p>
-              </div>
+            <div className="mt-10 flex flex-wrap items-start justify-center gap-8 md:gap-10">
+              <ManifestOfferCard
+                variant="dark"
+                titlePrimary="1-1 ТРЕК"
+                titleSecondary="CHALLENGE"
+                priceAmount="80k"
+                pricePeriod="/3mo"
+              />
+              <ManifestOfferCard
+                variant="light"
+                titlePrimary="1-1 ТРЕК"
+                titleSecondary="CHALLENGE"
+                priceAmount="30k"
+                pricePeriod="/1mo"
+              />
             </div>
           </div>
         </section>

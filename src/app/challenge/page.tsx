@@ -137,7 +137,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   },
   {
     variant: "dark",
-    titlePrimary: "Мои продуктовые консультации",
+    titlePrimary: "1-1 продуктовые консультации",
     titleSecondary: "Помогают увидеть картину шире и выйти из затыков",
     priceAmount: "",
     pricePeriod: "",
@@ -145,7 +145,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
     detail: {
       modalLayout: "radialCover",
       eyebrow: "Помогают увидеть картину шире и выйти из затыков",
-      title: "Мои продуктовые консультации",
+      title: "1-1 продуктовые консультации",
       blocks: [
         {
           type: "paragraph",
@@ -399,7 +399,7 @@ export default function ChallengePage() {
             </p>
             <Link
               href="/about"
-              className={`group mt-6 inline-flex items-center gap-3 text-[12px] leading-[1.6] text-black/65 ${interSans}`}
+              className="group mt-6 inline-flex items-center gap-3"
             >
               <span className="relative inline-block size-9 overflow-hidden rounded-full bg-zinc-200">
                 <Image
@@ -410,7 +410,10 @@ export default function ChallengePage() {
                   className="object-cover object-[center_30%]"
                 />
               </span>
-              <span>
+              <span
+                className={`text-[10px] font-normal uppercase leading-[15px] tracking-[0.4em] ${interSans}`}
+                style={{ color: "rgba(95, 94, 94, 0.6)" }}
+              >
                 Автор и ведущая челленджа Виктория Герман
               </span>
             </Link>

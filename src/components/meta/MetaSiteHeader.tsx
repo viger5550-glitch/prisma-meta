@@ -55,7 +55,7 @@ export function MetaSiteHeader() {
             <Link href={PRODUCTODELS_URL} target="_blank" rel="noopener noreferrer" className="hidden hover:opacity-70">
               GAME
             </Link>
-            <Link href={KNOWLEDGE_PRODUCTODEL_URL} target="_blank" rel="noopener noreferrer" className="hidden hover:opacity-70">
+            <Link href={KNOWLEDGE_PRODUCTODEL_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-70">
               KNOWLEDGE
             </Link>
             <Link href={PRODUCTODELS_URL} target="_blank" rel="noopener noreferrer" className="hidden hover:opacity-70">
