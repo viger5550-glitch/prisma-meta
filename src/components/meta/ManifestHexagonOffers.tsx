@@ -27,7 +27,7 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
     priceAmount: "30k",
     pricePeriod: "/3mo",
     moreHref: "/challenge",
-    newBadge: true,
+    startLabel: "Старт 25.05.2026",
   },
   {
     variant: "light",

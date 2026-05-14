@@ -17,6 +17,8 @@ export type ManifestOfferCardProps = {
   hidePrice?: boolean;
   /** Метка «NEW» под подзаголовком (titleSecondary) */
   newBadge?: boolean;
+  /** Дополнительная зелёная метка под подзаголовком (например, «Старт 25.05.26») */
+  startLabel?: string;
   /** Если передано — кнопка MORE становится button и вызывает обработчик вместо перехода */
   onMore?: () => void;
   /** Подпись на кнопке (по умолчанию «MORE») */
@@ -36,6 +38,7 @@ export function ManifestOfferCard({
   moreHref,
   hidePrice = false,
   newBadge = false,
+  startLabel,
   onMore,
   actionLabel = "MORE",
 }: ManifestOfferCardProps) {
@@ -78,6 +81,14 @@ export function ManifestOfferCard({
               style={{ backgroundColor: "#0CDA76" }}
             >
               New
+            </span>
+          ) : null}
+          {startLabel ? (
+            <span
+              className="mt-2 rounded-sm px-2 py-0.5 text-[8px] font-semibold uppercase leading-none tracking-[0.14em] text-black"
+              style={{ backgroundColor: "#0CDA76" }}
+            >
+              {startLabel}
             </span>
           ) : null}
         </div>
