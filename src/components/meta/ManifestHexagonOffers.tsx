@@ -33,7 +33,7 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
     variant: "light",
     titlePrimary: "1-1 ТРЕК",
     titleSecondary: "MENTORSHIP",
-    priceAmount: "60k",
+    priceAmount: "80k",
     pricePeriod: "/3mo",
     moreHref: "/mentorship",
   },

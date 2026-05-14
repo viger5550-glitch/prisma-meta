@@ -17,7 +17,7 @@ export function BackButton({ fallbackHref = "/" }: { fallbackHref?: string }) {
           router.push(fallbackHref);
         }
       }}
-      className={`inline-flex text-[10px] uppercase tracking-[0.25em] text-black/55 transition-opacity hover:opacity-70 ${interSans}`}
+      className={`inline-flex text-[10px] uppercase tracking-[0.25em] text-black transition-opacity hover:opacity-70 ${interSans}`}
     >
       ← назад
     </button>

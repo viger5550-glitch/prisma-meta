@@ -62,73 +62,73 @@ export default function MentorshipPage() {
           </div>
         </section>
 
-        <section className="bg-[#F7F7F7]">
-          <div
-            className={`mx-auto max-w-[820px] px-6 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 text-[16px] leading-[1.75] text-black/85 ${interSans}`}
-          >
-            <p>
-              Я по себе знаю, как сложно быть соло-предпринимателем и соло-автором. Очень легко сбиться с пути или
-              вовсе остановиться. Персональный трек — это возможность пройти авторский путь и гарантированно сделать
-              продукт с человеком, который не раз это проходил (то есть со мной).
-            </p>
+        <section className="bg-white">
+          <div className="mx-auto max-w-[1280px] px-6 pb-14 pt-2 md:px-12 md:pb-20 md:pt-4 lg:px-[96px] lg:pb-24 lg:pt-6">
+            <div
+              className={`max-w-[760px] text-[17px] leading-[1.8] text-zinc-800 ${interSans}`}
+            >
+              <p>
+                Я по себе знаю, как сложно быть соло-предпринимателем и соло-автором. Очень легко сбиться с пути или
+                вовсе остановиться. Персональный трек — это возможность пройти авторский путь и гарантированно
+                сделать продукт с человеком, который не раз это проходил (то есть со мной).
+              </p>
 
-            <h2 className="mt-12 font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
-              Почему я могу так говорить о себе
-            </h2>
-            <ul className="mt-6 space-y-4">
-              <li>
-                <span className="font-medium text-black">Предприниматель и продакт.</span>{" "}
-                Предпринимательское и продуктовое мышление дают мне особую призму, через которую помогу вам собрать
-                ваши продукты.
-              </li>
-              <li>
-                <span className="font-medium text-black">Системный аналитик в IT.</span>{" "}
-                Я проектировала сложные системы — у меня системный взгляд, который поможет создать не просто один
-                продукт, а целую продуктовую экосистему.
-              </li>
-              <li>
-                <span className="font-medium text-black">Внешний фактор и партнёр по движению.</span>{" "}
-                Я буду тем человеком, который аккуратно «пристаёт» с вопросами: что сделано, что делаем дальше. Вместе
-                решаем задачи и разблокируем затыки.
-              </li>
-            </ul>
-
-            <h2 className="mt-14 font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
-              Как мы работаем
-            </h2>
-            <p className="mt-6">
-              Это большая совместная работа, которая выходит за рамки одной консультации. Мы встречаемся 1 раз в
-              неделю на 1,5 часа и общаемся асинхронно в чате. Длительность трека — 3 месяца.
-            </p>
-
-            <h2 className="mt-14 font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
-              4 этапа трека
-            </h2>
-            <ol className="mt-6 space-y-4">
-              {STAGES.map((stage, i) => (
-                <li key={stage.name} className="flex gap-3">
-                  <span className="shrink-0 font-medium text-black">{i + 1}.</span>
-                  <span>
-                    <span className="font-medium text-black">{stage.name}</span> — {stage.text}
-                  </span>
+              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+                Почему я могу так говорить о себе
+              </h2>
+              <ul className="mt-8 space-y-5">
+                <li>
+                  <span className="font-medium text-black">Предприниматель и продакт.</span>{" "}
+                  Предпринимательское и продуктовое мышление дают мне особую призму, через которую помогу вам
+                  собрать ваши продукты.
                 </li>
-              ))}
-            </ol>
-            <p className="mt-6">
-              Вы уйдёте с продуктом, а главное — с воспроизводимым навыком создавать свои продукты.
-            </p>
+                <li>
+                  <span className="font-medium text-black">Системный аналитик в IT.</span>{" "}
+                  Я проектировала сложные системы — у меня системный взгляд, который поможет создать не просто один
+                  продукт, а целую продуктовую экосистему.
+                </li>
+                <li>
+                  <span className="font-medium text-black">Внешний фактор и партнёр по движению.</span>{" "}
+                  Я буду тем человеком, который аккуратно «пристаёт» с вопросами: что сделано, что делаем дальше.
+                  Вместе решаем задачи и разблокируем затыки.
+                </li>
+              </ul>
+
+              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+                Как мы работаем
+              </h2>
+              <p className="mt-8">
+                Это большая совместная работа, которая выходит за рамки одной консультации. Мы встречаемся 1 раз в
+                неделю на 1,5 часа и общаемся асинхронно в чате. Длительность трека — 3 месяца.
+              </p>
+
+              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+                4 этапа трека
+              </h2>
+              <ol className="mt-8 space-y-5">
+                {STAGES.map((stage, i) => (
+                  <li key={stage.name} className="flex gap-3">
+                    <span className="shrink-0 font-medium text-black">{i + 1}.</span>
+                    <span>
+                      <span className="font-medium text-black">{stage.name}</span> — {stage.text}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-8">
+                Вы уйдёте с продуктом, а главное — с воспроизводимым навыком создавать свои продукты.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="bg-white">
-          <div
-            className={`mx-auto max-w-[820px] px-6 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 text-[16px] leading-[1.75] text-black/85 ${interSans}`}
-          >
-            <h2 className="text-center font-serif text-[28px] leading-[1.05] tracking-[-0.02em] text-black md:text-[32px]">
+        <section className="bg-[#F2F2F2]">
+          <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 md:py-24 lg:px-[96px] lg:py-[120px]">
+            <h2 className="text-center font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
               Подписка на 1-1 трек
             </h2>
 
-            <div className="mt-10 flex flex-wrap items-start justify-center gap-8 md:gap-10">
+            <div className="mt-12 flex flex-wrap items-start justify-center gap-8 md:gap-12">
               <ManifestOfferCard
                 variant="dark"
                 titlePrimary="1-1 ТРЕК"

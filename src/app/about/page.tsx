@@ -15,10 +15,18 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <MetaSiteHeader />
-      <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-14 sm:px-8 lg:pt-20">
+      <main className="mx-auto w-full max-w-6xl px-6 pb-20 pt-3 sm:px-8 sm:pt-3 lg:pt-4">
         <BackButton fallbackHref="/challenge" />
-        <h1 className="mt-4 font-serif text-4xl leading-tight tracking-tight text-zinc-900 sm:text-5xl lg:text-[56px]">
-          Об авторе
+        <p
+          className={`mt-12 text-[10px] uppercase tracking-[0.4em] text-black/50 sm:mt-16 lg:mt-[88px] ${interSans}`}
+        >
+          AUTHOR
+        </p>
+        <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-serif text-[48px] leading-[0.95] tracking-[-0.03em] text-black md:text-[62px]">
+          <span className="flex items-start">
+            <span className="mr-1 -translate-x-[0.1em]">|</span>
+            <span>Об авторе</span>
+          </span>
         </h1>
 
         <section className="mt-12 flex flex-col gap-8 lg:mt-16 lg:flex-row lg:items-stretch lg:gap-10">
