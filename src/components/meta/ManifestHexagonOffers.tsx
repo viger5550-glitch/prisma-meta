@@ -41,8 +41,8 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
     variant: "dark",
     titlePrimary: "БЕКСТЕЙДЖ ТРЕК",
     titleSecondary: "Закрытый канал с отчётами челленджа",
-    priceAmount: "1k",
-    pricePeriod: "/mo",
+    priceAmount: "3k",
+    pricePeriod: "/3mo",
     moreHref: BACKSTAGE_URL,
   },
   {
