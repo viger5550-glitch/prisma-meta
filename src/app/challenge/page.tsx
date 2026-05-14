@@ -17,13 +17,13 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   {
     variant: "dark",
     titlePrimary: "Трекшен",
-    titleSecondary: "Помогает держать фокус и темп",
+    titleSecondary: "Чтобы держать фокус и темп",
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
     detail: {
       modalLayout: "radialCover",
-      eyebrow: "Помогает держать фокус и темп",
+      eyebrow: "Чтобы держать фокус и темп",
       title: "Трекшен",
       blocks: [
         {
@@ -56,14 +56,14 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   {
     variant: "light",
     titlePrimary: "AI модуль",
-    titleSecondary: "Ускоряет процесс разработки",
+    titleSecondary: "Чтобы ускорить разработку",
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
     newBadge: true,
     detail: {
       modalLayout: "radialCover",
-      eyebrow: "Ускоряет процесс разработки",
+      eyebrow: "Чтобы ускорить разработку",
       title: "AI модуль",
       blocks: [
         {
@@ -138,13 +138,13 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   {
     variant: "dark",
     titlePrimary: "1-1 продуктовые консультации",
-    titleSecondary: "Помогают увидеть картину шире и выйти из затыков",
+    titleSecondary: "Чтобы увидеть картину шире и выйти из затыков",
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
     detail: {
       modalLayout: "radialCover",
-      eyebrow: "Помогают увидеть картину шире и выйти из затыков",
+      eyebrow: "Чтобы увидеть картину шире и выйти из затыков",
       title: "1-1 продуктовые консультации",
       blocks: [
         {
@@ -169,13 +169,13 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   {
     variant: "light",
     titlePrimary: "Комьюнити встречи",
-    titleSecondary: "Переопыляемся и решаем задачи вместе",
+    titleSecondary: "Чтобы переопыляться и использовать коллективный разум",
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
     detail: {
       modalLayout: "radialCover",
-      eyebrow: "Переопыляемся и решаем задачи вместе",
+      eyebrow: "Чтобы переопыляться и использовать коллективный разум",
       title: "Комьюнити встречи",
       blocks: [
         {
@@ -228,70 +228,15 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
     },
   },
   {
-    variant: "dark",
-    titlePrimary: "Песочница",
-    titleSecondary: "Тестируем свои продукты",
-    priceAmount: "",
-    pricePeriod: "",
-    hidePrice: true,
-    detail: {
-      modalLayout: "radialCover",
-      eyebrow: "Тестируем свои продукты",
-      title: "Песочница",
-      blocks: [
-        {
-          type: "paragraph",
-          text:
-            "Формат, где участники тестируют свои продукты и идеи на тёплой аудитории в безопасной среде.",
-        },
-        {
-          type: "paragraph",
-          text:
-            "Этот модуль не про подготовку «идеального продукта», а про то, чтобы начать делать и проверять свои идеи на практике.",
-        },
-        {
-          type: "paragraph",
-          text:
-            "У нас уже сложился этот формат в сообществе продуктовых авторов: участники проводят тренинги, пилоты, вебинары и свои авторские разгоны. Это пространство, где можно взять свою идею или формат и попробовать его на живой, но поддерживающей аудитории.",
-        },
-        {
-          type: "paragraph",
-          text: "Что внутри:",
-        },
-        {
-          type: "list",
-          items: [
-            "тестирование своих форматов (вебинары, разборы, мини-продукты)",
-            "живая обратная связь от участников",
-            "поддержка релизов друг друга",
-          ],
-        },
-        {
-          type: "paragraph",
-          text: "Разберёмся:",
-        },
-        {
-          type: "list",
-          items: [
-            "как быстро проверять идеи без долгой подготовки",
-            "как понимать, есть ли отклик и ценность",
-            "как делать первые прогоны без страха «не зайдёт»",
-            "как дорабатывать формат на основе обратной связи",
-          ],
-        },
-      ],
-    },
-  },
-  {
     variant: "light",
     titlePrimary: "Методология «Prisma»",
-    titleSecondary: "Помогает не сойти с авторского пути",
+    titleSecondary: "Чтобы не сойти с авторского пути",
     priceAmount: "",
     pricePeriod: "",
     hidePrice: true,
     detail: {
       modalLayout: "radialCover",
-      eyebrow: "Помогает не сойти с авторского пути",
+      eyebrow: "Чтобы не сойти с авторского пути",
       title: "Методология «Prisma»",
       blocks: [
         {
@@ -332,6 +277,86 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
             { text: "Sale", badge: "new" },
             { text: "Lean" },
           ],
+        },
+      ],
+    },
+  },
+  {
+    variant: "dark",
+    titlePrimary: "Модуль «Автор и деньги»",
+    titleSecondary: "Начнём монетизировать свои продукты",
+    priceAmount: "",
+    pricePeriod: "",
+    hidePrice: true,
+    newBadge: true,
+    detail: {
+      modalLayout: "radialCover",
+      eyebrow: "Начнём монетизировать свои продукты",
+      title: "Модуль «Автор и деньги»",
+      blocks: [
+        {
+          type: "paragraph",
+          text:
+            "Как начать монетизировать свои продукты и сделать их источником дохода — на цифрах и в реальности.",
+        },
+        {
+          type: "paragraph",
+          text: "Что внутри:",
+        },
+        {
+          type: "paragraph",
+          text: "1. Мат-часть",
+        },
+        {
+          type: "speaker",
+          name: "Диана Зрячева",
+          description:
+            "математик-практик, к.ф.-м.н., специалист по финансовому моделированию",
+          avatarSrc: "/avatar-diana.png",
+          href: "https://t.me/ActuarialExam",
+        },
+        {
+          type: "paragraph",
+          text:
+            "Вместе с Дианой разберёмся с юнит-экономикой и моделями монетизации.\n\nРазберём:",
+        },
+        {
+          type: "list",
+          items: [
+            "юнит-экономику авторских продуктов",
+            "модели монетизации под твой формат",
+            "простой расчёт, во что превращается идея в цифрах",
+          ],
+        },
+        {
+          type: "paragraph",
+          text: "2. Психологическая часть",
+        },
+        {
+          type: "speaker",
+          name: "Юля Москвитина",
+          description:
+            "телесный терапевт и автор, которая зарабатывает на своих продуктах",
+          avatarSrc: "/avatar-yulia.png",
+          href: "https://t.me/moskvitinajuli",
+        },
+        {
+          type: "paragraph",
+          text:
+            "Даже если в таблицах всё сходится, психологические установки могут мешать превращать план в факт. С Юлей разберём, что мешает по-настоящему зарабатывать на своём.\n\nРазберём:",
+        },
+        {
+          type: "list",
+          items: [
+            "установки, которые тормозят при попытке зарабатывать на своём",
+            "«потолок дохода» — как его замечать и как с ним работать",
+            "как соединять тело, чувства и цифры, чтобы план превращался в факт",
+          ],
+        },
+        {
+          type: "paragraph",
+          text:
+            "В итоге деньги перестают быть абстракцией: видно, где у продукта реальные точки роста, и снимаются установки, которые мешали на этот рост выйти.",
         },
       ],
     },
