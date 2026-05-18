@@ -443,7 +443,7 @@ export default function ChallengePage() {
               Начать создавать своё
             </h2>
             <p className={`mt-8 text-[20px] leading-[1.65] text-black/55 sm:whitespace-nowrap ${interSans}`}>
-              3 месяца совместной работы над своим продуктом
+              подписка на 3 месяца совместной работы над своим продуктом
             </p>
             <p className={`mt-2 text-[20px] leading-[1.65] text-black/55 ${interSans}`}>
               30 000 ₽
