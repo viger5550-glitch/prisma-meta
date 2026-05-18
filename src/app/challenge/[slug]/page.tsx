@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: ChallengeDetailsPageProps): P
   }
 
   return {
-    title: `${track.title} | Продуктовые авторы`,
+    title: `${track.title} | Продуктоделы`,
     description: track.description,
   };
 }

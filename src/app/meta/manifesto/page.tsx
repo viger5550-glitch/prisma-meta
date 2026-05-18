@@ -75,14 +75,15 @@ export default function ManifestoPage() {
               className="text-[24px] leading-snug text-black md:text-[28px]"
               style={{ fontFamily: "var(--font-manifest-newsreader), ui-serif, Georgia, serif" }}
             >
-              Любая система стремится к идеальности: когда минимальные ресурсы приводят к максимальному
-              результату.
+              Любая система стремится к идеальности: когда минимальными ресурсами мы достигаем
+              максимального результата.
             </p>
             <p
               className="mt-6 text-[24px] leading-snug text-black md:text-[28px]"
               style={{ fontFamily: "var(--font-manifest-newsreader), ui-serif, Georgia, serif" }}
             >
-              Мы делаем продукты из своей гениальности, опираясь на свой опыт и интерес, и зарабатываем на них.
+              Тут мы делаем продукты из своей гениальности, опираясь на свой опыт и интерес, и зарабатываем на
+              них.
             </p>
 
             <div className="mt-16 space-y-14">
