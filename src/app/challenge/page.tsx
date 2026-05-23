@@ -332,14 +332,6 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
           text: "2. Психологическая часть",
         },
         {
-          type: "speaker",
-          name: "Юля Москвитина",
-          description:
-            "телесный терапевт и автор, которая зарабатывает на своих продуктах",
-          avatarSrc: "/avatar-yulia.png",
-          href: "https://t.me/moskvitinajuli",
-        },
-        {
           type: "paragraph",
           text:
             "Даже если в таблицах всё сходится, психологические установки могут мешать превращать план в факт. Поисследуем и эту тему вместе.",
