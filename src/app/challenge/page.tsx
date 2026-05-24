@@ -329,7 +329,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
         },
         {
           type: "paragraph",
-          text: "2. Психологическая часть",
+          text: "2. Ментальная часть",
         },
         {
           type: "paragraph",
