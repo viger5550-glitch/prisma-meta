@@ -72,18 +72,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
         },
         {
           type: "paragraph",
-          text: "Что внутри:",
-        },
-        {
-          type: "paragraph",
-          text: "1. Вайбкодинг для авторов",
-        },
-        {
-          type: "speaker",
-          name: "Андрей Погорелый",
-          description: "вайбкодер и техно-предприниматель",
-          avatarSrc: "/avatar-andrey.png",
-          href: "https://t.me/toolatetolearn",
+          text: "вайбкодинг для авторов",
         },
         {
           type: "paragraph",
@@ -97,40 +86,8 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
             "как строить разработку так, чтобы продукт можно было поддерживать",
             "как делегировать разработку AI и людям",
             "как сохранять авторский контроль над продуктом",
+            "как правильно настроить проект и делегировать вайбкодинг, чтобы вам сделали продукт, который вы сможете поддерживать самостоятельно",
           ],
-        },
-        {
-          type: "paragraph",
-          text: "Также тестируем новый формат: возможность отдавать задачи в аутсорс команде вайбкодеров Андрея с моим авторским контролем.",
-        },
-        {
-          type: "paragraph",
-          text: "2. Агенты и AI-ассистенты",
-        },
-        {
-          type: "speaker",
-          name: "Саша Кочанова",
-          description: "AI продакт и эдвайзер техно-предпринимателей",
-          avatarSrc: "/avatar-sasha.png",
-          href: "https://t.me/product_and_life",
-        },
-        {
-          type: "paragraph",
-          text: "Про то, как перестать делать всё руками и собрать вокруг себя AI-систему.\n\nРазберём:",
-        },
-        {
-          type: "list",
-          items: [
-            "как передавать часть задач AI",
-            "как настраивать процессы через Cowork",
-            "как кастомизировать агентов под себя",
-            "как использовать AI для контента, аналитики, ресерча и сборки лендингов",
-            "где границы AI и когда всё-таки нужен человек",
-          ],
-        },
-        {
-          type: "paragraph",
-          text: "В итоге AI становится не \"прикольной игрушкой\", а частью процесса создания продукта.",
         },
       ],
     },
@@ -281,7 +238,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   },
   {
     variant: "light",
-    titlePrimary: "Модуль «Автор и деньги»",
+    titlePrimary: "Модуль «Экономика продукта»",
     titleSecondary: "Чтобы начать зарабатывать на своих продуктах",
     priceAmount: "",
     pricePeriod: "",
@@ -290,7 +247,7 @@ const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
     detail: {
       modalLayout: "radialCover",
       eyebrow: "Чтобы начать зарабатывать на своих продуктах",
-      title: "Модуль «Автор и деньги»",
+      title: "Модуль «Экономика продукта»",
       blocks: [
         {
           type: "paragraph",
