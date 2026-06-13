@@ -2,7 +2,7 @@ import { ManifestAuthorHub } from "./ManifestAuthorHub";
 import { ManifestOfferCard, type ManifestOfferCardProps } from "./ManifestOfferCard";
 import { RadialCardsLayout, type RadialLayoutItem } from "./RadialCardsLayout";
 
-const BACKSTAGE_URL = "https://t.me/tribute/app?startapp=sIPX";
+const BACKSTAGE_URL = "https://t.me/productodel_bot";
 const GAME_URL = "https://t.me/zzzzzzz5550bot";
 
 /**
@@ -23,11 +23,11 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   {
     variant: "dark",
     titlePrimary: "ГРУППОВОЙ ТРЕК",
-    titleSecondary: "challenge 4.0",
+    titleSecondary: "challenge 5.0",
     priceAmount: "30k",
     pricePeriod: "/3mo",
     moreHref: "/challenge",
-    startLabel: "Старт 25.05.2026",
+    startLabel: "Старт сентябрь",
   },
   {
     variant: "light",
@@ -39,8 +39,8 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "dark",
-    titlePrimary: "БЕКСТЕЙДЖ ТРЕК",
-    titleSecondary: "Закрытый канал с отчётами челленджа",
+    titlePrimary: "inside",
+    titleSecondary: "закрытый канал о том, как проходит челлендж",
     priceAmount: "3k",
     pricePeriod: "/3mo",
     moreHref: BACKSTAGE_URL,
