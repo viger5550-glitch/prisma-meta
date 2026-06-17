@@ -11,7 +11,7 @@ import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
-const CHALLENGE_SIGNUP_URL = "https://t.me/productodel_bot";
+const CHALLENGE_SIGNUP_URL = "https://t.me/vigerman";
 
 const CHALLENGE_HEX_CARDS: ChallengeOfferCard[] = [
   {
