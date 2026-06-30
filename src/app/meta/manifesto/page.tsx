@@ -4,9 +4,9 @@ import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 export const metadata: Metadata = {
-  title: "Манифест соло фаундера | PRISMA",
+  title: "Манифест продуктового автора | PRISMA",
   description:
-    "Манифест для соло фаундеров: гениальность, доход за любимое дело, авторство как стратегия.",
+    "Манифест для продуктовых авторов: гениальность, доход за любимое дело, авторство как стратегия.",
 };
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
@@ -60,7 +60,7 @@ export default function ManifestoPage() {
           <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-serif text-[48px] leading-[0.95] tracking-[-0.03em] text-black md:text-[62px]">
             <span className="flex items-start">
               <span className="mr-1 -translate-x-[0.1em]">|</span>
-              <span>Манифест соло фаундера</span>
+              <span>Манифест продуктового автора</span>
             </span>
           </h1>
         </div>
