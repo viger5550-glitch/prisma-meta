@@ -31,7 +31,7 @@ export default function MentorshipPage() {
               </span>
             </h1>
             <p
-              className={`mt-8 max-w-[546px] p-0 text-left text-[10px] font-normal uppercase leading-[15px] tracking-[0.4em] ${interSans}`}
+              className={`mt-8 whitespace-nowrap p-0 text-left text-[10px] font-normal uppercase leading-[15px] tracking-[0.4em] ${interSans}`}
               style={{ color: "rgba(95, 94, 94, 0.6)" }}
             >
               программа индивидуального продуктового сопровождения

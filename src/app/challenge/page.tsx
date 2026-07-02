@@ -341,12 +341,7 @@ export default function ChallengePage() {
             <h1 className="mt-5 flex flex-wrap items-baseline gap-x-4 gap-y-2 font-serif text-[48px] leading-[0.95] tracking-[-0.03em] text-black md:text-[62px]">
               <span className="flex items-start">
                 <span className="mr-1 -translate-x-[0.1em]">|</span>
-                <span>Продуктовые авторы</span>
-              </span>
-              <span
-                className={`text-[11px] font-normal normal-case tracking-[0.06em] text-black/45 md:text-[13px] ${interSans}`}
-              >
-                ex. Продуктоделы
+                <span>Групповой трек</span>
               </span>
             </h1>
             <p

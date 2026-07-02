@@ -87,7 +87,7 @@ export function MentorshipFormatsSection({ interSansClassName }: MentorshipForma
             {activeModal === "subscription" ? (
               <>
                 <p className={`text-[18px] leading-[1.6] text-zinc-800 ${interSansClassName}`}>
-                  Чтобы пойти в работу — давайте сначала встретимся и поймём, что подходим друг другу.
+                  Чтобы пойти в работу — давай сначала встретимся и поймём, что подходим друг другу.
                 </p>
                 <a
                   href={TELEGRAM_URL}
