@@ -36,13 +36,9 @@ export default function MentorshipPage() {
             >
               программа индивидуального продуктового сопровождения
             </p>
-          </div>
-        </section>
 
-        <section className="bg-white">
-          <div className="mx-auto max-w-[1280px] px-6 pb-14 pt-2 md:px-12 md:pb-20 md:pt-4 lg:px-[96px] lg:pb-24 lg:pt-6">
             <div
-              className={`max-w-[760px] text-[17px] leading-[1.65] text-zinc-800 ${interSans}`}
+              className={`mt-10 max-w-[760px] text-[17px] leading-[1.65] text-zinc-800 md:mt-12 ${interSans}`}
             >
               <p>Большинство соло-фаундеров сталкиваются с такими проблемами:</p>
               <ul className="mt-4 list-disc space-y-2 pl-6 marker:text-black/80">
@@ -65,17 +61,37 @@ export default function MentorshipPage() {
                 <p>
                   Год назад я ушла из найма и прошла, кажется, все возможные грабли соло-фаундерства.
                 </p>
-                <p>
-                  Разработала собственную методологию, адаптированную именно под собственные проекты.
-                </p>
-                <p>
-                  Провела 4 сезона продуктовых челленджей — групповые 3-месячные треки для соло-фаундеров и понимаю,
-                  как держать трек и формировать навык, а не просто хаотично делать.
-                </p>
-                <p>
-                  Вне найма научилась зарабатывать на собственных продуктах и вышла на доход вне найма, но без стресса
-                  и выгорания и с кайфом от создания &quot;своего&quot;.
-                </p>
+                <ul className="list-disc space-y-2 pl-6 marker:text-black/80">
+                  <li>
+                    Разработала собственную{" "}
+                    <a
+                      href="https://knowledge.productodel.ru/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black underline decoration-black/30 underline-offset-2 transition-colors hover:decoration-black"
+                    >
+                      методологию
+                    </a>
+                    , адаптированную именно под собственные проекты.
+                  </li>
+                  <li>
+                    Провела 4 сезона продуктовых{" "}
+                    <a
+                      href="https://www.prisma-meta.ru/challenge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-black underline decoration-black/30 underline-offset-2 transition-colors hover:decoration-black"
+                    >
+                      челленджей
+                    </a>{" "}
+                    — групповые 3-месячные треки для соло-фаундеров и понимаю, как держать трек и формировать навык, а
+                    не просто хаотично делать.
+                  </li>
+                  <li>
+                    Вне найма научилась зарабатывать на собственных продуктах и вышла на доход вне найма, но без
+                    стресса и выгорания и с кайфом от создания &quot;своего&quot;.
+                  </li>
+                </ul>
               </div>
 
               <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
@@ -96,15 +112,9 @@ export default function MentorshipPage() {
                   почему именно это.
                 </li>
                 <li>
-                  Собираем продуктовую карту — по авторской методологии: аудитории, гипотезы, приоритеты. Встраиваем
-                  первые традиции продуктовых исследований — практики, которые потом работают без меня.
+                  Собираем продуктовую карту — по авторской методологии: аудитории, гипотезы, приоритеты.
                 </li>
               </ul>
-              <p className="mt-4">
-                Это не коучинг. Я не работаю с мотивацией и убеждениями — работаю с твоим проектом, гипотезами и
-                задачами. Не делаю за тебя — делаем вместе.
-              </p>
-
               <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
                 Что остаётся
               </h2>
@@ -134,8 +144,10 @@ export default function MentorshipPage() {
               </h2>
               <p className="mt-4">
                 Первая встреча проходит до начала программы: разбираемся в ситуации и проверяем совместимость. Если
-                оба чувствуем, что сработаемся, — стартуем. Стоимость онбординга (5000 руб.) идёт в зачёт первого
-                месяца.
+                оба чувствуем, что сработаемся, — стартуем.
+              </p>
+              <p className="mt-3">
+                Стоимость онбординга 5000 руб. — идёт в зачёт первого месяца.
               </p>
               <p className="mt-4 text-black">В каждом месяце — 5 встреч:</p>
               <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-black/80">
@@ -143,10 +155,7 @@ export default function MentorshipPage() {
                   <span className="text-black">Трекшн — 4 раза в месяц.</span> Что сделано, что
                   получилось, какой фокус на неделю.
                 </li>
-                <li>
-                  <span className="text-black">Ретро — 1 раз в месяц.</span> Глубокий разбор месяца и
-                  корректировка курса.
-                </li>
+                <li>Ретро — 1 раз в месяц глубокий разбор месяца и корректировка курса.</li>
               </ul>
             </div>
           </div>
