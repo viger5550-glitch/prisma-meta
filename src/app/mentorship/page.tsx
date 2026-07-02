@@ -180,15 +180,17 @@ export default function MentorshipPage() {
                 variant="dark"
                 titlePrimary="ПОДПИСКА"
                 titleSecondary="НА МЕСЯЦ"
-                priceAmount="30 000"
+                priceAmount="30k"
                 pricePeriod="/3mo"
+                moreHref={MENTORSHIP_INTRO_URL}
               />
               <ManifestOfferCard
                 variant="light"
                 titlePrimary="ДОПОЛНИТЕЛЬНЫЕ"
                 titleSecondary="ВОРКШОПЫ"
-                priceAmount="5 000"
+                priceAmount="5k"
                 pricePeriod="/1 session"
+                moreHref={MENTORSHIP_INTRO_URL}
               />
             </div>
           </div>
