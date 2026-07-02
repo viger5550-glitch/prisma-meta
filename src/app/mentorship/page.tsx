@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
+import { ManifestOfferCard } from "@/components/meta/ManifestOfferCard";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
@@ -42,10 +43,10 @@ export default function MentorshipPage() {
         <section className="bg-white">
           <div className="mx-auto max-w-[1280px] px-6 pb-14 pt-2 md:px-12 md:pb-20 md:pt-4 lg:px-[96px] lg:pb-24 lg:pt-6">
             <div
-              className={`max-w-[760px] text-[17px] leading-[1.8] text-zinc-800 ${interSans}`}
+              className={`max-w-[760px] text-[17px] leading-[1.65] text-zinc-800 ${interSans}`}
             >
               <p>Большинство соло-фаундеров сталкиваются с такими проблемами:</p>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-4 list-disc space-y-2 pl-6 marker:text-black/80">
                 <li>Строю, а вдруг никому не нужно.</li>
                 <li>Хожу по кругу: пробую, не получается, возвращаюсь к началу.</li>
                 <li>Не знаю где взять первых людей под тест.</li>
@@ -53,10 +54,10 @@ export default function MentorshipPage() {
                 <li>Непонятно когда остановиться — нет критерия &quot;хватит или продолжать&quot;.</li>
               </ul>
 
-              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+              <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
                 Почему я могу говорить об этом
               </h2>
-              <div className="mt-8 space-y-5">
+              <div className="mt-4 space-y-3">
                 <p>
                   Я продакт с шестилетним опытом в IT: делала продукты для больших компаний. Но когда начинаешь делать
                   продукт для себя, это совсем другая история.
@@ -70,64 +71,64 @@ export default function MentorshipPage() {
                 <p>Я буду вашим внешним фактором и партнёром по движению.</p>
               </div>
 
-              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+              <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
                 Что делаем вместе
               </h2>
-              <div className="mt-8 space-y-8">
-                <div>
-                  <h3 className="font-medium text-black">Встраиваем работу над проектом в твою реальную жизнь</h3>
-                  <p className="mt-2">
+              <ul className="mt-4 list-disc space-y-4 pl-6 marker:text-black/80">
+                <li>
+                  <h3 className="font-semibold text-black">Встраиваем работу над проектом в твою реальную жизнь</h3>
+                  <p className="mt-1">
                     У тебя уже есть фулл-тайм, клиенты или другие проекты. Выстраиваем процессы работы над продуктом
                     так, чтобы он двигался в реальных условиях — не «когда появится время», а в конкретных слотах с
                     конкретным ритмом.
                   </p>
-                </div>
-                <div>
-                  <h3 className="font-medium text-black">Настраиваем цикл быстрой валидации</h3>
-                  <p className="mt-2">
+                </li>
+                <li>
+                  <h3 className="font-semibold text-black">Настраиваем цикл быстрой валидации</h3>
+                  <p className="mt-1">
                     Каждая гипотеза — это вопрос с ценой ошибки. Находим самое рискованное допущение — то, разрушение
                     которого убивает всё остальное, — и проверяем его самым дешёвым способом до того, как строить.
                     Ищем первых людей под тест, договариваемся о критериях «работает / не работает» до теста, а не
                     после. Потому что после всегда найдётся объяснение, почему результат «почти считается».
                   </p>
-                </div>
-                <div>
-                  <h3 className="font-medium text-black">Строим бэклог и учимся с ним работать</h3>
-                  <p className="mt-2">
+                </li>
+                <li>
+                  <h3 className="font-semibold text-black">Строим бэклог и учимся с ним работать</h3>
+                  <p className="mt-1">
                     Это живой инструмент приоритетов, а не список задач. Понятно, что делать сейчас и почему именно
                     это, а не другое. Можно добавлять, убирать и двигать приоритеты самостоятельно — без меня.
                   </p>
-                </div>
-                <div>
-                  <h3 className="font-medium text-black">Собираем продуктовую карту</h3>
-                  <p className="mt-2">
+                </li>
+                <li>
+                  <h3 className="font-semibold text-black">Собираем продуктовую карту</h3>
+                  <p className="mt-1">
                     По авторской методологии соло-фаундера: аудитории, гипотезы, приоритеты — всё в одном месте.
                     Встраиваем первые традиции продуктовых исследований — практики, которые потом работают
                     самостоятельно.
                   </p>
-                </div>
-              </div>
-              <p className="mt-8">
+                </li>
+              </ul>
+              <p className="mt-4">
                 Это не коучинг. Работа идёт не с мотивацией и убеждениями, а с проектом, гипотезами и задачами. Не
                 делаю за тебя — делаем вместе.
               </p>
 
-              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+              <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
                 Что остаётся
               </h2>
-              <p className="mt-8">
+              <p className="mt-4">
                 Как у персонального тренера — остаётся не тренер, а практика.
               </p>
-              <p className="mt-5">
+              <p className="mt-3">
                 После 1-3 месяцев знаешь, что делать и как делать, — не из теории, а из реальной практики рядом с
                 кем-то, кто видит проект насквозь. Первые трассы пройдены вместе — дальше путь самостоятельный.
               </p>
-              <p className="mt-5">
+              <p className="mt-3">
                 Можно вернуться — для глубокой стратегической сессии или когда нужно перенастроить программу. Но
                 фундамент уже твой.
               </p>
-              <p className="mt-8">С тобой остаётся:</p>
-              <ul className="mt-5 space-y-5">
+              <p className="mt-4 font-medium text-black">С тобой остаётся:</p>
+              <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-black/80">
                 <li>
                   <span className="font-medium text-black">Встроенный продуктовый процесс</span> — работа над
                   продуктом живёт в реальности, не на энтузиазме.
@@ -146,15 +147,15 @@ export default function MentorshipPage() {
                 </li>
               </ul>
 
-              <h2 className="mt-16 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+              <h2 className="mt-10 font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
                 Как мы работаем
               </h2>
-              <p className="mt-8">
+              <p className="mt-4">
                 Первая встреча проходит до начала программы: разбираемся в ситуации и проверяем совместимость. Если
                 оба чувствуем, что сработаемся, — стартуем. Стоимость онбординга идёт в зачёт первого месяца.
               </p>
-              <p className="mt-8">В каждом месяце — 5 встреч:</p>
-              <ul className="mt-5 space-y-5">
+              <p className="mt-4 font-medium text-black">В каждом месяце — 5 встреч:</p>
+              <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-black/80">
                 <li>
                   <span className="font-medium text-black">Трекшн — 4 раза в месяц.</span> Что сделано, что
                   получилось, какой фокус на неделю.
@@ -164,38 +165,31 @@ export default function MentorshipPage() {
                   корректировка курса.
                 </li>
               </ul>
-              <p className="mt-8">В конце каждого месяца решаем: продолжаем или нет.</p>
+              <p className="mt-4">В конце каждого месяца решаем: продолжаем или нет.</p>
             </div>
           </div>
         </section>
 
         <section className="bg-[#F2F2F2]">
           <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 md:py-24 lg:px-[96px] lg:py-[120px]">
-            <div className={`max-w-[760px] text-[17px] leading-[1.8] text-zinc-800 ${interSans}`}>
-              <h2 className="font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
-                Стоимость
-              </h2>
-              <ul className="mt-8 space-y-4">
-                <li>
-                  <span className="font-medium text-black">1-й месяц</span> — 50 000 ₽
-                </li>
-                <li>
-                  <span className="font-medium text-black">2-й месяц</span> — 40 000 ₽
-                </li>
-                <li>
-                  <span className="font-medium text-black">3-й месяц и далее</span> — 30 000 ₽
-                </li>
-              </ul>
-              <p className="mt-8">
-                Чем дольше работаем, тем дешевле каждый месяц. Накопительный эффект растёт, цена снижается.
-              </p>
-              <p className="mt-8">
-                Дополнительные воркшопы можно докупать отдельно. Воркшопы — это встречи, на которых мы делаем и
-                вайбкодим вместе.
-              </p>
-              <p className="mt-5">
-                <span className="font-medium text-black">1 сессия</span> — 5 000 ₽.
-              </p>
+            <h2 className="text-center font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
+              Подписка на месяц
+            </h2>
+            <div className="mt-10 flex flex-wrap items-start justify-center gap-8 md:gap-12">
+              <ManifestOfferCard
+                variant="dark"
+                titlePrimary="ПОДПИСКА"
+                titleSecondary="НА МЕСЯЦ"
+                priceAmount="30 000"
+                pricePeriod="/3mo"
+              />
+              <ManifestOfferCard
+                variant="light"
+                titlePrimary="ДОПОЛНИТЕЛЬНЫЕ"
+                titleSecondary="ВОРКШОПЫ"
+                priceAmount="5 000"
+                pricePeriod="/1 session"
+              />
             </div>
           </div>
         </section>
