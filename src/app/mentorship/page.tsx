@@ -6,7 +6,6 @@ import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
-const MENTORSHIP_INTRO_URL = "https://t.me/vigerman";
 
 export const metadata: Metadata = {
   title: "Персональный трек — mentorship | PRISMA",
@@ -76,7 +75,7 @@ export default function MentorshipPage() {
               </h2>
               <ul className="mt-4 list-disc space-y-4 pl-6 marker:text-black/80">
                 <li>
-                  <h3 className="font-semibold text-black">Встраиваем работу над проектом в твою реальную жизнь</h3>
+                  <h3 className="text-black">Встраиваем работу над проектом в твою реальную жизнь</h3>
                   <p className="mt-1">
                     У тебя уже есть фулл-тайм, клиенты или другие проекты. Выстраиваем процессы работы над продуктом
                     так, чтобы он двигался в реальных условиях — не «когда появится время», а в конкретных слотах с
@@ -84,7 +83,7 @@ export default function MentorshipPage() {
                   </p>
                 </li>
                 <li>
-                  <h3 className="font-semibold text-black">Настраиваем цикл быстрой валидации</h3>
+                  <h3 className="text-black">Настраиваем цикл быстрой валидации</h3>
                   <p className="mt-1">
                     Каждая гипотеза — это вопрос с ценой ошибки. Находим самое рискованное допущение — то, разрушение
                     которого убивает всё остальное, — и проверяем его самым дешёвым способом до того, как строить.
@@ -93,14 +92,14 @@ export default function MentorshipPage() {
                   </p>
                 </li>
                 <li>
-                  <h3 className="font-semibold text-black">Строим бэклог и учимся с ним работать</h3>
+                  <h3 className="text-black">Строим бэклог и учимся с ним работать</h3>
                   <p className="mt-1">
                     Это живой инструмент приоритетов, а не список задач. Понятно, что делать сейчас и почему именно
                     это, а не другое. Можно добавлять, убирать и двигать приоритеты самостоятельно — без меня.
                   </p>
                 </li>
                 <li>
-                  <h3 className="font-semibold text-black">Собираем продуктовую карту</h3>
+                  <h3 className="text-black">Собираем продуктовую карту</h3>
                   <p className="mt-1">
                     По авторской методологии соло-фаундера: аудитории, гипотезы, приоритеты — всё в одном месте.
                     Встраиваем первые традиции продуктовых исследований — практики, которые потом работают
@@ -127,22 +126,22 @@ export default function MentorshipPage() {
                 Можно вернуться — для глубокой стратегической сессии или когда нужно перенастроить программу. Но
                 фундамент уже твой.
               </p>
-              <p className="mt-4 font-medium text-black">С тобой остаётся:</p>
+              <p className="mt-4 text-black">С тобой остаётся:</p>
               <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-black/80">
                 <li>
-                  <span className="font-medium text-black">Встроенный продуктовый процесс</span> — работа над
+                  <span className="text-black">Встроенный продуктовый процесс</span> — работа над
                   продуктом живёт в реальности, не на энтузиазме.
                 </li>
                 <li>
-                  <span className="font-medium text-black">Продуктовая карта</span> — видно, что делать сейчас и что
+                  <span className="text-black">Продуктовая карта</span> — видно, что делать сейчас и что
                   потом.
                 </li>
                 <li>
-                  <span className="font-medium text-black">Навык тестировать гипотезы</span> — быстро, дёшево, с
+                  <span className="text-black">Навык тестировать гипотезы</span> — быстро, дёшево, с
                   чёткими критериями.
                 </li>
                 <li>
-                  <span className="font-medium text-black">База знаний</span> — методологии в виде статей и
+                  <span className="text-black">База знаний</span> — методологии в виде статей и
                   практических скиллов.
                 </li>
               </ul>
@@ -154,14 +153,14 @@ export default function MentorshipPage() {
                 Первая встреча проходит до начала программы: разбираемся в ситуации и проверяем совместимость. Если
                 оба чувствуем, что сработаемся, — стартуем. Стоимость онбординга идёт в зачёт первого месяца.
               </p>
-              <p className="mt-4 font-medium text-black">В каждом месяце — 5 встреч:</p>
+              <p className="mt-4 text-black">В каждом месяце — 5 встреч:</p>
               <ul className="mt-3 list-disc space-y-2 pl-6 marker:text-black/80">
                 <li>
-                  <span className="font-medium text-black">Трекшн — 4 раза в месяц.</span> Что сделано, что
+                  <span className="text-black">Трекшн — 4 раза в месяц.</span> Что сделано, что
                   получилось, какой фокус на неделю.
                 </li>
                 <li>
-                  <span className="font-medium text-black">Ретро — 1 раз в месяц.</span> Глубокий разбор месяца и
+                  <span className="text-black">Ретро — 1 раз в месяц.</span> Глубокий разбор месяца и
                   корректировка курса.
                 </li>
               </ul>
@@ -171,27 +170,6 @@ export default function MentorshipPage() {
         </section>
 
         <MentorshipFormatsSection interSansClassName={interSans} />
-
-        <section className="bg-[#F2F2F2]">
-          <div className="mx-auto flex max-w-[1280px] flex-col items-center px-6 py-20 text-center md:px-12 md:py-24 lg:px-[96px] lg:py-28">
-            <h2 className="font-serif text-[30px] leading-[0.98] tracking-[-0.02em] text-black md:text-[34px]">
-              Сметчимся?
-            </h2>
-            <p
-              className={`mt-6 max-w-[520px] text-[15px] leading-[1.7] text-black/60 ${interSans}`}
-            >
-              Чтобы пойти в работу — давайте сначала встретимся и поймём, что подходим друг другу.
-            </p>
-            <a
-              href={MENTORSHIP_INTRO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`mt-10 inline-flex h-11 min-w-[200px] items-center justify-center bg-black px-7 text-[10px] font-medium uppercase tracking-[0.26em] text-white transition-colors hover:bg-zinc-900 ${interSans}`}
-            >
-              Записаться на встречу-знакомство
-            </a>
-          </div>
-        </section>
 
         <MetaSiteFooter />
       </div>
