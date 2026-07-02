@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
-import { ManifestOfferCard } from "@/components/meta/ManifestOfferCard";
+import { MentorshipFormatsSection } from "@/components/meta/MentorshipFormatsSection";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
-const MENTORSHIP_INTRO_URL = "https://cal.com/vika-german/1-1-встречи";
+const MENTORSHIP_INTRO_URL = "https://t.me/vigerman";
 
 export const metadata: Metadata = {
   title: "Персональный трек — mentorship | PRISMA",
@@ -170,31 +170,7 @@ export default function MentorshipPage() {
           </div>
         </section>
 
-        <section className="bg-[#F2F2F2]">
-          <div className="mx-auto max-w-[1280px] px-6 py-16 md:px-12 md:py-24 lg:px-[96px] lg:py-[120px]">
-            <h2 className="text-center font-serif text-[32px] leading-[1.05] tracking-[-0.02em] text-black md:text-[40px]">
-              Подписка на месяц
-            </h2>
-            <div className="mt-10 flex flex-wrap items-start justify-center gap-8 md:gap-12">
-              <ManifestOfferCard
-                variant="dark"
-                titlePrimary="ПОДПИСКА"
-                titleSecondary="НА МЕСЯЦ"
-                priceAmount="30k"
-                pricePeriod="/3mo"
-                moreHref={MENTORSHIP_INTRO_URL}
-              />
-              <ManifestOfferCard
-                variant="light"
-                titlePrimary="ДОПОЛНИТЕЛЬНЫЕ"
-                titleSecondary="ВОРКШОПЫ"
-                priceAmount="5k"
-                pricePeriod="/1 session"
-                moreHref={MENTORSHIP_INTRO_URL}
-              />
-            </div>
-          </div>
-        </section>
+        <MentorshipFormatsSection interSansClassName={interSans} />
 
         <section className="bg-[#F2F2F2]">
           <div className="mx-auto flex max-w-[1280px] flex-col items-center px-6 py-20 text-center md:px-12 md:py-24 lg:px-[96px] lg:py-28">
