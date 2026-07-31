@@ -36,7 +36,7 @@ export function MetaHomePage() {
               className={`col-span-2 m-0 max-w-[546px] justify-self-start p-0 text-left text-[10px] font-normal uppercase leading-[15px] tracking-[0.4em] ${interSans}`}
               style={{ color: "rgba(95, 94, 94, 0.6)" }}
             >
-              Сообщество фаундеров, которые делают свои продукты
+              Сообщество соло фаундеров, которые делают свои продукты
             </p>
           </div>
         </div>

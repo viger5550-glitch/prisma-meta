@@ -26,7 +26,7 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
     titleSecondary: "product lab",
     priceAmount: "30k",
     pricePeriod: "/3mo",
-    moreHref: "/challenge",
+    moreHref: "/lab",
     startLabel: "Старт сентябрь",
   },
   {
