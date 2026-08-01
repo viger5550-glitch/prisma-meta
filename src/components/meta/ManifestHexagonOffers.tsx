@@ -23,7 +23,7 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   {
     variant: "dark",
     titlePrimary: "ГРУППОВОЙ ТРЕК",
-    titleSecondary: "product lab",
+    titleSecondary: "product lab 5.0",
     priceAmount: "30k",
     pricePeriod: "/3mo",
     moreHref: "/lab",
