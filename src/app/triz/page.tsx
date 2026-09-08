@@ -50,24 +50,14 @@ export default function TrizPage() {
                 Автор адаптированной методологии Виктория Герман
               </span>
             </Link>
-            <div className="mt-11 flex flex-wrap items-center gap-6">
-              <a
-                href={TRIZ_BOT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center bg-black px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.24em] text-white transition-colors hover:bg-zinc-900 ${interSans}`}
-              >
-                Начать работу
-              </a>
-              <p className="flex items-baseline gap-1 text-black">
-                <span className="font-serif text-[30px] font-normal leading-none tracking-tight">
-                  1K
-                </span>
-                <span className={`text-[11px] font-normal leading-none tracking-wide ${interSans}`}>
-                  /one-time
-                </span>
-              </p>
-            </div>
+            <a
+              href={TRIZ_BOT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-11 inline-flex items-center justify-center bg-black px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.24em] text-white transition-colors hover:bg-zinc-900 ${interSans}`}
+            >
+              Начать работу
+            </a>
           </div>
         </section>
 

@@ -9,19 +9,24 @@ type TrizSolverCardProps = {
 
 export function TrizSolverCard({ solver, interSansClassName }: TrizSolverCardProps) {
   return (
-    <article className="flex h-full flex-col bg-[#E6E6E6] p-[22px] pt-[26px] shadow-[0_8px_28px_rgba(0,0,0,0.09)] rounded-[2px]">
+    <article
+      className="flex min-w-0 flex-[1_1_160px] flex-col bg-[#E6E6E6] px-[22px] pb-[22px] pt-[26px]"
+      style={{ boxShadow: "0 10px 30px rgba(0,0,0,0.09)" }}
+    >
       <Image
         src={solver.imageSrc}
         alt={solver.imageAlt}
         width={136}
         height={136}
-        className="mx-auto aspect-square size-full max-w-[136px] rounded-[18px] object-cover object-center"
+        className="mx-auto block aspect-square h-auto w-full max-w-[136px] rounded-[18px] object-cover object-center"
       />
-      <h3 className="mt-[18px] text-center font-serif text-[26px] leading-[1.1] text-black">
+      <h3
+        className="mt-[18px] text-center font-serif text-[26px] font-normal leading-[1.1] text-black"
+      >
         {solver.name}
       </h3>
       <p
-        className={`mt-2.5 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-black ${interSansClassName}`}
+        className={`mt-[10px] text-center text-[10px] font-bold uppercase tracking-[0.22em] text-[#0a0a0a] ${interSansClassName}`}
       >
         {solver.roleLabel}
       </p>
@@ -58,11 +63,13 @@ function SolverField({
   return (
     <div>
       <p
-        className={`text-[9px] font-bold uppercase tracking-[0.24em] text-black ${interSansClassName}`}
+        className={`text-[9px] font-bold uppercase tracking-[0.24em] text-[#0a0a0a] ${interSansClassName}`}
       >
         {label}
       </p>
-      <p className={`mt-1.5 text-[12.5px] leading-[1.8] text-zinc-600 ${interSansClassName}`}>
+      <p
+        className={`mt-1.5 text-[12.5px] leading-[1.8] text-[#5f5f5f] ${interSansClassName}`}
+      >
         {text}
       </p>
     </div>
