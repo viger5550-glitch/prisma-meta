@@ -2,7 +2,7 @@ import { ManifestAuthorHub } from "./ManifestAuthorHub";
 import { ManifestOfferCard, type ManifestOfferCardProps } from "./ManifestOfferCard";
 import { RadialCardsLayout, type RadialLayoutItem } from "./RadialCardsLayout";
 
-const BACKSTAGE_URL = "https://t.me/productodel_bot";
+const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 
 /**
  * Раскладка четырёх карточек по сторонам света (top, right, bottom, left).
@@ -38,11 +38,11 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "dark",
-    titlePrimary: "inside",
-    titleSecondary: "закрытый канал о том, как проходит челлендж",
-    priceAmount: "3k",
-    pricePeriod: "/3mo",
-    moreHref: BACKSTAGE_URL,
+    titlePrimary: "KNOWLEDGE",
+    titleSecondary: "story book",
+    priceAmount: "5K",
+    pricePeriod: "/6mo",
+    moreHref: KNOWLEDGE_URL,
   },
   {
     variant: "light",

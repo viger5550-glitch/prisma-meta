@@ -42,10 +42,10 @@ export function MetaSiteHeader() {
             <Link href="/about" className={navLinkClass(isRouteActive(pathname, "/about"))}>
               AUTHOR
             </Link>
-            <Link href="/meta/manifesto" className={navLinkClass(isRouteActive(pathname, "/meta/manifesto"))}>
+            {/* Временно скрыты пункты: THE MANIFESTO, CHALLENGE, MENTORSHIP, GAME, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
+            <Link href="/meta/manifesto" className={navLinkClass(isRouteActive(pathname, "/meta/manifesto"), "hidden")}>
               THE MANIFESTO
             </Link>
-            {/* Временно скрыты пункты: CHALLENGE, MENTORSHIP, GAME, KNOWLEDGE, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
             <Link href="/challenge" className={navLinkClass(isRouteActive(pathname, "/challenge"), "hidden")}>
               challenge
             </Link>

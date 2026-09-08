@@ -5,7 +5,7 @@ import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { TrizSolversSection } from "@/components/meta/TrizSolversSection";
-import { TRIZ_BOT_URL } from "@/components/meta/trizSolvers";
+import { TRIZ_BOT_URL, TRIZ_KASSA_URL } from "@/components/meta/trizSolvers";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 
@@ -90,7 +90,7 @@ export default function TrizPage() {
               Готовы решать задачи по-новому?
             </h2>
             <a
-              href={TRIZ_BOT_URL}
+              href={TRIZ_KASSA_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={`mt-8 inline-flex items-center justify-center bg-black px-10 py-3.5 text-[10px] font-medium uppercase tracking-[0.24em] text-white transition-colors hover:bg-zinc-900 ${interSans}`}
