@@ -3,7 +3,6 @@ import { ManifestOfferCard, type ManifestOfferCardProps } from "./ManifestOfferC
 import { RadialCardsLayout, type RadialLayoutItem } from "./RadialCardsLayout";
 
 const BACKSTAGE_URL = "https://t.me/productodel_bot";
-const GAME_URL = "https://t.me/zzzzzzz5550bot";
 
 /**
  * Раскладка четырёх карточек по сторонам света (top, right, bottom, left).
@@ -47,11 +46,12 @@ const CROSS_CARD_PROPS: ManifestOfferCardProps[] = [
   },
   {
     variant: "light",
-    titlePrimary: "СОЛО ТРЕК",
-    titleSecondary: "GAME",
-    priceAmount: "3k",
-    pricePeriod: "/3mo",
-    moreHref: GAME_URL,
+    titlePrimary: "ТРИЗ-РЕШАТЕЛИ",
+    titleSecondary: "AI АГЕНТЫ",
+    priceAmount: "1K",
+    pricePeriod: "/one-time",
+    moreHref: "/triz",
+    newBadge: true,
   },
 ];
 

@@ -1,6 +1,6 @@
 # Стиль страниц-лендингов (PRISMA Meta)
 
-Единый стилевой контракт для страниц-лендингов проекта (`/`, `/about`, `/challenge`, `/mentorship`, `/meta/manifesto`, будущие). Документ фиксирует, как должен выглядеть **заголовок страницы** и **контентная колонка**, какие используются **шрифты**, **отступы** и **фоны**. Любая новая страница лендинга обязана попадать в этот контракт; отклонения — только с явным обоснованием в PR.
+Единый стилевой контракт для страниц-лендингов проекта (`/`, `/about`, `/challenge`, `/mentorship`, `/triz`, `/meta/manifesto`, будущие). Документ фиксирует, как должен выглядеть **заголовок страницы** и **контентная колонка**, какие используются **шрифты**, **отступы** и **фоны**. Любая новая страница лендинга обязана попадать в этот контракт; отклонения — только с явным обоснованием в PR.
 
 ## 1. Контейнер и текстовая колонка
 
@@ -192,6 +192,6 @@
 
 ## 7. Ссылки
 
-- Реализации с актуальной разметкой: [`/challenge`](../src/app/challenge/page.tsx), [`/mentorship`](../src/app/mentorship/page.tsx), [`/about`](../src/app/about/page.tsx), [`/meta/manifesto`](../src/app/meta/manifesto/page.tsx).
+- Реализации с актуальной разметкой: [`/challenge`](../src/app/challenge/page.tsx), [`/mentorship`](../src/app/mentorship/page.tsx), [`/triz`](../src/app/triz/page.tsx), [`/about`](../src/app/about/page.tsx), [`/meta/manifesto`](../src/app/meta/manifesto/page.tsx).
 - Компонент карточек: [`ManifestOfferCard`](../src/components/meta/ManifestOfferCard.tsx).
 - Глобальный футер и шапка: [`MetaSiteFooter`](../src/components/meta/MetaSiteFooter.tsx), [`MetaSiteHeader`](../src/components/meta/MetaSiteHeader.tsx).
