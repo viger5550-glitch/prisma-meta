@@ -9,6 +9,10 @@
 - [Frontend Sprints Plan](./frontend-sprints-plan.md)
 - [Sprint 1 Backlog: Typography Rollout](./sprint-1-backlog-typography.md)
 
+## New projects (handoff)
+
+- [ТРИЗ-команда решателей — бриф](./triz-assistant-product-brief.md) — отдельный продукт (не Meta); скопировать в новую папку/репозиторий
+
 ## Frontend conventions
 
 - [Стиль страниц-лендингов (Page Style Guide)](./page-style-guide.md) — единый контракт hero-заголовка, текстовой колонки, шрифтов и фонов для всех лендингов.
