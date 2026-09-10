@@ -7,7 +7,6 @@ import { homeShell } from "./homeShell";
 
 const PRODUCTODELS_URL = "https://productodels.figma.site/";
 const CAL_MENTORSHIP = "https://cal.com/vika-german/консультация";
-const KNOWLEDGE_PRODUCTODEL_URL = "https://knowledge.productodel.ru/";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 
@@ -44,7 +43,7 @@ export function MetaSiteHeader({ wide = false }: { wide?: boolean }) {
             <Link href="/about" className={navLinkClass(isRouteActive(pathname, "/about"))}>
               AUTHOR
             </Link>
-            {/* Временно скрыты пункты: THE MANIFESTO, CHALLENGE, MENTORSHIP, GAME, KNOWLEDGE, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
+            {/* Временно скрыты пункты: THE MANIFESTO, CHALLENGE, MENTORSHIP, GAME, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
             <Link href="/meta/manifesto" className={navLinkClass(isRouteActive(pathname, "/meta/manifesto"), "hidden")}>
               THE MANIFESTO
             </Link>
