@@ -44,7 +44,7 @@ export function MetaSiteHeader({ wide = false }: { wide?: boolean }) {
             <Link href="/about" className={navLinkClass(isRouteActive(pathname, "/about"))}>
               AUTHOR
             </Link>
-            {/* Временно скрыты пункты: THE MANIFESTO, CHALLENGE, MENTORSHIP, GAME, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
+            {/* Временно скрыты пункты: THE MANIFESTO, CHALLENGE, MENTORSHIP, GAME, KNOWLEDGE, DESIGN SOLUTION — убрать `hidden` с ссылок, чтобы вернуть */}
             <Link href="/meta/manifesto" className={navLinkClass(isRouteActive(pathname, "/meta/manifesto"), "hidden")}>
               THE MANIFESTO
             </Link>
@@ -56,9 +56,6 @@ export function MetaSiteHeader({ wide = false }: { wide?: boolean }) {
             </Link>
             <Link href={PRODUCTODELS_URL} target="_blank" rel="noopener noreferrer" className="hidden hover:opacity-70">
               GAME
-            </Link>
-            <Link href={KNOWLEDGE_PRODUCTODEL_URL} target="_blank" rel="noopener noreferrer" className="hover:opacity-70">
-              KNOWLEDGE
             </Link>
             <Link href={PRODUCTODELS_URL} target="_blank" rel="noopener noreferrer" className="hidden hover:opacity-70">
               DESIGN SOLUTION
