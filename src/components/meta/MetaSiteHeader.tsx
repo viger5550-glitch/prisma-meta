@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { homeShell } from "./homeShell";
+
 const PRODUCTODELS_URL = "https://productodels.figma.site/";
 const CAL_MENTORSHIP = "https://cal.com/vika-german/консультация";
 const KNOWLEDGE_PRODUCTODEL_URL = "https://knowledge.productodel.ru/";
@@ -22,13 +24,13 @@ function navLinkClass(active: boolean, extra?: string) {
     .join(" ");
 }
 
-export function MetaSiteHeader() {
+export function MetaSiteHeader({ wide = false }: { wide?: boolean }) {
   const pathname = usePathname();
 
   return (
     <header className="bg-white">
       <div
-        className={`mx-auto flex max-w-[1280px] flex-col gap-4 px-6 py-6 md:px-12 lg:px-[96px] lg:py-6 ${interSans}`}
+        className={`flex flex-col gap-4 py-6 ${wide ? homeShell : "mx-auto max-w-[1280px] px-6 md:px-12 lg:px-[96px]"} ${interSans}`}
       >
         <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
           <Link

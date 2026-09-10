@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const manifestInter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-manifest-inter",
-  display: "swap",
+  display: "block",
 });
 
 const geistSans = Geist({
@@ -21,8 +21,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "PRISMA",
   description: "Место, где мы делаем свои авторские продукты.",
-  viewport: "width=device-width, initial-scale=1, viewport-fit=cover",
-  other: { "color-scheme": "light" },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  colorScheme: "light",
 };
 
 export default function RootLayout({

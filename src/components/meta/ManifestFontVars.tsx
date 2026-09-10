@@ -1,23 +1,18 @@
-import { Inter, Newsreader } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-manifest-inter",
-  display: "swap",
-});
+import { Newsreader } from "next/font/google";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-manifest-newsreader",
-  display: "swap",
+  display: "block",
 });
 
-/** Inter + Newsreader для /meta и страницы «Слово автора» (/about). */
+/**
+ * Newsreader для цен. Inter уже висит на <html> из root layout —
+ * второй Inter с display:swap здесь дёргал текст при гидрации.
+ */
 export function ManifestFontVars({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <div className={`${inter.variable} ${newsreader.variable}`}>{children}</div>
-  );
+  return <div className={newsreader.variable}>{children}</div>;
 }

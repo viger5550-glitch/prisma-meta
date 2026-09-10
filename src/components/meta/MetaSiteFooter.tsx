@@ -1,3 +1,5 @@
+import { homeShell } from "./homeShell";
+
 const PRIVACY_URL = "https://knowledge.productodel.ru/legal/privacy";
 const OFFER_URL = "https://knowledge.productodel.ru/legal/offer";
 const SUPPORT_TG_URL = "https://t.me/vigerman";
@@ -43,10 +45,12 @@ function InstagramIcon({ className = "" }: { className?: string }) {
   );
 }
 
-export function MetaSiteFooter() {
+export function MetaSiteFooter({ wide = false }: { wide?: boolean }) {
   return (
     <footer className={`border-t border-black/5 bg-white ${interSans}`}>
-      <div className="mx-auto flex max-w-[1280px] flex-col gap-6 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-[96px]">
+      <div
+        className={`flex flex-col gap-6 py-6 md:flex-row md:items-center md:justify-between ${wide ? homeShell : "mx-auto max-w-[1280px] px-6 md:px-12 lg:px-[96px]"}`}
+      >
         <nav className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-500">
           <a href={PRIVACY_URL} target="_blank" rel="noopener noreferrer" className="hover:text-black">
             политика конфиденциальности
