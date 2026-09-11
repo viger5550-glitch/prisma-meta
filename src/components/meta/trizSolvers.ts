@@ -1,5 +1,4 @@
 export const TRIZ_BOT_URL = "https://t.me/productodel_bot";
-export const TRIZ_KASSA_URL = "https://t.me/pm_kassa_bot";
 
 export type TrizSolver = {
   id: "sava" | "il" | "max" | "ilona";

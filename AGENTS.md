@@ -6,8 +6,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Навигация: страницы из хедера
 
-Страницы по ссылкам из `MetaSiteHeader` (**AUTHOR** → `/about`, **THE MANIFESTO** → `/meta/manifesto`) должны содержать [`BackButton`](src/components/meta/BackButton.tsx) над заголовком: `router.back()` + осмысленный `fallbackHref`. Подробнее: [docs/navigation-from-header.md](docs/navigation-from-header.md).
+Пункты `MetaSiteHeader` дублируют карточки каталога (`HOME_OFFERS`): те же названия и те же `href`. `/about` и `/meta/manifesto` в шапке больше не стоят. Если страница всё же открывается из хедера — кнопка [`BackButton`](src/components/meta/BackButton.tsx) над заголовком (`router.back()` + `fallbackHref`). Подробнее: [docs/navigation-from-header.md](docs/navigation-from-header.md).
 
 ## Стиль страниц-лендингов
 
-Все лендинги (`/`, `/about`, `/challenge`, `/mentorship`, `/meta/manifesto`, новые) должны попадать в единый стилевой контракт: контейнер `max-w-[1280px]` с `lg:px-[96px]`, текстовая колонка `max-w-[760px]`, серифный заголовок страницы с фирменной вертикальной палкой `|`, опциональные тег (eyebrow) и подзаголовок, чередование фонов `bg-white` ↔ `bg-[#F2F2F2]`. Полный контракт и готовый шаблон hero: [docs/page-style-guide.md](docs/page-style-guide.md).
+Все лендинги (`/`, `/about`, `/challenge`, `/mentorship`, `/triz`, `/agents`, `/meta/manifesto`, новые) должны попадать в единый стилевой контракт: контейнер `max-w-[1280px]` с `lg:px-[96px]`, текстовая колонка `max-w-[760px]`, серифный заголовок страницы с фирменной вертикальной палкой `|`, опциональные тег (eyebrow) и подзаголовок, чередование фонов `bg-white` ↔ `bg-[#F2F2F2]`. Полный контракт и готовый шаблон hero: [docs/page-style-guide.md](docs/page-style-guide.md).

@@ -22,7 +22,6 @@ export const HOME_FILTERS: { id: HomeOfferFilter; label: string }[] = [
   { id: "outsource", label: "АУТСОРС" },
 ];
 
-const CAL_CONSULT = "https://cal.com/vika-german/консультация";
 const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 
 export const HOME_OFFERS: HomeOffer[] = [
@@ -30,7 +29,7 @@ export const HOME_OFFERS: HomeOffer[] = [
     id: "challenge",
     category: "community",
     variant: "dark",
-    title: "CHALLENGE : 5.0",
+    title: "CHALLENGE",
     subtitle: "ИДЕИ НА ПРОД",
     description: "Челлендж по затаскиванию идей на прод",
     priceAmount: "30k",
@@ -72,8 +71,8 @@ export const HOME_OFFERS: HomeOffer[] = [
     description: "Разрабатываю AI агентов под ваши процессы и внедряю под ключ.",
     priceAmount: "30k+",
     pricePeriod: "/session",
-    actionLabel: "ЗАПИСАТЬСЯ",
-    href: CAL_CONSULT,
+    actionLabel: "MORE",
+    href: "/agents",
   },
   {
     id: "apps-dev",
@@ -84,8 +83,8 @@ export const HOME_OFFERS: HomeOffer[] = [
     description: "Разрабатываю приложения и мини аппы: от идеи до прода.",
     priceAmount: "50k+",
     pricePeriod: "/session",
-    actionLabel: "ЗАПИСАТЬСЯ",
-    href: CAL_CONSULT,
+    actionLabel: "MORE",
+    href: "/apps",
   },
 ];
 

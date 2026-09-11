@@ -9,40 +9,37 @@ type TrizSolverCardProps = {
 
 export function TrizSolverCard({ solver, interSansClassName }: TrizSolverCardProps) {
   return (
-    <article
-      className="flex min-w-0 flex-[1_1_160px] flex-col bg-[#E6E6E6] px-[22px] pb-[22px] pt-[26px]"
-      style={{ boxShadow: "0 10px 30px rgba(0,0,0,0.09)" }}
-    >
+    <article className="flex flex-col gap-4 bg-[#F2F2F2] px-6 py-7">
       <Image
         src={solver.imageSrc}
         alt={solver.imageAlt}
-        width={136}
-        height={136}
-        className="mx-auto block aspect-square h-auto w-full max-w-[136px] rounded-[18px] object-cover object-center"
+        width={120}
+        height={120}
+        className="mx-auto size-[120px] rounded-full object-cover object-center"
       />
-      <h3
-        className="mt-[18px] text-center font-serif text-[26px] font-normal leading-[1.1] text-black"
-      >
-        {solver.name}
-      </h3>
-      <p
-        className={`mt-[10px] text-center text-[10px] font-bold uppercase tracking-[0.22em] text-[#0a0a0a] ${interSansClassName}`}
-      >
-        {solver.roleLabel}
-      </p>
-      <div className="mt-5 flex flex-col gap-4 border-t border-[#D2D2D2] pt-5">
+      <div className="flex flex-col items-center gap-2">
+        <h3 className="font-serif text-[26px] font-normal leading-none text-[#0a0a0a]">
+          {solver.name}
+        </h3>
+        <p
+          className={`text-[9.5px] font-semibold uppercase leading-none tracking-[0.24em] text-[#5a5ad6] ${interSansClassName}`}
+        >
+          {solver.roleLabel}
+        </p>
+      </div>
+      <div className="flex flex-col gap-4 border-t border-[#e0e0e0] pt-5">
         <SolverField
-          label="РОЛЬ"
+          label="Роль"
           text={solver.roleText}
           interSansClassName={interSansClassName}
         />
         <SolverField
-          label="ОРУДИЯ"
+          label="Орудия"
           text={solver.tools}
           interSansClassName={interSansClassName}
         />
         <SolverField
-          label="ИСПОЛЬЗУЙ"
+          label="Используй"
           text={solver.useWhen}
           interSansClassName={interSansClassName}
         />
@@ -61,14 +58,14 @@ function SolverField({
   interSansClassName: string;
 }) {
   return (
-    <div>
+    <div className="flex flex-col gap-1.5">
       <p
-        className={`text-[9px] font-bold uppercase tracking-[0.24em] text-[#0a0a0a] ${interSansClassName}`}
+        className={`text-[8.5px] font-bold uppercase leading-none tracking-[0.24em] text-[#0a0a0a] ${interSansClassName}`}
       >
         {label}
       </p>
       <p
-        className={`mt-1.5 text-[12.5px] leading-[1.8] text-[#5f5f5f] ${interSansClassName}`}
+        className={`text-[11.5px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSansClassName}`}
       >
         {text}
       </p>
