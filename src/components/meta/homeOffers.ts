@@ -29,7 +29,7 @@ export const HOME_OFFERS: HomeOffer[] = [
     id: "challenge",
     category: "community",
     variant: "dark",
-    title: "CHALLENGE",
+    title: "Кати на prod",
     subtitle: "ИДЕИ НА ПРОД",
     description: "Челлендж по затаскиванию идей на прод",
     priceAmount: "30k",

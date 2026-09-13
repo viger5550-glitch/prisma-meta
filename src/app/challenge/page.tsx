@@ -47,7 +47,7 @@ const INSIDE_CARDS = [
 ] as const;
 
 export const metadata: Metadata = {
-  title: "Кати на прод — challenge | PRISMA",
+  title: "Кати на prod — challenge | PRISMA",
   description:
     "Сезон 5: челлендж по затаскиванию идей в прод. Коворкинги, трекшен, демо-дни и бот-трекер — go с нами.",
 };
@@ -77,7 +77,7 @@ export default function ChallengePage() {
 
               <h1 className="flex items-center gap-[26px] font-serif text-[48px] font-normal leading-[0.9] tracking-[0.01em] text-[#0a0a0a] md:text-[62px] lg:text-[74px]">
                 <span className="block h-16 w-[3px] shrink-0 bg-[#0a0a0a] lg:h-20" aria-hidden />
-                <span>КАТИ НА ПРОД</span>
+                <span className="uppercase">Кати на prod</span>
               </h1>
 
               <p
