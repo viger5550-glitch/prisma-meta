@@ -16,4 +16,4 @@
 ## Frontend conventions
 
 - [Стиль страниц-лендингов (Page Style Guide)](./page-style-guide.md) — единый контракт hero-заголовка, текстовой колонки, шрифтов и фонов для всех лендингов.
-- [Навигация: страницы из хедера](./navigation-from-header.md) — обязательный `BackButton` для страниц `MetaSiteHeader`.
+- [Навигация: лендинги и хедер](./navigation-from-header.md) — на лендингах нет `BackButton`; на главную ведёт логотип PRISMA.

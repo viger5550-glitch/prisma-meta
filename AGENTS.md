@@ -4,9 +4,9 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-## Навигация: страницы из хедера
+## Навигация: хедер, без стрелки «назад»
 
-Пункты `MetaSiteHeader` дублируют карточки каталога (`HOME_OFFERS`): те же названия и те же `href`. `/about` и `/meta/manifesto` в шапке больше не стоят. Если страница всё же открывается из хедера — кнопка [`BackButton`](src/components/meta/BackButton.tsx) над заголовком (`router.back()` + `fallbackHref`). Подробнее: [docs/navigation-from-header.md](docs/navigation-from-header.md).
+Пункты `MetaSiteHeader` дублируют карточки каталога (`HOME_OFFERS`): те же названия и те же `href`. Логотип **PRISMA** ведёт на главную. На лендингах не ставить `BackButton` и ссылку «← PRISMA»: возврат на главную — только через хедер.
 
 ## Стиль страниц-лендингов
 

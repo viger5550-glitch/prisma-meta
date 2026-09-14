@@ -19,8 +19,7 @@
 - **Максимальная ширина:** `max-w-[1280px]`.
 - **Горизонтальные отступы:** `px-6 md:px-12 lg:px-[96px]`.
 - **Вертикальные отступы** зависят от типа секции:
-  - hero **без** `BackButton`: `pb-14 pt-12 md:pb-20 md:pt-16 lg:pb-24 lg:pt-[110px]`;
-  - hero **с** `BackButton`: верхний padding уменьшается до `pt-3 md:pt-3 lg:pt-4`, чтобы кнопка «← НАЗАД» прижалась к шапке и читалась как навигация, а не как часть заголовка. Расстояние от кнопки до eyebrow добирается уже margin-ом на eyebrow (см. § 3.5);
+  - hero: `pb-14 pt-12 md:pb-20 md:pt-16 lg:pb-24 lg:pt-[110px]`;
   - рядовые секции — `py-16 md:py-24 lg:py-[120px]`.
 
   Конкретные числа можно подобрать ближе к контексту, но шаг и логика отступов сохраняются.
@@ -126,20 +125,9 @@
 
 Длина: одна строка на десктопе, до двух на мобайле. Если в подзаголовок просится больше двух строк — это уже первый абзац контента, а не подзаголовок.
 
-### 3.5. BackButton
+### 3.5. Навигация назад
 
-Страницы, на которые ссылается [`MetaSiteHeader`](../src/components/meta/MetaSiteHeader.tsx) — `AUTHOR (/about)` и `THE MANIFESTO (/meta/manifesto)` — обязаны содержать `BackButton` **над** тегом/заголовком. Детали: [docs/navigation-from-header.md](./navigation-from-header.md).
-
-**Расположение по вертикали:** `BackButton` должен сидеть **близко к шапке** — это навигационный элемент, а не часть hero. Поэтому верхний padding hero-секции уменьшается (`pt-6 md:pt-7 lg:pt-8`), а отступ между кнопкой и eyebrow добирается уже margin-ом на eyebrow:
-
-```tsx
-<BackButton fallbackHref="/" />
-<p className={`mt-12 text-[10px] uppercase tracking-[0.4em] text-black/50 md:mt-16 lg:mt-[88px] ${interSans}`}>
-  THE MANIFESTO
-</p>
-```
-
-Антипаттерн: BackButton, висящий в ~100 px от хедера и почти впритык к eyebrow — он читается как маркер раздела, а не как ссылка «назад».
+На лендингах **не** ставить `BackButton` и ссылку «← PRISMA». Возврат на главную — логотип **PRISMA** в [`MetaSiteHeader`](../src/components/meta/MetaSiteHeader.tsx). Подробнее: [docs/navigation-from-header.md](./navigation-from-header.md).
 
 ## 4. Чередование фонов
 
@@ -188,7 +176,7 @@
 - [ ] Текстовая колонка контента ограничена `max-w-[760px]` (или `max-w-[720px]` для статьи).
 - [ ] Основной текст — `text-[17px] leading-[1.8] text-zinc-800` на `interSans`.
 - [ ] Между секциями чередуются фоны `bg-white` ↔ `bg-[#F2F2F2]`.
-- [ ] Для страниц, на которые ведёт `MetaSiteHeader`, добавлен `BackButton`.
+- [ ] Нет `BackButton` и ссылки «← PRISMA»: на главную ведёт логотип в шапке.
 
 ## 7. Ссылки
 

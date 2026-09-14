@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
@@ -59,42 +58,33 @@ export default function ChallengePage() {
         <MetaSiteHeader />
 
         <section className="bg-white">
-          <div className="mx-auto flex max-w-[1280px] flex-col items-start gap-11 px-6 pb-14 pt-3 md:px-12 md:pb-16 lg:px-[96px] lg:pb-[62px] lg:pt-4">
-            <Link
-              href="/"
-              className={`text-[9px] font-bold uppercase tracking-[0.24em] text-[#a8a8a8] transition-colors hover:text-[#0a0a0a] ${interSans}`}
+          <div className="mx-auto flex max-w-[1280px] flex-col items-start gap-6 px-6 pb-16 pt-12 md:px-12 md:pb-20 lg:px-[96px] lg:pb-[100px] lg:pt-[70px]">
+            <span
+              className={`rounded-full px-4 py-[7px] text-[8px] font-bold uppercase tracking-[0.2em] text-[#0a0a0a] ${interSans}`}
+              style={{ backgroundColor: BRAND_GREEN }}
             >
-              ← PRISMA
-            </Link>
+              Сезон 5 · набор открыт
+            </span>
 
-            <div className="flex flex-col items-start gap-[22px]">
-              <span
-                className={`rounded-full px-4 py-[7px] text-[8px] font-bold uppercase tracking-[0.2em] text-[#0a0a0a] ${interSans}`}
-                style={{ backgroundColor: BRAND_GREEN }}
-              >
-                Сезон 5 · набор открыт
-              </span>
+            <h1 className="flex items-center gap-[26px] font-serif text-[48px] font-normal leading-[0.9] tracking-[0.01em] text-[#0a0a0a] md:text-[62px] lg:text-[74px]">
+              <span className="block h-16 w-[3px] shrink-0 bg-[#0a0a0a] lg:h-20" aria-hidden />
+              <span className="uppercase">Кати на prod</span>
+            </h1>
 
-              <h1 className="flex items-center gap-[26px] font-serif text-[48px] font-normal leading-[0.9] tracking-[0.01em] text-[#0a0a0a] md:text-[62px] lg:text-[74px]">
-                <span className="block h-16 w-[3px] shrink-0 bg-[#0a0a0a] lg:h-20" aria-hidden />
-                <span className="uppercase">Кати на prod</span>
-              </h1>
+            <p
+              className={`m-0 text-[11px] font-normal uppercase leading-[1.6] tracking-[0.36em] text-[#a8a8a8] ${interSans}`}
+            >
+              Челлендж по затаскиванию идей в прод
+            </p>
 
-              <p
-                className={`m-0 text-[11px] font-normal uppercase leading-[1.6] tracking-[0.36em] text-[#a8a8a8] ${interSans}`}
-              >
-                Челлендж по затаскиванию идей в прод
-              </p>
-
-              <a
-                href={CHALLENGE_SIGNUP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${ctaClass} mt-2.5 px-[34px] py-[15px]`}
-              >
-                Я в деле
-              </a>
-            </div>
+            <a
+              href={CHALLENGE_SIGNUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${ctaClass} mt-[22px] px-[34px] py-[15px]`}
+            >
+              Я в деле
+            </a>
           </div>
         </section>
 
