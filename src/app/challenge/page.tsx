@@ -242,14 +242,15 @@ export default function ChallengePage() {
                 <p
                   className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
-                  Закрытый телеграм-канал: полезные статьи по ходу моего трекшена и отчёты по нему.{" "}
+                  Закрытый телеграм-канал, в котором я буду публиковать полезные статьи и отчеты по
+                  ходу своего трекшена. Пример статей можно посмотреть в{" "}
                   <a
                     href={KNOWLEDGE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#5a5ad6] transition-colors hover:text-[#0a0a0a]"
                   >
-                    Статьи — в Story Book
+                    Story Book
                   </a>
                   .
                 </p>
