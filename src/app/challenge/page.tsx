@@ -7,6 +7,7 @@ import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 const CHALLENGE_SIGNUP_URL = "https://t.me/+kImikjZiicphYmIy";
+const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 const BRAND_GREEN = "#00e37a";
 
 const ctaClass = `inline-flex items-center justify-center bg-[#0a0a0a] text-[9px] font-bold uppercase tracking-[0.24em] text-white transition-colors hover:bg-[#00e37a] hover:text-[#0a0a0a] ${interSans}`;
@@ -77,12 +78,7 @@ export default function ChallengePage() {
               Челлендж по затаскиванию идей в прод
             </p>
 
-            <a
-              href={CHALLENGE_SIGNUP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${ctaClass} mt-[22px] px-[34px] py-[15px]`}
-            >
+            <a href="#buy" className={`${ctaClass} mt-[22px] px-[34px] py-[15px]`}>
               Я в деле
             </a>
           </div>
@@ -195,33 +191,87 @@ export default function ChallengePage() {
         </section>
 
         <section id="buy" className="bg-white">
-          <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-10 px-6 py-16 md:px-12 md:py-[70px] lg:px-[96px]">
-            <div className="flex flex-col gap-2.5">
-              <p className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}>
-                Старт 21.09.26
-              </p>
-              <div className="flex items-baseline gap-2">
-                <span className={`text-[52px] font-light leading-none ${interSans}`}>30k</span>
-                <span className={`text-[10px] font-medium tracking-[0.05em] text-[#8a8a8a] ${interSans}`}>
-                  /сезон · 3 месяца
+          <div className="mx-auto flex max-w-[1280px] flex-col gap-[34px] px-6 py-16 md:px-12 md:py-[70px] lg:px-[96px]">
+            <h2 className="flex items-center gap-[18px] font-serif text-[26px] font-normal leading-none tracking-[0.04em] text-[#0a0a0a] md:text-[32px]">
+              <span className="block h-[30px] w-[3px] shrink-0 bg-[#0a0a0a]" aria-hidden />
+              <span>Форматы участия</span>
+            </h2>
+            <p
+              className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
+            >
+              Старт 21.09.26 · сезон 3 месяца
+            </p>
+            <div className="flex flex-wrap items-center justify-between gap-10">
+              <article className="flex flex-col gap-2.5">
+                <p
+                  className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
+                >
+                  Участник
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className={`text-[52px] font-light leading-none ${interSans}`}>20k</span>
+                  <span
+                    className={`text-[10px] font-medium tracking-[0.05em] text-[#8a8a8a] ${interSans}`}
+                  >
+                    /сезон · 3 месяца
+                  </span>
+                </div>
+                <p
+                  className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
+                >
+                  При оплате сразу — 20 000 ₽,
+                  <br />
+                  при оплате после — 30 000 ₽.
+                </p>
+              </article>
+
+              <article className="flex flex-col gap-2.5">
+                <p
+                  className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
+                >
+                  Наблюдатель
+                </p>
+                <div className="flex items-baseline gap-2">
+                  <span className={`text-[52px] font-light leading-none ${interSans}`}>10k</span>
+                  <span
+                    className={`text-[10px] font-medium tracking-[0.05em] text-[#8a8a8a] ${interSans}`}
+                  >
+                    /сезон · 3 месяца
+                  </span>
+                </div>
+                <p
+                  className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
+                >
+                  Закрытый телеграм-канал: полезные статьи по ходу моего трекшена и отчёты по нему.
+                  Статьи —{" "}
+                  <a
+                    href={KNOWLEDGE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#5a5ad6] transition-colors hover:text-[#0a0a0a]"
+                  >
+                    в Story Book
+                  </a>
+                  .
+                </p>
+              </article>
+
+              <div className="flex flex-col items-center gap-3">
+                <a
+                  href={CHALLENGE_SIGNUP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${ctaClass} px-[52px] py-4 whitespace-nowrap`}
+                >
+                  Я в деле
+                </a>
+                <span
+                  className={`text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
+                >
+                  Есть пробный период
                 </span>
               </div>
-              <p className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}>
-                Первые 14 дней — пробный период.
-                <br />
-                При оплате сразу — 20 000 ₽,
-                <br />
-                при оплате после — 30 000 ₽.
-              </p>
             </div>
-            <a
-              href={CHALLENGE_SIGNUP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${ctaClass} px-[52px] py-4 whitespace-nowrap`}
-            >
-              Я в деле
-            </a>
           </div>
         </section>
 
