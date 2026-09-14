@@ -219,6 +219,8 @@ export default function ChallengePage() {
                 <p
                   className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
+                  Закрытая группа, в которой мы вместе трекаем свои продукты.
+                  <br />
                   При оплате сразу — 20 000 ₽,
                   <br />
                   при оплате после — 30 000 ₽.
