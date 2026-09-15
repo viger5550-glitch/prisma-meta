@@ -220,11 +220,11 @@ export default function ChallengePage() {
                 <p
                   className={`m-0 text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
-                  Закрытая группа, в которой мы вместе трекаем свои продукты.
+                  Закрытая группа, в которой мы вместе будем катить идею в прод.
                   <br />
                   При оплате сразу — 20 000 ₽,
                   <br />
-                  при оплате после — 30 000 ₽.
+                  При оплате после пробного периода — 30 000 ₽.
                 </p>
                 <div className="mt-3 flex flex-col items-start gap-3">
                   <a
@@ -260,8 +260,8 @@ export default function ChallengePage() {
                 <p
                   className={`m-0 text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
-                  Закрытый телеграм-канал, в котором я буду публиковать полезные статьи и отчеты по
-                  ходу своего трекшена. Пример статей можно посмотреть в{" "}
+                  Закрытый телеграм-канал, в котором я буду публиковать свои отчеты по трекшену и
+                  полезные статьи из{" "}
                   <a
                     href={KNOWLEDGE_URL}
                     target="_blank"
