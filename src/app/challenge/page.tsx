@@ -7,6 +7,7 @@ import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 const CHALLENGE_SIGNUP_URL = "https://t.me/+kImikjZiicphYmIy";
+const CHALLENGE_BOT_URL = "https://t.me/productodel_bot";
 const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 const BRAND_GREEN = "#00e37a";
 
@@ -201,8 +202,8 @@ export default function ChallengePage() {
             >
               Старт 21.09.26 · сезон 3 месяца
             </p>
-            <div className="flex flex-wrap items-center justify-between gap-10">
-              <article className="flex flex-col gap-2.5">
+            <div className="flex flex-wrap items-start justify-between gap-10">
+              <article className="flex max-w-[46ch] flex-col gap-2.5">
                 <p
                   className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
                 >
@@ -217,7 +218,7 @@ export default function ChallengePage() {
                   </span>
                 </div>
                 <p
-                  className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
+                  className={`m-0 text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
                   Закрытая группа, в которой мы вместе трекаем свои продукты.
                   <br />
@@ -225,9 +226,24 @@ export default function ChallengePage() {
                   <br />
                   при оплате после — 30 000 ₽.
                 </p>
+                <div className="mt-3 flex flex-col items-start gap-3">
+                  <a
+                    href={CHALLENGE_SIGNUP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${ctaClass} px-[52px] py-4 whitespace-nowrap`}
+                  >
+                    Я в деле
+                  </a>
+                  <span
+                    className={`text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
+                  >
+                    Есть пробный период
+                  </span>
+                </div>
               </article>
 
-              <article className="flex flex-col gap-2.5">
+              <article className="flex max-w-[46ch] flex-col gap-2.5">
                 <p
                   className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
                 >
@@ -242,7 +258,7 @@ export default function ChallengePage() {
                   </span>
                 </div>
                 <p
-                  className={`m-0 max-w-[46ch] text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
+                  className={`m-0 text-[12px] leading-[1.8] text-[#4a4a4a] [text-wrap:pretty] ${interSans}`}
                 >
                   Закрытый телеграм-канал, в котором я буду публиковать полезные статьи и отчеты по
                   ходу своего трекшена. Пример статей можно посмотреть в{" "}
@@ -256,23 +272,17 @@ export default function ChallengePage() {
                   </a>
                   .
                 </p>
+                <div className="mt-3 flex flex-col items-start gap-3">
+                  <a
+                    href={CHALLENGE_BOT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${ctaClass} px-[52px] py-4 whitespace-nowrap`}
+                  >
+                    Я в деле
+                  </a>
+                </div>
               </article>
-
-              <div className="flex flex-col items-center gap-3">
-                <a
-                  href={CHALLENGE_SIGNUP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${ctaClass} px-[52px] py-4 whitespace-nowrap`}
-                >
-                  Я в деле
-                </a>
-                <span
-                  className={`text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
-                >
-                  Есть пробный период
-                </span>
-              </div>
             </div>
           </div>
         </section>

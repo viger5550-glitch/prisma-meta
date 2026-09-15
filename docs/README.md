@@ -11,7 +11,7 @@
 
 ## New projects (handoff)
 
-- [ТРИЗ-команда решателей — бриф](./triz-assistant-product-brief.md) — отдельный продукт (не Meta); скопировать в новую папку/репозиторий
+- [Свой Telegram-бот вместо LEADTEX](./handoff/telegram-bot-self-hosted/SUMMARY.md) — саммари, [ТЗ](./handoff/telegram-bot-self-hosted/TZ.md), [промпт новому агенту](./handoff/telegram-bot-self-hosted/AGENT-PROMPT.md), [план](./handoff/telegram-bot-self-hosted/PLAN.md). Новый репозиторий, не этот сайт.
 
 ## Frontend conventions
 
