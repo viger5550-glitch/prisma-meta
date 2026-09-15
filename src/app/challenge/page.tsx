@@ -202,8 +202,8 @@ export default function ChallengePage() {
             >
               Старт 21.09.26 · сезон 3 месяца
             </p>
-            <div className="flex flex-wrap items-start justify-between gap-10">
-              <article className="flex max-w-[46ch] flex-col gap-2.5">
+            <div className="grid grid-cols-1 items-stretch gap-10 md:grid-cols-2">
+              <article className="flex flex-col gap-2.5">
                 <p
                   className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
                 >
@@ -222,11 +222,9 @@ export default function ChallengePage() {
                 >
                   Закрытая группа, в которой мы вместе будем катить идею в прод.
                   <br />
-                  При оплате сразу — 20 000 ₽,
-                  <br />
-                  При оплате после пробного периода — 30 000 ₽.
+                  При оплате до окончания пробного периода — 20 000 ₽, при оплате после — 30 000 ₽.
                 </p>
-                <div className="mt-3 flex flex-col items-start gap-3">
+                <div className="mt-auto flex flex-col items-start gap-3 pt-3">
                   <a
                     href={CHALLENGE_SIGNUP_URL}
                     target="_blank"
@@ -243,7 +241,7 @@ export default function ChallengePage() {
                 </div>
               </article>
 
-              <article className="flex max-w-[46ch] flex-col gap-2.5">
+              <article className="flex flex-col gap-2.5">
                 <p
                   className={`m-0 text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.3em] text-[#a8a8a8] ${interSans}`}
                 >
@@ -272,7 +270,7 @@ export default function ChallengePage() {
                   </a>
                   .
                 </p>
-                <div className="mt-3 flex flex-col items-start gap-3">
+                <div className="mt-auto flex flex-col items-start gap-3 pt-3">
                   <a
                     href={CHALLENGE_BOT_URL}
                     target="_blank"
@@ -281,6 +279,12 @@ export default function ChallengePage() {
                   >
                     Я в деле
                   </a>
+                  <span
+                    className={`invisible text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
+                    aria-hidden
+                  >
+                    Есть пробный период
+                  </span>
                 </div>
               </article>
             </div>
