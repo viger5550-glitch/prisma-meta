@@ -236,7 +236,7 @@ export default function ChallengePage() {
                   <span
                     className={`text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
                   >
-                    Есть пробный период
+                    Есть пробный период до 28.09.26.
                   </span>
                 </div>
               </article>
@@ -283,7 +283,7 @@ export default function ChallengePage() {
                     className={`invisible text-[8.5px] font-medium uppercase leading-[1.4] tracking-[0.2em] text-[#a8a8a8] ${interSans}`}
                     aria-hidden
                   >
-                    Есть пробный период
+                    Есть пробный период до 28.09.26.
                   </span>
                 </div>
               </article>
