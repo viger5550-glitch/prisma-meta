@@ -1,4 +1,4 @@
-export type HomeOfferCategory = "community" | "products" | "outsource";
+export type HomeOfferCategory = "products" | "outsource";
 export type HomeOfferFilter = "all" | HomeOfferCategory;
 
 export type HomeOffer = {
@@ -17,7 +17,6 @@ export type HomeOffer = {
 
 export const HOME_FILTERS: { id: HomeOfferFilter; label: string }[] = [
   { id: "all", label: "ВСЕ" },
-  { id: "community", label: "КОМЬЮНИТИ" },
   { id: "products", label: "ПРОДУКТЫ" },
   { id: "outsource", label: "АУТСОРС" },
 ];
@@ -27,7 +26,7 @@ const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 export const HOME_OFFERS: HomeOffer[] = [
   {
     id: "challenge",
-    category: "community",
+    category: "products",
     variant: "dark",
     title: "Кати на prod",
     subtitle: "ИДЕИ НА ПРОД",
@@ -93,8 +92,7 @@ export const HOME_FILTER_OFFER_IDS: Record<
   Exclude<HomeOfferFilter, "all">,
   readonly HomeOffer["id"][]
 > = {
-  community: ["challenge"],
-  products: ["triz", "knowledge"],
+  products: ["challenge", "triz", "knowledge"],
   outsource: ["agents-dev", "apps-dev"],
 };
 
