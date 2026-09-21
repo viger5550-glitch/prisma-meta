@@ -4,9 +4,6 @@ import { HomeCatalogCover } from "./HomeCatalogCover";
 import type { HomeOffer } from "./homeOffers";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
-const serif = {
-  fontFamily: "var(--font-manifest-newsreader), var(--font-serif), ui-serif, Georgia, serif",
-} as const;
 
 export function HomeCatalogCard({ offer }: { offer: HomeOffer }) {
   const isDark = offer.variant === "dark";
@@ -16,7 +13,6 @@ export function HomeCatalogCard({ offer }: { offer: HomeOffer }) {
   const titleCls = isDark ? "text-white" : "text-[#5B5BD6]";
   const subtitleCls = isDark ? "text-white/85" : "text-[#5B5BD6]";
   const descriptionCls = isDark ? "text-white/75" : "text-zinc-600";
-  const periodCls = isDark ? "text-white/80" : "text-black/55";
   const moreSurface = isDark
     ? "bg-white text-black group-hover:bg-[#00e37a] group-hover:text-[#0a0a0a]"
     : "bg-black text-white group-hover:bg-[#00e37a] group-hover:text-[#0a0a0a]";
@@ -56,24 +52,11 @@ export function HomeCatalogCard({ offer }: { offer: HomeOffer }) {
         </p>
 
         <div className="mt-auto pt-6">
-          <p className="flex h-10 items-end gap-1.5">
-            <span
-              className="text-[32px] font-normal leading-none tracking-normal [font-variant-numeric:lining-nums_tabular-nums]"
-              style={serif}
-            >
-              {offer.priceAmount}
-            </span>
-            <span
-              className={`mb-[3px] text-[11px] font-normal leading-none tracking-[0.04em] [font-variant-numeric:lining-nums_tabular-nums] ${periodCls}`}
-            >
-              {offer.pricePeriod}
-            </span>
-          </p>
           <Link
             href={offer.href}
             target={external ? "_blank" : undefined}
             rel={external ? "noopener noreferrer" : undefined}
-            className={`mt-4 flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors duration-300 ${moreSurface}`}
+            className={`flex h-9 w-full items-center justify-center text-[10px] font-medium uppercase tracking-[0.22em] transition-colors duration-300 ${moreSurface}`}
           >
             {offer.actionLabel}
           </Link>

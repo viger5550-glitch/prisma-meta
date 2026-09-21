@@ -8,8 +8,6 @@ export type HomeOffer = {
   title: string;
   subtitle: string;
   description: string;
-  priceAmount: string;
-  pricePeriod: string;
   actionLabel: string;
   href: string;
   startLabel?: string;
@@ -31,8 +29,6 @@ export const HOME_OFFERS: HomeOffer[] = [
     title: "Кати на prod",
     subtitle: "ИДЕИ НА ПРОД",
     description: "Челлендж по затаскиванию идей на прод",
-    priceAmount: "20k",
-    pricePeriod: "/3mo",
     actionLabel: "MORE",
     href: "/challenge",
     startLabel: "Старт 21.09.26",
@@ -44,8 +40,6 @@ export const HOME_OFFERS: HomeOffer[] = [
     title: "AI AGENTS",
     subtitle: "ТРИЗ-РЕШАТЕЛИ",
     description: "AI ассистенты разбирают продуктовый кейс по ТРИЗ",
-    priceAmount: "1.9k",
-    pricePeriod: "₽ /донат",
     actionLabel: "MORE",
     href: "/triz",
   },
@@ -56,8 +50,6 @@ export const HOME_OFFERS: HomeOffer[] = [
     title: "README",
     subtitle: "Методология создания продуктов для экспертов и солофаундеров",
     description: "Основана на реальных событиях",
-    priceAmount: "5k",
-    pricePeriod: "/3mo",
     actionLabel: "MORE",
     href: KNOWLEDGE_URL,
   },
@@ -68,8 +60,6 @@ export const HOME_OFFERS: HomeOffer[] = [
     title: "AI AGENTS DEV",
     subtitle: "БЕСПЛАТНАЯ СЕССИЯ · 60 МИНУТ",
     description: "Разрабатываю AI агентов под ваши процессы и внедряю под ключ.",
-    priceAmount: "30k+",
-    pricePeriod: "/session",
     actionLabel: "MORE",
     href: "/agents",
   },
@@ -80,8 +70,6 @@ export const HOME_OFFERS: HomeOffer[] = [
     title: "APPS DEV",
     subtitle: "БЕСПЛАТНАЯ СЕССИЯ · 60 МИНУТ",
     description: "Разрабатываю приложения и мини аппы: от идеи до прода.",
-    priceAmount: "50k+",
-    pricePeriod: "/session",
     actionLabel: "MORE",
     href: "/apps",
   },
