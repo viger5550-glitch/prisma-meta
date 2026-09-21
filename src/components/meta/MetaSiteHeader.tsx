@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { HOME_OFFERS } from "./homeOffers";
+import { ACTIVE_HOME_OFFERS } from "./homeOffers";
 import { homeShell } from "./homeShell";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
@@ -36,7 +36,7 @@ export function MetaSiteHeader({ wide = false }: { wide?: boolean }) {
           </Link>
 
           <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-normal uppercase leading-[15px] tracking-[4px] text-black lg:gap-x-8">
-            {HOME_OFFERS.map((offer) => {
+            {ACTIVE_HOME_OFFERS.map((offer) => {
               const external = !offer.href.startsWith("/");
               return (
                 <Link

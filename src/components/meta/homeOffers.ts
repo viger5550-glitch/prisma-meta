@@ -1,4 +1,4 @@
-export type HomeOfferCategory = "products" | "outsource";
+export type HomeOfferCategory = "products" | "outsource" | "archive";
 export type HomeOfferFilter = "all" | HomeOfferCategory;
 
 export type HomeOffer = {
@@ -17,6 +17,7 @@ export const HOME_FILTERS: { id: HomeOfferFilter; label: string }[] = [
   { id: "all", label: "ВСЕ" },
   { id: "products", label: "ПРОДУКТЫ" },
   { id: "outsource", label: "АУТСОРС" },
+  { id: "archive", label: "АРХИВ" },
 ];
 
 const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
@@ -24,7 +25,7 @@ const KNOWLEDGE_URL = "https://www.prisma-knowledge.ru/";
 export const HOME_OFFERS: HomeOffer[] = [
   {
     id: "challenge",
-    category: "products",
+    category: "archive",
     variant: "dark",
     title: "Кати на prod",
     subtitle: "ИДЕИ НА ПРОД",
@@ -80,15 +81,27 @@ export const HOME_FILTER_OFFER_IDS: Record<
   Exclude<HomeOfferFilter, "all">,
   readonly HomeOffer["id"][]
 > = {
-  products: ["challenge", "triz", "knowledge"],
+  products: ["triz", "knowledge"],
   outsource: ["agents-dev", "apps-dev"],
+  archive: ["challenge"],
 };
+
+export function isArchivedHomeOffer(offer: HomeOffer) {
+  return offer.category === "archive";
+}
+
+/** Карточки шапки и вкладки «ВСЕ»: без архива. */
+export const ACTIVE_HOME_OFFERS = HOME_OFFERS.filter(
+  (offer) => !isArchivedHomeOffer(offer),
+);
 
 export function filterHomeOffers(
   offers: readonly HomeOffer[],
   filter: HomeOfferFilter,
 ): HomeOffer[] {
-  if (filter === "all") return [...offers];
+  if (filter === "all") {
+    return offers.filter((offer) => !isArchivedHomeOffer(offer));
+  }
   const ids = new Set(HOME_FILTER_OFFER_IDS[filter]);
   return offers.filter((offer) => ids.has(offer.id));
 }
