@@ -50,12 +50,7 @@ export default function TrizPage() {
               </span>
             </Link>
 
-            <a
-              href={TRIZ_BOT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${ctaClass} mt-[22px] px-[34px] py-[15px]`}
-            >
+            <a href="#access" className={`${ctaClass} mt-[22px] px-[34px] py-[15px]`}>
               Начать работу
             </a>
           </div>
@@ -86,7 +81,7 @@ export default function TrizPage() {
 
         <TrizSolversSection interSansClassName={interSans} />
 
-        <section className="bg-white">
+        <section id="access" className="scroll-mt-6 bg-white">
           <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-10 px-6 py-16 md:px-12 md:py-[70px] lg:px-[96px]">
             <div className="flex flex-col gap-2.5">
               <p
@@ -95,7 +90,7 @@ export default function TrizPage() {
                 Доступ в телеграм-боте
               </p>
               <div className="flex items-baseline gap-2">
-                <span className={`text-[52px] font-light leading-none ${interSans}`}>1.9k</span>
+                <span className={`text-[52px] font-light leading-none ${interSans}`}>1K</span>
                 <span
                   className={`text-[10px] font-medium tracking-[0.05em] text-[#8a8a8a] ${interSans}`}
                 >

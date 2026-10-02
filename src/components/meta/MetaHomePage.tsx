@@ -184,7 +184,7 @@ function Team() {
       <SectionTitle eyebrow="Команда" title="Практики, чей опыт становится агентом" />
       {/* subgrid выравнивает имя, био и «отвечает за» по строкам между карточками.
           Фон — у ячеек, а строка профиля self-start: раскрытый профиль не тянет соседние карточки. */}
-      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(250px,1fr))]">
+      <div className="grid gap-5 [grid-template-columns:repeat(auto-fill,minmax(max(200px,calc((100%_-_4*20px)/5)),1fr))]">
         {STUDIO_TEAM.map((member) => (
           <article key={member.name} className="row-span-5 grid grid-rows-subgrid gap-y-0">
             <div className="aspect-[4/5] overflow-hidden bg-[#e2e2e2]">
