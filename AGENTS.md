@@ -6,7 +6,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Навигация: хедер, без стрелки «назад»
 
-Пункты `MetaSiteHeader` дублируют карточки каталога (`HOME_OFFERS`): те же названия и те же `href`. Логотип **PRISMA** ведёт на главную. На лендингах не ставить `BackButton` и ссылку «← PRISMA»: возврат на главную — только через хедер.
+Пункты `MetaSiteHeader` заданы списком `NAV_ITEMS` в самом компоненте: Dream team (`/#team`), Portfolio (`/#portfolio`), README (ссылка из `HOME_OFFERS`). Логотип **PRISMA** ведёт на главную. На лендингах не ставить `BackButton` и ссылку «← PRISMA»: возврат на главную — только через хедер.
 
 ## Стиль страниц-лендингов
 

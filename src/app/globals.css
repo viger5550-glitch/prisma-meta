@@ -24,3 +24,18 @@ body {
 .font-serif {
   font-family: var(--font-serif);
 }
+
+/* Главная студии: бегущая строка и пульс бейджа «в работе». */
+@keyframes studio-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes studio-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-motion { animation: none !important; }
+}
