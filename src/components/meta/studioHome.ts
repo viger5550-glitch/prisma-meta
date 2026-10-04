@@ -201,6 +201,8 @@ export type StudioCase = {
   /** Пока страницы кейса нет — карточка без ссылки. */
   href?: string;
   violet?: boolean;
+  /** Плашка статуса на обложке, например «В разработке». */
+  status?: string;
 };
 
 export const STUDIO_CASES: StudioCase[] = [
@@ -251,5 +253,16 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Команда ТРИЗ-решателей",
     text: "Агент разбирает противоречие в задаче и предлагает 5 приёмов ТРИЗ с примерами применения.",
     href: "/triz",
+  },
+  {
+    category: "products",
+    word: "Еда",
+    tags: "Mini app · питание",
+    author: "Виктория Герман",
+    title: "Foody",
+    text: "Приложение по питанию: мягкий переход к интуитивному питанию без диет, подсчёта калорий и чувства вины.",
+    href: "/foody",
+    status: "В разработке",
+    violet: true,
   },
 ];

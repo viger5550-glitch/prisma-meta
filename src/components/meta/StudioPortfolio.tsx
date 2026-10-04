@@ -22,7 +22,16 @@ function CaseCard({ item, index }: { item: StudioCase; index: number }) {
           <span className="font-mono text-[10px] leading-none" style={{ color: item.violet ? "#d8d8f4" : "#8a8a8a" }}>
             {String(index + 1).padStart(2, "0")}
           </span>
-          <Dot size={8} />
+          {item.status ? (
+            <span
+              className="rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#0a0a0a]"
+              style={{ background: GREEN }}
+            >
+              {item.status}
+            </span>
+          ) : (
+            <Dot size={8} />
+          )}
         </div>
         <span className={`text-[clamp(34px,3.6vw,46px)] italic leading-none ${serif}`}>
           {item.word}
