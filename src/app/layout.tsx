@@ -20,7 +20,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PRISMA",
-  description: "Место, где мы делаем свои авторские продукты.",
+  description:
+    "AI-студия по разработке smart-агентов: соединяем методологию и технологию.",
 };
 
 export const viewport: Viewport = {

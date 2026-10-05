@@ -3,9 +3,9 @@ import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { MetaHomePage } from "@/components/meta/MetaHomePage";
 
 export const metadata: Metadata = {
-  title: "PRISMA — мета",
+  title: "PRISMA — AI-студия по разработке smart-агентов",
   description:
-    "Место, где мы делаем свои авторские продукты: сообщество, наставничество, игра, база знаний, решения.",
+    "Соединяем методологию и технологию: проектируем и запускаем AI-агентов для продаж, маркетинга и контента.",
 };
 
 export default function Home() {
