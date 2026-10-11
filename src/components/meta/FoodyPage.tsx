@@ -2,13 +2,14 @@ import Image from "next/image";
 
 import {
   FOODY_AUDIENCE,
+  FOODY_DONATE_URL,
   FOODY_HERO,
   FOODY_PAINS,
   FOODY_PAINS_NOTE,
   FOODY_PHASES,
   FOODY_SCREENS,
   FOODY_STATUS,
-  FOODY_SUPPORT_URL,
+  FOODY_THREADS_URL,
   FOODY_TOOLS,
   type FoodyCard,
 } from "@/components/meta/foodyLanding";
@@ -194,22 +195,32 @@ export function FoodyPage() {
               <span className={cardLabel} style={{ color: GREEN }}>
                 Поддержка
               </span>
-              <span className={`text-[22px] leading-[1.2] ${serif}`}>Закрытая кухня продукта</span>
+              <span className={`text-[22px] leading-[1.2] ${serif}`}>Backstage продукта</span>
               <p className="m-0 text-[11.5px] leading-[1.8] text-pretty text-[#bdbdbd]">
-                Поддержать проект можно подпиской на закрытый канал: там я рассказываю изнутри, как делается продукт —
-                решения, ошибки, цифры и то, что обычно не показывают.
+                Про создание продукта веду Backstage-канал в Threads. Подписывайтесь, если интересно посмотреть
+                изнутри, как строятся продукты.
               </p>
               <p className="m-0 text-[11.5px] leading-[1.8] text-pretty" style={{ color: GREEN }}>
-                Все вырученные средства идут на развитие проекта.
+                Вы также можете поддержать проект. Все вырученные средства идут на развитие проекта.
               </p>
-              <a
-                href={FOODY_SUPPORT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto block bg-white py-[13px] text-center text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#00e37a]"
-              >
-                Поддержать проект
-              </a>
+              <div className="mt-auto grid gap-[10px] sm:grid-cols-2">
+                <a
+                  href={FOODY_THREADS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white py-[13px] text-center text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#00e37a]"
+                >
+                  Подписаться на Threads
+                </a>
+                <a
+                  href={FOODY_DONATE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border border-white py-[12px] text-center text-[9px] font-bold uppercase leading-none tracking-[.24em] text-white transition-colors duration-[250ms] hover:border-[#00e37a] hover:bg-[#00e37a] hover:text-[#0a0a0a]"
+                >
+                  Задонатить
+                </a>
+              </div>
             </article>
           </div>
         </section>

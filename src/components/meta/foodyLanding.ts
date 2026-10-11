@@ -1,6 +1,7 @@
 /** Лендинг продукта Foody (макет «Foody standalone»). */
 
-export const FOODY_SUPPORT_URL = "https://web.tribute.tg/s/16UV";
+export const FOODY_THREADS_URL = "https://www.threads.com/@viki_germany";
+export const FOODY_DONATE_URL = "https://yoomoney.ru/fundraise/1K76N9RGNBD.260910";
 
 export const FOODY_HERO = {
   tag: "Mini app · Foody",
