@@ -1,7 +1,6 @@
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import {
-  STUDIO_HERO_AGENTS,
   STUDIO_MARQUEE,
   STUDIO_SMART,
   STUDIO_TEAM,
@@ -12,22 +11,9 @@ import { StudioPortfolio } from "@/components/meta/StudioPortfolio";
 import { Dot, Eyebrow, GREEN, SectionTitle, VIOLET, lift, sans, serif, shell } from "@/components/meta/studioUi";
 
 function Hero() {
-  const [sales, content, marketing] = STUDIO_HERO_AGENTS;
-  const card = `absolute flex w-[62%] flex-col gap-[14px] px-[22px] py-6 transition-[transform,box-shadow] duration-[450ms] ease-[cubic-bezier(.2,.8,.2,1)] hover:z-[5] hover:-translate-y-[10px] hover:rotate-0`;
-  const facts = (role: string, kpi: string, strong: string) => (
-    <>
-      <span>
-        <b className={`font-semibold ${strong}`}>Роль</b> — {role}
-      </span>
-      <span>
-        <b className={`font-semibold ${strong}`}>KPI</b> — {kpi}
-      </span>
-    </>
-  );
-
   return (
     <header
-      className={`grid items-center gap-x-[5vw] gap-y-14 bg-white pb-24 pt-12 ${shell} [grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))]`}
+      className={`bg-white pb-24 pt-12 ${shell}`}
     >
       <div className="flex flex-col gap-[34px]">
         <div className="flex flex-col items-start gap-[22px]">
@@ -38,16 +24,17 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            AI-студия по разработке smart агентов
+            Business tech
           </p>
         </div>
 
         <div className="flex flex-col gap-6 pt-7">
           <h2 className={`m-0 max-w-[15ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
-            Соединяем методологию и{" "}
+            Ассистенты, которые{" "}
             <span className="italic" style={{ boxShadow: `${GREEN} 0 -0.28em 0 inset` }}>
-              технологию
-            </span>
+              держат
+            </span>{" "}
+            процессы
           </h2>
           <div className="mt-[6px] flex flex-wrap gap-[10px]">
             <a
@@ -58,54 +45,6 @@ function Hero() {
             </a>
           </div>
         </div>
-      </div>
-
-      <div className="relative h-[500px] w-full max-w-[480px] justify-self-center">
-        <article
-          className={`${card} left-0 top-[10px] z-[1] -rotate-6 bg-[#f1f1f1] hover:shadow-[0_24px_48px_rgba(0,0,0,.12)]`}
-        >
-          <span className="text-[9px] font-semibold uppercase leading-[1.4] tracking-[.2em]" style={{ color: VIOLET }}>
-            {sales.tag}
-          </span>
-          <span className={`text-[22px] leading-[1.2] ${serif}`}>{sales.title}</span>
-          <div className="flex flex-col gap-2 border-t border-[#dcdcdc] pt-3 text-[11px] leading-[1.6] text-[#4a4a4a]">
-            {facts(sales.role, sales.kpi, "text-[#0a0a0a]")}
-          </div>
-        </article>
-
-        <article
-          className={`${card} right-0 top-[130px] z-[2] rotate-[4deg] bg-[#0a0a0a] text-white shadow-[0_20px_44px_rgba(0,0,0,.16)] hover:shadow-[0_30px_60px_rgba(0,0,0,.24)]`}
-        >
-          <div className="flex items-center justify-between gap-[10px]">
-            <span className="text-[9px] font-semibold uppercase leading-[1.4] tracking-[.2em] text-[#f1f1f1]">
-              {content.tag}
-            </span>
-            <span
-              className="flex items-center gap-[6px] rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#052]"
-              style={{ background: GREEN }}
-            >
-              <span className="studio-motion h-[5px] w-[5px] rounded-full bg-[#052] animate-[studio-pulse_1.6s_ease-in-out_infinite]" />
-              в работе
-            </span>
-          </div>
-          <span className={`text-[22px] leading-[1.2] ${serif}`}>{content.title}</span>
-          <div className="flex flex-col gap-2 border-t border-[#2a2a2a] pt-3 text-[11px] leading-[1.6] text-[#bdbdbd]">
-            {facts(content.role, content.kpi, "text-white")}
-          </div>
-        </article>
-
-        <article
-          className={`${card} left-[8%] top-[290px] z-[3] -rotate-2 border-t-[3px] bg-white shadow-[0_14px_34px_rgba(0,0,0,.09)] hover:shadow-[0_24px_48px_rgba(0,0,0,.14)]`}
-          style={{ borderTopColor: GREEN }}
-        >
-          <span className="text-[9px] font-semibold uppercase leading-[1.4] tracking-[.2em]" style={{ color: VIOLET }}>
-            {marketing.tag}
-          </span>
-          <span className={`text-[22px] leading-[1.2] ${serif}`}>{marketing.title}</span>
-          <div className="flex flex-col gap-2 border-t border-[#e2e2e2] pt-3 text-[11px] leading-[1.6] text-[#4a4a4a]">
-            {facts(marketing.role, marketing.kpi, "text-[#0a0a0a]")}
-          </div>
-        </article>
       </div>
     </header>
   );
@@ -285,8 +224,8 @@ function Contact() {
   );
 }
 
-/** Главная студии: hero, бегущая строка, SMART, команда, кейсы, чек-ап. */
-export function MetaHomePage() {
+/** Направление «Для бизнеса»: hero, бегущая строка, SMART, команда, кейсы, чек-ап. */
+export function StudioBusinessPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
       <MetaSiteHeader wide />

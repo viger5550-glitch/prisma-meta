@@ -3,16 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { HOME_OFFERS } from "./homeOffers";
 import { shell as studioShell } from "./studioUi";
 
-const README_HREF = HOME_OFFERS.find((offer) => offer.id === "knowledge")?.href ?? "/";
-
-/** Меню шапки: якоря главной студии + README. */
+/** Меню шапки: направления студии. */
 const NAV_ITEMS = [
-  { id: "team", title: "Dream team", href: "/#team" },
-  { id: "portfolio", title: "Portfolio", href: "/#portfolio" },
-  { id: "readme", title: "README", href: README_HREF },
+  { id: "business", title: "Business tech", href: "/business" },
+  { id: "health", title: "Health tech", href: "/health-tech" },
 ];
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";

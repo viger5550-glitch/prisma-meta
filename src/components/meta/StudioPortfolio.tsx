@@ -11,7 +11,7 @@ import {
 } from "@/components/meta/studioHome";
 import { Dot, GREEN, SectionTitle, VIOLET, lift, serif, shell } from "@/components/meta/studioUi";
 
-function CaseCard({ item, index }: { item: StudioCase; index: number }) {
+export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
   const body = (
     <>
       <div

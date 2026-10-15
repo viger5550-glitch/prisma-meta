@@ -30,10 +30,10 @@ export function Eyebrow({ children, color = "#a8a8a8" }: { children: React.React
   );
 }
 
-export function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
+export function SectionTitle({ eyebrow, title }: { eyebrow?: string; title: string }) {
   return (
     <div className="flex flex-col gap-4">
-      <Eyebrow>{eyebrow}</Eyebrow>
+      {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
       <div className="flex items-center gap-[18px]">
         <span className="block h-[34px] w-[3px] flex-none bg-[#0a0a0a]" />
         <h2 className={`m-0 text-[30px] leading-[1.2] text-pretty ${serif}`}>{title}</h2>

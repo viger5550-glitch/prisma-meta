@@ -1,4 +1,4 @@
-/** Контент главной студии (макет «PRISMA - главная студия»). */
+/** Контент направления «Для бизнеса» (макет «PRISMA - главная студия»). */
 
 export const STUDIO_TG_URL = "https://t.me/vigerman";
 
@@ -9,34 +9,6 @@ export const STUDIO_MARQUEE = [
   "Tone of voice",
   "Бизнес-метрики",
   "Реальный экспертный опыт",
-];
-
-export type StudioHeroAgent = {
-  tag: string;
-  title: string;
-  role: string;
-  kpi: string;
-};
-
-export const STUDIO_HERO_AGENTS: StudioHeroAgent[] = [
-  {
-    tag: "Агент · Продажи",
-    title: "Ассистент отдела продаж",
-    role: "квалифицирует заявки",
-    kpi: "конверсия в оплату",
-  },
-  {
-    tag: "Агент · Контент",
-    title: "Редактор экспертного блога",
-    role: "пишет в голосе эксперта",
-    kpi: "органический трафик",
-  },
-  {
-    tag: "Агент · Маркетинг",
-    title: "Аналитик воронки",
-    role: "находит узкие места",
-    kpi: "стоимость заявки",
-  },
 ];
 
 export type StudioSmartCard = {
@@ -253,16 +225,5 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Команда ТРИЗ-решателей",
     text: "Агент разбирает противоречие в задаче и предлагает 5 приёмов ТРИЗ с примерами применения.",
     href: "/triz",
-  },
-  {
-    category: "products",
-    word: "Еда",
-    tags: "Mini app · питание",
-    author: "Виктория Герман",
-    title: "Foody",
-    text: "Приложение по питанию: мягкий переход к интуитивному питанию без диет, подсчёта калорий и чувства вины.",
-    href: "/foody",
-    status: "В разработке",
-    violet: true,
   },
 ];
