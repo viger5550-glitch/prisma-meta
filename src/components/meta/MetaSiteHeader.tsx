@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 
 import { shell as studioShell } from "./studioUi";
 
-/** Меню шапки: направления студии. */
+/** Меню шапки: направления студии и профиль основателя. */
 const NAV_ITEMS = [
   { id: "business", title: "Business tech", href: "/business" },
   { id: "health", title: "Health tech", href: "/health-tech" },
+  { id: "founder", title: "Founder", href: "/founder" },
 ];
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
