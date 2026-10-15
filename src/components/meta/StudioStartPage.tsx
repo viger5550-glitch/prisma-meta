@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { studioFontVars } from "@/components/meta/studioFonts";
-import { Dot, GREEN, SectionTitle, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
+import { Dot, GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
 const DIRECTIONS = [
   {
@@ -36,7 +36,7 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            Студия по разработке smart agents &amp; apps
+            Студия по разработке смарт агентов и приложений
           </p>
         </div>
 
@@ -56,7 +56,6 @@ function Hero() {
 function Directions() {
   return (
     <section className={`flex flex-1 flex-col gap-10 pb-[110px] pt-[88px] ${shell}`}>
-      <SectionTitle title="Выберите направление" />
       <div className="grid items-stretch gap-5 [grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))]">
         {DIRECTIONS.map((item, index) => (
           <Link
