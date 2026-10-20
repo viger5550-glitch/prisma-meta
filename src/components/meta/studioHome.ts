@@ -208,13 +208,22 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
+    word: "Лидген",
+    tags: "Лидген-агент",
+    audience: "Для тех, чьи клиенты сидят в профильных Telegram-чатах",
+    title: "Лидген-агент",
+    href: "/cases/lidgen",
+    text: "Следит за профильными чатами и приносит только те запросы, где вы можете быть полезны.",
+    violet: true,
+  },
+  {
+    category: "agents",
     word: "Монетизация сообщества",
     tags: "Агент по работе с чатами сообществ",
     audience: "Для владельцев сообществ, где жизнь идёт в чатах",
     title: "Монетизатор",
     href: "/cases/monetizator",
     text: "Агент разбирает интро в чате и сам ведёт базу участников, а поверх неё работает витрина сообщества.",
-    violet: true,
   },
   {
     category: "agents",
@@ -225,6 +234,7 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Внедрятор",
     href: "/cases/vnedryator",
     text: "Ведёт клиентов консультанта по пошаговому плану между чек-сессиями.",
+    violet: true,
   },
   {
     category: "products",
@@ -234,6 +244,5 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Команда ТРИЗ-решателей",
     text: "Агент разбирает противоречие в задаче и предлагает 5 приёмов ТРИЗ с примерами применения.",
     href: "/triz",
-    violet: true,
   },
 ];
