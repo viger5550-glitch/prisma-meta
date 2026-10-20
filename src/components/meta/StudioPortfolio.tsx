@@ -112,7 +112,7 @@ export function StudioPortfolio() {
           );
         })}
       </div>
-      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))]">
+      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))]">
         {visible.map(({ item, index }) => (
           <CaseCard key={item.title} item={item} index={index} />
         ))}
