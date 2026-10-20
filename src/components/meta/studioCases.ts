@@ -124,7 +124,7 @@ export const STUDIO_CASE_DETAILS: StudioCaseDetails[] = [
   },
   {
     slug: "lidolov",
-    title: "Обработка лидов",
+    title: "Обработка лидов и сохранение в CRM",
     stack: "Telegram · CRM · CJM",
     gallery: gallery("lidolov", ["Новый лид в CRM", "База лидов"]),
     galleryFit: "cover",

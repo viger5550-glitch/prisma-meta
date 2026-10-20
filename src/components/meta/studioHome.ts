@@ -189,7 +189,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Лиды",
+    word: "Обработка лидов",
     tags: "Обработка лидов",
     audience: "Для тех, кто продаёт услуги и получает заявки в чатах",
     title: "Лидолов",
