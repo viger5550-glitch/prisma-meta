@@ -52,6 +52,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               {item.title}
             </h1>
           </div>
+          {item.gallery.length > 0 && (
           <div className="mt-[26px] flex flex-col gap-3">
             <span className="text-[8px] font-medium uppercase leading-none tracking-[.24em] text-[#8a8a8a]">
               Галерея · {screensLabel(item.gallery.length)}
@@ -79,6 +80,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               ))}
             </div>
           </div>
+          )}
         </header>
 
         <section className={`flex flex-wrap items-start gap-x-[6vw] gap-y-12 py-24 ${shell}`}>
