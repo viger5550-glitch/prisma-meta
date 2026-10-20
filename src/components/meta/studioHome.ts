@@ -237,6 +237,15 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
+    word: "Контент",
+    tags: "Контент-агент",
+    audience: "Для экспертов со своим каналом",
+    title: "Контент-агент",
+    href: "/cases/content",
+    text: "Собирает мысли и черновики из канала в базу и подсказывает, какой пост писать сейчас по контент-стратегии.",
+  },
+  {
+    category: "agents",
     word: "Стратегия",
     tags: "Агент по внедрению стратегии",
     audience:
@@ -244,6 +253,7 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Внедрятор",
     href: "/cases/vnedryator",
     text: "Ведёт клиентов консультанта по пошаговому плану между чек-сессиями.",
+    violet: true,
   },
   {
     category: "products",
@@ -253,6 +263,5 @@ export const STUDIO_CASES: StudioCase[] = [
     title: "Команда ТРИЗ-решателей",
     text: "Агент разбирает противоречие в задаче и предлагает 5 приёмов ТРИЗ с примерами применения.",
     href: "/triz",
-    violet: true,
   },
 ];
