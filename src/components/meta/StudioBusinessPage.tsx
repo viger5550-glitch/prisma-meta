@@ -24,24 +24,23 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            Business tech
+            Студия по разработке смарт агентов и приложений
           </p>
         </div>
 
         <div className="flex flex-col gap-6 pt-7">
-          <h2 className={`m-0 max-w-[15ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
-            Ассистенты, которые{" "}
+          <h2 className={`m-0 max-w-[20ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
+            Соединяем авторские методологии и новые{" "}
             <span className="italic" style={{ boxShadow: `${GREEN} 0 -0.28em 0 inset` }}>
-              держат
-            </span>{" "}
-            процессы
+              технологии
+            </span>
           </h2>
           <div className="mt-[6px] flex flex-wrap gap-[10px]">
             <a
               href="#contact"
               className="bg-[#0a0a0a] px-10 py-4 text-[9px] font-bold leading-none tracking-[.24em] text-white transition-colors duration-[250ms] hover:bg-[#00e37a] hover:text-[#0a0a0a]"
             >
-              ОБСУДИТЬ АГЕНТА
+              ОБСУДИТЬ ПРОЕКТ
             </a>
           </div>
         </div>
@@ -227,7 +226,7 @@ function Contact() {
   );
 }
 
-/** Направление «Для бизнеса»: hero, бегущая строка, SMART, команда, кейсы, чек-ап. */
+/** Главная студии: hero, бегущая строка, SMART, команда, портфолио по направлениям, чек-ап. */
 export function StudioBusinessPage() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">

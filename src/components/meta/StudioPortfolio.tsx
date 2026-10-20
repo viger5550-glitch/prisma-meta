@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { HEALTH_CASES } from "@/components/meta/healthTech";
 import {
   STUDIO_CASE_TABS,
   STUDIO_CASES,
@@ -84,11 +85,17 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
   );
 }
 
+/** Портфолио по направлениям: сначала Business tech, потом Health tech, потом EdTech. */
+const ALL_CASES = (["business", "health", "edtech"] as const).flatMap((category) =>
+  [...STUDIO_CASES, ...HEALTH_CASES].filter((item) => item.category === category),
+);
+
 export function StudioPortfolio() {
   const [tab, setTab] = useState<StudioCaseTab>("all");
-  const visible = STUDIO_CASES.map((item, index) => ({ item, index })).filter(
-    ({ item }) => tab === "all" || item.category === tab,
-  );
+  // Цвет обложек чередуется по порядку в выбранной вкладке, а не задаётся в данных.
+  const visible = ALL_CASES.map((item, index) => ({ item, index }))
+    .filter(({ item }) => tab === "all" || item.category === tab)
+    .map(({ item, index }, i) => ({ item: { ...item, violet: i % 2 === 1 }, index }));
 
   return (
     <section id="portfolio" className={`flex flex-col gap-12 py-[100px] ${shell}`}>

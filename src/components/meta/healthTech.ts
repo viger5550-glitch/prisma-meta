@@ -41,7 +41,7 @@ export const HEALTH_WHY: { title: string; text: string; dark?: boolean }[] = [
 
 export const HEALTH_CASES: StudioCase[] = [
   {
-    category: "products",
+    category: "health",
     word: "Привычки",
     tags: "Companion app · Питание",
     audience: "Для тех, кто хочет изменить отношения с едой",
@@ -51,7 +51,7 @@ export const HEALTH_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "products",
+    category: "health",
     word: "Дневник",
     tags: "Companion app · Терапия",
     audience: "Для терапевтов и пациентов, которым важно не терять нить между сессиями",

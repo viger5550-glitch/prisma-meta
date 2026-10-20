@@ -151,16 +151,17 @@ export const STUDIO_TEAM: StudioTeamMember[] = [
   },
 ];
 
-export type StudioCaseTab = "all" | "agents" | "products";
+export type StudioCaseTab = "all" | "business" | "health" | "edtech";
 
 export const STUDIO_CASE_TABS: { id: StudioCaseTab; label: string }[] = [
   { id: "all", label: "Все" },
-  { id: "agents", label: "AI-агенты" },
-  { id: "products", label: "Продукты" },
+  { id: "business", label: "Business tech" },
+  { id: "health", label: "Health tech" },
+  { id: "edtech", label: "EdTech" },
 ];
 
 export type StudioCase = {
-  category: "agents" | "products";
+  category: "business" | "health" | "edtech";
   word: string;
   tags: string;
   /** Строка над названием: для кого кейс. */
@@ -179,7 +180,7 @@ export type StudioCase = {
 
 export const STUDIO_CASES: StudioCase[] = [
   {
-    category: "agents",
+    category: "business",
     word: "Таск менеджер",
     tags: "Бизнес-ассистент",
     audience: "Для соло-предпринимателей и частных экспертов, которые ведут несколько проектов",
@@ -188,7 +189,7 @@ export const STUDIO_CASES: StudioCase[] = [
     text: "Собирает задачи из чатов, раскладывает по проектам и каждое утро говорит, что сегодня главное.",
   },
   {
-    category: "agents",
+    category: "business",
     word: "Ведение CRM",
     tags: "Агент входящих лидов",
     audience: "Для тех, кто продаёт услуги и получает заявки в чатах",
@@ -198,7 +199,7 @@ export const STUDIO_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "agents",
+    category: "business",
     word: "Ричаутинг",
     tags: "Ричаут-агент",
     audience: "Для тех, кто продаёт через личные сообщения",
@@ -207,7 +208,7 @@ export const STUDIO_CASES: StudioCase[] = [
     text: "Находит в чатах людей под вашу аудиторию и подбирает каждому офер по вашей методологии.",
   },
   {
-    category: "agents",
+    category: "business",
     word: "Лидогенерация",
     tags: "Лидген-агент",
     audience: "Для тех, чьи клиенты сидят в профильных Telegram-чатах",
@@ -217,7 +218,7 @@ export const STUDIO_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "agents",
+    category: "business",
     word: "Монетизация сообщества",
     tags: "Агент по работе с чатами сообществ",
     audience: "Для владельцев сообществ, где жизнь идёт в чатах",
@@ -226,7 +227,7 @@ export const STUDIO_CASES: StudioCase[] = [
     text: "Агент разбирает интро в чате и сам ведёт базу участников, а поверх неё работает витрина сообщества.",
   },
   {
-    category: "agents",
+    category: "business",
     word: "Диагностика",
     tags: "Скрининг-бот",
     audience: "Для экспертов: запуск, прогрев, диагностика клиента",
@@ -236,7 +237,7 @@ export const STUDIO_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "agents",
+    category: "business",
     word: "Контент мейкинг",
     tags: "Контент-агент",
     audience: "Для экспертов со своим каналом",
@@ -245,7 +246,7 @@ export const STUDIO_CASES: StudioCase[] = [
     text: "Собирает мысли и черновики из канала в базу и подсказывает, какой пост писать сейчас по контент-стратегии.",
   },
   {
-    category: "agents",
+    category: "business",
     word: "Внедрение стратегий",
     tags: "Агент по внедрению стратегии",
     audience:
@@ -256,7 +257,7 @@ export const STUDIO_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "products",
+    category: "edtech",
     word: "Упаковка методологии",
     tags: "ТРИЗ-ассистенты",
     author: "Виктория Герман",

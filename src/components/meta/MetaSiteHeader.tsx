@@ -5,12 +5,8 @@ import { usePathname } from "next/navigation";
 
 import { shell as studioShell } from "./studioUi";
 
-/** Меню шапки: направления студии и профиль основателя. */
-const NAV_ITEMS = [
-  { id: "business", title: "Business tech", href: "/business" },
-  { id: "health", title: "Health tech", href: "/health-tech" },
-  { id: "founder", title: "Founder", href: "/founder" },
-];
+/** Меню шапки: профиль основателя. Направления разведены вкладками портфолио на главной. */
+const NAV_ITEMS = [{ id: "founder", title: "Founder", href: "/founder" }];
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 

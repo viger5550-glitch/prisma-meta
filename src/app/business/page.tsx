@@ -1,17 +1,6 @@
-import type { Metadata } from "next";
-import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
-import { StudioBusinessPage } from "@/components/meta/StudioBusinessPage";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Business tech | PRISMA",
-  description:
-    "Соединяем методологию и технологию: проектируем и запускаем AI-агентов для продаж, маркетинга и контента.",
-};
-
+/** Business tech теперь главная страница. */
 export default function BusinessRoute() {
-  return (
-    <ManifestFontVars>
-      <StudioBusinessPage />
-    </ManifestFontVars>
-  );
+  redirect("/");
 }

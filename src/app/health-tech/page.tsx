@@ -1,17 +1,6 @@
-import type { Metadata } from "next";
-import { HealthTechPage } from "@/components/meta/HealthTechPage";
-import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Health tech | PRISMA",
-  description:
-    "Companion apps, которые помогают пройти терапию или изменить привычки.",
-};
-
+/** Кейсы Health tech переехали во вкладку портфолио на главной. */
 export default function HealthTechRoute() {
-  return (
-    <ManifestFontVars>
-      <HealthTechPage />
-    </ManifestFontVars>
-  );
+  redirect("/");
 }

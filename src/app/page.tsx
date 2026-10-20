@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
-import { StudioStartPage } from "@/components/meta/StudioStartPage";
+import { StudioBusinessPage } from "@/components/meta/StudioBusinessPage";
 
 export const metadata: Metadata = {
   title: "PRISMA — студия по разработке smart agents & apps",
   description:
-    "Соединяем методологию и технологию: smart agents для бизнеса и companion apps для health tech.",
+    "Соединяем авторские методологии и новые технологии: smart agents для бизнеса, companion apps для health tech и упаковка методологий для EdTech.",
 };
 
 export default function Home() {
   return (
     <ManifestFontVars>
-      <StudioStartPage />
+      <StudioBusinessPage />
     </ManifestFontVars>
   );
 }
