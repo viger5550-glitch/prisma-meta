@@ -180,7 +180,7 @@ export type StudioCase = {
 export const STUDIO_CASES: StudioCase[] = [
   {
     category: "agents",
-    word: "Планировщик задач",
+    word: "Таск менеджер",
     tags: "Бизнес-ассистент",
     audience: "Для соло-предпринимателей и частных экспертов, которые ведут несколько проектов",
     title: "Разгребатор",
@@ -189,7 +189,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Обработка лидов",
+    word: "Ведение CRM",
     tags: "Агент входящих лидов",
     audience: "Для тех, кто продаёт услуги и получает заявки в чатах",
     title: "Лидолов",
@@ -199,7 +199,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Ричаут",
+    word: "Ричаутинг",
     tags: "Ричаут-агент",
     audience: "Для тех, кто продаёт через личные сообщения",
     title: "Ричаут-агент",
@@ -208,7 +208,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Лидген",
+    word: "Лидогенерация",
     tags: "Лидген-агент",
     audience: "Для тех, чьи клиенты сидят в профильных Telegram-чатах",
     title: "Лидген-агент",
@@ -237,7 +237,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Контент",
+    word: "Контент мейкинг",
     tags: "Контент-агент",
     audience: "Для экспертов со своим каналом",
     title: "Контент-агент",
@@ -246,7 +246,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "agents",
-    word: "Стратегия",
+    word: "Внедрение стратегий",
     tags: "Агент по внедрению стратегии",
     audience:
       "Для консультантов, которые хотят внедрять свои стратегии и растить за счёт этого свой чек",
@@ -257,7 +257,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "products",
-    word: "Метод",
+    word: "Упаковка методологии",
     tags: "ТРИЗ-ассистенты",
     author: "Виктория Герман",
     title: "Команда ТРИЗ-решателей",
