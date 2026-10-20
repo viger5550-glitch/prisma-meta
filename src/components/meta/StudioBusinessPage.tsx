@@ -117,6 +117,9 @@ function Smart() {
 const profileLabel = "text-[8px] font-medium uppercase leading-none tracking-[.24em] text-[#8a8a8a]";
 const profileText = "m-0 text-[11.5px] leading-[1.75] text-pretty text-[#2a2a2a]";
 
+/** Блок команды временно скрыт — чтобы вернуть, поставить true. */
+const SHOW_TEAM = false;
+
 function Team() {
   return (
     <section id="team" className={`flex flex-col gap-12 bg-white py-[100px] ${shell}`}>
@@ -233,7 +236,7 @@ export function StudioBusinessPage() {
         <Hero />
         <Marquee />
         <Smart />
-        <Team />
+        {SHOW_TEAM ? <Team /> : null}
         <StudioPortfolio />
         <Contact />
       </main>
