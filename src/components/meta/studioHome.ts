@@ -200,7 +200,7 @@ export const STUDIO_CASES: StudioCase[] = [
   {
     category: "agents",
     word: "Монетизация сообщества",
-    tags: "Агент-база участников",
+    tags: "Агент по работе с чатами сообществ",
     audience: "Для владельцев сообществ, где жизнь идёт в чатах",
     title: "Монетизатор",
     href: "/cases/monetizator",

@@ -194,7 +194,7 @@ export const STUDIO_CASE_DETAILS: StudioCaseDetails[] = [
   },
   {
     slug: "monetizator",
-    title: "Агент-база участников",
+    title: "Агент по работе с чатами сообществ",
     stack: "Telegram · Агент · Notion",
     gallery: gallery("monetizator", [
       "Онбординг",
