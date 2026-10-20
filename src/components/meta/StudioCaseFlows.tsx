@@ -84,7 +84,7 @@ function FlowCard({
           </div>
 
           <div className="flex flex-col gap-[6px]">
-            <span className={heading}>Что получил клиент</span>
+            <span className={heading}>{flow.resultsTitle ?? "Что получил клиент"}</span>
             <ul className="m-0 flex list-none flex-col p-0">
               {flow.results.map((result) => (
                 <li key={result} className={`flex items-center gap-3 ${row}`}>
