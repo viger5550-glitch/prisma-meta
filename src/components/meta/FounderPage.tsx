@@ -24,12 +24,15 @@ function Hero() {
             {FOUNDER.role}
           </p>
         </div>
-        <p className="m-0 max-w-[52ch] text-[14px] leading-[1.8] text-pretty text-[#4a4a4a]">{FOUNDER.bio}</p>
-        <div className="flex max-w-[52ch] flex-col gap-2 border-t border-[#e2e2e2] pt-4">
-          <span className="text-[8px] font-medium uppercase leading-none tracking-[.24em] text-[#8a8a8a]">
-            В агентах отвечает за
-          </span>
-          <p className="m-0 text-[13px] leading-[1.75] text-pretty text-[#2a2a2a]">{FOUNDER.responsibility}</p>
+        <p className={`m-0 max-w-[26ch] text-[clamp(22px,2.2vw,28px)] leading-[1.3] text-balance ${serif}`}>
+          {FOUNDER.bio}
+        </p>
+        <div className="flex max-w-[52ch] flex-col gap-4">
+          {(FOUNDER.about ?? [FOUNDER.bio]).map((paragraph) => (
+            <p key={paragraph} className="m-0 text-[14px] leading-[1.8] text-pretty text-[#4a4a4a]">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </div>
 

@@ -3,12 +3,13 @@
 export const STUDIO_TG_URL = "https://t.me/vigerman";
 
 export const STUDIO_MARQUEE = [
-  "Методология",
-  "Роль",
-  "KPI",
-  "Tone of voice",
-  "Бизнес-метрики",
-  "Реальный экспертный опыт",
+  "Авторская методология",
+  "Голос эксперта",
+  "Сценарии",
+  "Метрики результата",
+  "Агенты",
+  "Приложения",
+  "Экспертный опыт",
 ];
 
 export type StudioSmartCard = {
@@ -62,7 +63,10 @@ export type StudioProfileBlock = {
 export type StudioTeamMember = {
   name: string;
   role: string;
+  /** Короткая строка: карточка команды и ава в hero главной. */
   bio: string;
+  /** Полный текст о себе для /founder, по абзацам. */
+  about?: string[];
   responsibility: string;
   profile: StudioProfileBlock[];
   photo: string;
@@ -73,7 +77,13 @@ export const STUDIO_TEAM: StudioTeamMember[] = [
   {
     name: "Виктория Герман",
     role: "Основатель · AI-продакт",
-    bio: "Предприниматель, затем 7 лет в IT: бизнес-аналитик и продакт в проектах ФНС и Мегамаркета (Сбер). Разбираю процессы эксперта и собираю из них агента с продуктовой логикой: у него есть роль, обязанности и KPI.",
+    bio: "Делаю AI-продукты, которые ведут человека к большой цели маленькими шагами.",
+    about: [
+      "Я Виктория Герман, продакт. 8 лет в разработке цифровых продуктов: проекты ФНС, экосистема Сбера — Мегамаркет, Самокат. Собирала команды и вела продукты от идеи до запуска.",
+      "Сейчас работаю на себя. Запускаю AI-продукты там, где человеку нужно долго что-то делать самому: восстанавливаться после лечения, выполнять практики терапии, осваивать метод эксперта, менять привычки. Специалист даёт план, а дальше человек остаётся с ним один. Мои продукты закрывают этот разрыв: человек получает поддержку каждый день, а специалист видит, как идут дела.",
+      "Работаю так: погружаюсь в процесс клиники или методологию специалиста, провожу интервью, сама собираю прототип и проверяю его на пользователях. Возвращаюсь к клиенту с выводами и планом. Если направление подтверждается, помогаю собрать под него команду.",
+      "Параллельно делаю свой продукт — Foody, приложение для перехода от компульсивного переедания к осознанному питанию. Прохожу с ним Сеченовский акселератор, где у меня есть доступ к экспертам по медицинской регуляторике.",
+    ],
     responsibility: "Архитектуру агента, цель в метриках и запуск в процессы клиента.",
     profile: [
       {
@@ -151,17 +161,16 @@ export const STUDIO_TEAM: StudioTeamMember[] = [
   },
 ];
 
-export type StudioCaseTab = "all" | "business" | "health" | "edtech";
+export type StudioCaseTab = "all" | "business" | "health";
 
 export const STUDIO_CASE_TABS: { id: StudioCaseTab; label: string }[] = [
   { id: "all", label: "Все" },
-  { id: "business", label: "Business tech" },
-  { id: "health", label: "Health tech" },
-  { id: "edtech", label: "EdTech" },
+  { id: "business", label: "Agents" },
+  { id: "health", label: "Apps" },
 ];
 
 export type StudioCase = {
-  category: "business" | "health" | "edtech";
+  category: "business" | "health";
   word: string;
   tags: string;
   /** Строка над названием: для кого кейс. */
@@ -176,12 +185,14 @@ export type StudioCase = {
   violet?: boolean;
   /** Плашка статуса на обложке, например «В разработке». */
   status?: string;
+  /** Зелёная плашка направления на обложке, например «Health», «Education». */
+  direction?: string;
 };
 
 export const STUDIO_CASES: StudioCase[] = [
   {
     category: "business",
-    word: "Таск менеджер",
+    word: "Управление задачами",
     tags: "Бизнес-ассистент",
     audience: "Для соло-предпринимателей и частных экспертов, которые ведут несколько проектов",
     title: "Разгребатор",
@@ -228,17 +239,7 @@ export const STUDIO_CASES: StudioCase[] = [
   },
   {
     category: "business",
-    word: "Диагностика",
-    tags: "Скрининг-бот",
-    audience: "Для экспертов: запуск, прогрев, диагностика клиента",
-    title: "Скрининг-бот",
-    href: "/cases/screening",
-    text: "Проводит диагностику по методологии эксперта и сам ведёт человека к консультации или продукту.",
-    violet: true,
-  },
-  {
-    category: "business",
-    word: "Контент мейкинг",
+    word: "Создание контента",
     tags: "Контент-агент",
     audience: "Для экспертов со своим каналом",
     title: "Контент-агент",
@@ -257,7 +258,8 @@ export const STUDIO_CASES: StudioCase[] = [
     violet: true,
   },
   {
-    category: "edtech",
+    category: "health",
+    direction: "Education",
     word: "Упаковка методологии",
     tags: "ТРИЗ-ассистенты",
     author: "Виктория Герман",
@@ -266,3 +268,8 @@ export const STUDIO_CASES: StudioCase[] = [
     href: "/triz",
   },
 ];
+
+/** Заголовок страницы кейса = надпись с обложки карточки портфолио. */
+export function getCaseHeading(slug: string, fallback: string): string {
+  return STUDIO_CASES.find((item) => item.href === `/cases/${slug}`)?.word ?? fallback;
+}

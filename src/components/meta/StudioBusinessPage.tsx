@@ -24,17 +24,29 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            Студия по разработке смарт агентов и приложений
+            Продуктовая AI-лаборатория
           </p>
         </div>
 
         <div className="flex flex-col gap-6 pt-7">
           <h2 className={`m-0 max-w-[20ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
-            Соединяем авторские методологии и новые{" "}
+            Превращаю авторские методологии в{" "}
             <span className="italic" style={{ boxShadow: `${GREEN} 0 -0.28em 0 inset` }}>
-              технологии
+              AI native продукты
             </span>
           </h2>
+          <a href="/founder" className="group flex items-center gap-[14px] self-start text-[#0a0a0a]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={STUDIO_TEAM[0].photo}
+              alt={STUDIO_TEAM[0].name}
+              className="h-11 w-11 flex-none rounded-full object-cover grayscale"
+              style={{ objectPosition: STUDIO_TEAM[0].objectPosition }}
+            />
+            <span className="border-b border-[#0a0a0a]/30 text-[13px] font-semibold leading-[1.4] transition-colors group-hover:border-[#00e37a]">
+              {STUDIO_TEAM[0].name}
+            </span>
+          </a>
           <div className="mt-[6px] flex flex-wrap gap-[10px]">
             <a
               href="#contact"
@@ -119,6 +131,9 @@ const profileText = "m-0 text-[11.5px] leading-[1.75] text-pretty text-[#2a2a2a]
 /** Блок команды временно скрыт — чтобы вернуть, поставить true. */
 const SHOW_TEAM = false;
 
+/** Блок SMART временно скрыт — чтобы вернуть, поставить true. См. docs/hidden-blocks.md. */
+const SHOW_SMART = false;
+
 function Team() {
   return (
     <section id="team" className={`flex flex-col gap-12 bg-white py-[100px] ${shell}`}>
@@ -194,18 +209,18 @@ function Contact() {
   return (
     <section id="contact" className={`flex flex-wrap items-center justify-between gap-10 bg-white py-[90px] ${shell}`}>
       <div className="flex flex-col gap-3">
-        <Eyebrow>Аудит процессов</Eyebrow>
-        <h2 className={`m-0 text-[30px] leading-[1.2] ${serif}`}>Чек-ап: где вашему бизнесу нужен агент</h2>
+        <Eyebrow>Разбор методологии</Eyebrow>
+        <h2 className={`m-0 text-[30px] leading-[1.2] ${serif}`}>Чек-ап: какой AI-продукт вырастет из вашей методологии</h2>
         <div className="flex items-baseline gap-[10px]">
           <span className="text-[72px] font-light leading-none" style={{ boxShadow: `inset 0 -.18em 0 ${GREEN}` }}>
             60
           </span>
           <span className="text-[10px] font-medium leading-none tracking-[.05em] text-[#8a8a8a]">
-            минут · разбор процессов
+            минут · разбор методологии
           </span>
         </div>
         <p className="m-0 max-w-[46ch] text-[12px] leading-[1.8] text-pretty text-[#4a4a4a]">
-          Разберём ваши процессы, найдём, где агент даст эффект, и сформулируем его цель в метриках.
+          Разберём вашу методологию, найдём, что в ней можно передать агенту или приложению, и сформулируем, каким будет продукт и как измерить его результат.
         </p>
         <div className="flex max-w-[46ch] flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#e2e2e2] pt-[14px]">
           <span className={`text-[26px] leading-none ${serif}`}>7 000 ₽</span>
@@ -234,7 +249,7 @@ export function StudioBusinessPage() {
       <main className={`${studioFontVars} ${sans}`}>
         <Hero />
         <Marquee />
-        <Smart />
+        {SHOW_SMART ? <Smart /> : null}
         {SHOW_TEAM ? <Team /> : null}
         <StudioPortfolio />
         <Contact />

@@ -5,7 +5,7 @@ import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 export const metadata: Metadata = {
   title: "Виктория Герман — основатель | PRISMA",
   description:
-    "Основатель студии PRISMA: 7 лет в IT, бизнес-аналитик и продакт в проектах ФНС и Мегамаркета (Сбер). Собираю агентов с продуктовой логикой.",
+    "Основатель PRISMA, продакт: 8 лет в цифровых продуктах — ФНС, Мегамаркет, Самокат. Запускаю AI-продукты, которые поддерживают человека между встречами со специалистом.",
 };
 
 export default function FounderRoute() {

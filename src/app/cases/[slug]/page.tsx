@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { StudioCasePage } from "@/components/meta/StudioCasePage";
 import { STUDIO_CASE_DETAILS, getStudioCaseBySlug } from "@/components/meta/studioCases";
+import { getCaseHeading } from "@/components/meta/studioHome";
 
 type CasePageProps = {
   params: Promise<{ slug: string }>;
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: CasePageProps): Promise<Metad
   }
 
   return {
-    title: `${item.title} | PRISMA`,
+    title: `${getCaseHeading(item.slug, item.title)} | PRISMA`,
     description: item.solution,
   };
 }

@@ -42,7 +42,8 @@ export const HEALTH_WHY: { title: string; text: string; dark?: boolean }[] = [
 export const HEALTH_CASES: StudioCase[] = [
   {
     category: "health",
-    word: "Привычки",
+    direction: "Health",
+    word: "Внедрение привычки",
     tags: "Companion app · Питание",
     audience: "Для тех, кто хочет изменить отношения с едой",
     title: "Foody",
@@ -52,12 +53,12 @@ export const HEALTH_CASES: StudioCase[] = [
   },
   {
     category: "health",
-    word: "Дневник",
+    direction: "Health",
+    word: "Ведение терапевтического дневника",
     tags: "Companion app · Терапия",
     audience: "Для терапевтов и пациентов, которым важно не терять нить между сессиями",
     title: "Дневники пациентов в терапевтическом процессе",
     text: "Пациент ведёт дневник между сессиями, терапевт видит записи и использует их в работе.",
-    status: "В работе",
   },
 ];
 

@@ -5,7 +5,7 @@ import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { StudioCaseFlows } from "@/components/meta/StudioCaseFlows";
 import type { StudioCaseDetails } from "@/components/meta/studioCases";
 import { studioFontVars } from "@/components/meta/studioFonts";
-import { STUDIO_TG_URL } from "@/components/meta/studioHome";
+import { STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
 import { Eyebrow, GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
 function screensLabel(n: number) {
@@ -49,7 +49,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
           <div className="flex items-start gap-4">
             <span className="block w-[3px] flex-none self-stretch bg-[#0a0a0a]" />
             <h1 className={`m-0 max-w-[22ch] text-[clamp(34px,4.4vw,58px)] leading-[1.12] text-balance ${serif}`}>
-              {item.title}
+              {getCaseHeading(item.slug, item.title)}
             </h1>
           </div>
           {item.gallery.length > 0 && (

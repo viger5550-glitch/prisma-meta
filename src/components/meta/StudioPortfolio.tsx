@@ -23,13 +23,22 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
           <span className="font-mono text-[10px] leading-none" style={{ color: item.violet ? "#d8d8f4" : "#8a8a8a" }}>
             {String(index + 1).padStart(2, "0")}
           </span>
-          {item.status ? (
-            <span
-              className="rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#0a0a0a]"
-              style={{ background: GREEN }}
-            >
-              {item.status}
-            </span>
+          {item.direction || item.status ? (
+            <div className="flex items-center gap-[6px]">
+              {item.status ? (
+                <span className="rounded-full border border-white/60 px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-white">
+                  {item.status}
+                </span>
+              ) : null}
+              {item.direction ? (
+                <span
+                  className="rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#0a0a0a]"
+                  style={{ background: GREEN }}
+                >
+                  {item.direction}
+                </span>
+              ) : null}
+            </div>
           ) : (
             <Dot size={8} />
           )}
@@ -57,7 +66,6 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
             item.audience
           )}
         </span>
-        <span className={`text-[24px] leading-[1.2] ${serif}`}>{item.title}</span>
         <span className="text-[11.5px] leading-[1.7] text-pretty text-[#4a4a4a]">{item.text}</span>
         {item.price ? (
           <div className="flex items-baseline gap-[6px] pt-1">
@@ -85,8 +93,8 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
   );
 }
 
-/** Портфолио по направлениям: сначала Business tech, потом Health tech, потом EdTech. */
-const ALL_CASES = (["business", "health", "edtech"] as const).flatMap((category) =>
+/** Портфолио по направлениям: сначала Agents, потом Apps. */
+const ALL_CASES = (["business", "health"] as const).flatMap((category) =>
   [...STUDIO_CASES, ...HEALTH_CASES].filter((item) => item.category === category),
 );
 
@@ -99,7 +107,7 @@ export function StudioPortfolio() {
 
   return (
     <section id="portfolio" className={`flex flex-col gap-12 py-[100px] ${shell}`}>
-      <SectionTitle eyebrow="Портфолио" title="Строим агентов с «человеческим лицом»" />
+      <SectionTitle eyebrow="Портфолио" title="За каждым продуктом — авторский метод" />
       <div className="-mt-4 flex flex-wrap gap-[10px]" role="tablist">
         {STUDIO_CASE_TABS.map((t) => {
           const active = t.id === tab;

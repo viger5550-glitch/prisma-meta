@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 
 import { shell as studioShell } from "./studioUi";
 
-/** Меню шапки: профиль основателя. Направления разведены вкладками портфолио на главной. */
-const NAV_ITEMS = [{ id: "founder", title: "Founder", href: "/founder" }];
+/** Меню шапки. Сейчас пустое: на /founder ведёт ава в hero главной, направления — вкладки портфолио. */
+const NAV_ITEMS: { id: string; title: string; href: string }[] = [];
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";
 
