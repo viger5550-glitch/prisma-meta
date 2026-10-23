@@ -7,6 +7,9 @@ import { Eyebrow, GREEN, SectionTitle, VIOLET, sans, serif, shell } from "@/comp
 /** Профиль основателя студии — те же данные, что в карточке команды на /business. */
 const FOUNDER = STUDIO_TEAM[0];
 
+/** Блок «Профиль» временно скрыт — чтобы вернуть, поставить true. См. docs/hidden-blocks.md. */
+const SHOW_PROFILE = false;
+
 function Hero() {
   return (
     <header
@@ -107,7 +110,7 @@ export function FounderPage() {
       <MetaSiteHeader wide />
       <main className={`${studioFontVars} ${sans}`}>
         <Hero />
-        <Profile />
+        {SHOW_PROFILE ? <Profile /> : null}
         <Contact />
       </main>
       <MetaSiteFooter wide />
