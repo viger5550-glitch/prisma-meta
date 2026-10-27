@@ -24,15 +24,15 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            Продуктовая AI-лаборатория
+            Студия по разработке AI native продуктов
           </p>
         </div>
 
         <div className="flex flex-col gap-6 pt-7">
           <h2 className={`m-0 max-w-[20ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
-            Превращаю авторские методологии в{" "}
+            Соединяем авторские методологии и{" "}
             <span className="italic" style={{ boxShadow: `${GREEN} 0 -0.28em 0 inset` }}>
-              AI native продукты
+              технологии
             </span>
           </h2>
           <a href="/founder" className="group flex items-center gap-[14px] self-start text-[#0a0a0a]">
