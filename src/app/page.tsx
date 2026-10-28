@@ -3,9 +3,9 @@ import { ManifestFontVars } from "@/components/meta/ManifestFontVars";
 import { StudioBusinessPage } from "@/components/meta/StudioBusinessPage";
 
 export const metadata: Metadata = {
-  title: "PRISMA — студия по разработке smart agents & apps",
+  title: "PRISMA — AI native продукты для помогающих практиков",
   description:
-    "Соединяем авторские методологии и технологии: smart agents для бизнеса, companion apps для health tech и упаковка методологий для EdTech.",
+    "Помогаем вашим клиентам идти к большой цели маленькими шагами: copilot platforms, companion apps, behavior change products.",
 };
 
 export default function Home() {

@@ -98,8 +98,10 @@ const ALL_CASES = (["business", "health"] as const).flatMap((category) =>
   [...STUDIO_CASES, ...HEALTH_CASES].filter((item) => item.category === category),
 );
 
-export function StudioPortfolio() {
-  const [tab, setTab] = useState<StudioCaseTab>("all");
+/** only — показать одно направление без вкладок (главная — Apps, /agents — Agents). */
+export function StudioPortfolio({ only }: { only?: StudioCase["category"] } = {}) {
+  const [selected, setTab] = useState<StudioCaseTab>("all");
+  const tab: StudioCaseTab = only ?? selected;
   // Цвет обложек чередуется по порядку в выбранной вкладке, а не задаётся в данных.
   const visible = ALL_CASES.map((item, index) => ({ item, index }))
     .filter(({ item }) => tab === "all" || item.category === tab)
@@ -107,7 +109,12 @@ export function StudioPortfolio() {
 
   return (
     <section id="portfolio" className={`flex flex-col gap-12 py-[100px] ${shell}`}>
-      <SectionTitle eyebrow="Портфолио" title="За каждым продуктом — авторский метод" />
+      {only === "business" ? (
+        <SectionTitle eyebrow="Store" title="Готовые агенты под ваши процессы" />
+      ) : (
+        <SectionTitle eyebrow="Портфолио" title="За каждым продуктом — авторский метод" />
+      )}
+      {only ? null : (
       <div className="-mt-4 flex flex-wrap gap-[10px]" role="tablist">
         {STUDIO_CASE_TABS.map((t) => {
           const active = t.id === tab;
@@ -127,6 +134,7 @@ export function StudioPortfolio() {
           );
         })}
       </div>
+      )}
       <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))]">
         {visible.map(({ item, index }) => (
           <CaseCard key={item.title} item={item} index={index} />

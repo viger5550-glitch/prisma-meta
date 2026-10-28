@@ -1,6 +1,8 @@
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import {
+  AGENTS_FOUNDER,
+  AGENTS_MARQUEE,
   STUDIO_MARQUEE,
   STUDIO_SMART,
   STUDIO_TEAM,
@@ -10,7 +12,28 @@ import { studioFontVars } from "@/components/meta/studioFonts";
 import { StudioPortfolio } from "@/components/meta/StudioPortfolio";
 import { Dot, Eyebrow, GREEN, SectionTitle, VIOLET, lift, sans, serif, shell } from "@/components/meta/studioUi";
 
-function Hero() {
+type Variant = "home" | "agents";
+
+/** Тексты hero: главная (Apps) и лендинг агентов /agents. */
+const HERO = {
+  home: {
+    eyebrow: "AI native продукты для помогающих практиков",
+    lead: "Помогаем вашим клиентам идти к большой цели",
+    accent: "маленькими шагами",
+    tail: "",
+    cta: "ОБСУДИТЬ ПРОЕКТ",
+  },
+  agents: {
+    eyebrow: "AI-агенты для бизнеса",
+    lead: "Агенты, которые",
+    accent: "держат",
+    tail: "процессы",
+    cta: "ОБСУДИТЬ АГЕНТА",
+  },
+} satisfies Record<Variant, { eyebrow: string; lead: string; accent: string; tail: string; cta: string }>;
+
+function Hero({ variant }: { variant: Variant }) {
+  const t = HERO[variant];
   return (
     <header
       className={`bg-white pb-24 pt-12 ${shell}`}
@@ -24,18 +47,19 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em] text-[#a8a8a8]">
-            Студия по разработке AI native продуктов
+            {t.eyebrow}
           </p>
         </div>
 
         <div className="flex flex-col gap-6 pt-7">
           <h2 className={`m-0 max-w-[20ch] text-[clamp(38px,4.6vw,68px)] leading-[1.08] text-balance ${serif}`}>
-            Соединяем авторские методологии и{" "}
+            {t.lead}{" "}
             <span className="italic" style={{ boxShadow: `${GREEN} 0 -0.28em 0 inset` }}>
-              технологии
+              {t.accent}
             </span>
+            {t.tail ? <> {t.tail}</> : null}
           </h2>
-          <a href="/founder" className="group flex items-center gap-[14px] self-start text-[#0a0a0a]">
+          <a href={variant === "agents" ? "/agents/founder" : "/founder"} className="group flex items-center gap-[14px] self-start text-[#0a0a0a]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={STUDIO_TEAM[0].photo}
@@ -43,8 +67,13 @@ function Hero() {
               className="h-11 w-11 flex-none rounded-full object-cover grayscale"
               style={{ objectPosition: STUDIO_TEAM[0].objectPosition }}
             />
-            <span className="border-b border-[#0a0a0a]/30 text-[13px] font-semibold leading-[1.4] transition-colors group-hover:border-[#00e37a]">
-              {STUDIO_TEAM[0].name}
+            <span className="flex flex-col gap-[3px]">
+              <span className="self-start border-b border-[#0a0a0a]/30 text-[13px] font-semibold leading-[1.4] transition-colors group-hover:border-[#00e37a]">
+                {STUDIO_TEAM[0].name}
+              </span>
+              {variant === "agents" ? (
+                <span className="max-w-[48ch] text-[11.5px] leading-[1.5] text-[#4a4a4a]">{AGENTS_FOUNDER.lead}</span>
+              ) : null}
             </span>
           </a>
           <div className="mt-[6px] flex flex-wrap gap-[10px]">
@@ -52,7 +81,7 @@ function Hero() {
               href="#contact"
               className="bg-[#0a0a0a] px-10 py-4 text-[9px] font-bold leading-none tracking-[.24em] text-white transition-colors duration-[250ms] hover:bg-[#00e37a] hover:text-[#0a0a0a]"
             >
-              ОБСУДИТЬ ПРОЕКТ
+              {t.cta}
             </a>
           </div>
         </div>
@@ -61,13 +90,14 @@ function Hero() {
   );
 }
 
-function Marquee() {
+function Marquee({ words }: { words: string[] }) {
   const row = (
     <div
       className={`flex items-center gap-10 whitespace-nowrap pr-10 text-[34px] italic leading-none ${serif}`}
     >
-      {STUDIO_MARQUEE.map((word) => (
-        <span key={word} className="contents">
+      {/* фраз мало — повторяем, чтобы полоса была шире экрана и в цикле не было разрыва */}
+      {Array.from({ length: Math.ceil(8 / words.length) }, () => words).flat().map((word, i) => (
+        <span key={i} className="contents">
           <span>{word}</span>
           <Dot size={10} />
         </span>
@@ -241,18 +271,58 @@ function Contact() {
   );
 }
 
-/** Главная студии: hero, бегущая строка, SMART, команда, портфолио по направлениям, чек-ап. */
-export function StudioBusinessPage() {
+/** CTA страницы агентов: бесплатная демо-встреча — стандартный агент или кастомный. */
+function AgentsDemo() {
+  return (
+    <section id="contact" className={`flex flex-wrap items-center justify-between gap-10 bg-white py-[90px] ${shell}`}>
+      <div className="flex flex-col gap-3">
+        <Eyebrow>Демо-встреча</Eyebrow>
+        <h2 className={`m-0 max-w-[24ch] text-[30px] leading-[1.2] text-balance ${serif}`}>
+          Поймём ваш запрос
+        </h2>
+        <div className="flex items-baseline gap-[10px]">
+          <span className="text-[72px] font-light leading-none" style={{ boxShadow: `inset 0 -.18em 0 ${GREEN}` }}>
+            30
+          </span>
+          <span className="text-[10px] font-medium leading-none tracking-[.05em] text-[#8a8a8a]">
+            минут · free
+          </span>
+        </div>
+        <p className="m-0 max-w-[46ch] text-[12px] leading-[1.8] text-pretty text-[#4a4a4a]">
+          Вы расскажете, как устроены ваши процессы, а я покажу агентов в работе, и вместе поймём, подойдёт ли вам готовый агент или нужен настроенный под вас.
+        </p>
+      </div>
+      <a
+        href={STUDIO_TG_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whitespace-nowrap bg-[#00e37a] px-[60px] py-5 text-[9px] font-bold leading-none tracking-[.24em] text-[#0a0a0a] transition-[background-color,color,transform] duration-300 hover:-translate-y-[3px] hover:bg-[#0a0a0a] hover:text-white"
+      >
+        ЗАПИСАТЬСЯ НА ДЕМО
+      </a>
+    </section>
+  );
+}
+
+/**
+ * Студийная страница: hero, бегущая строка, SMART, команда, портфолио, CTA (чек-ап на главной, демо на /agents).
+ * variant="home" — главная, кейсы Apps; variant="agents" — /agents, кейсы Agents.
+ */
+export function StudioBusinessPage({ variant = "home" }: { variant?: Variant } = {}) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide />
+      <MetaSiteHeader wide hideLogo={variant === "agents"} />
       <main className={`${studioFontVars} ${sans}`}>
-        <Hero />
-        <Marquee />
+        <Hero variant={variant} />
+        <Marquee words={variant === "agents" ? AGENTS_MARQUEE : STUDIO_MARQUEE} />
         {SHOW_SMART ? <Smart /> : null}
         {SHOW_TEAM ? <Team /> : null}
-        <StudioPortfolio />
-        <Contact />
+        <StudioPortfolio only={variant === "agents" ? "business" : "health"} />
+        {variant === "agents" ? (
+          <AgentsDemo />
+        ) : (
+          <Contact />
+        )}
       </main>
       <MetaSiteFooter wide />
     </div>

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 
-/** Business tech теперь главная страница. */
+/** Лендинг агентов переехал на /agents. */
 export default function BusinessRoute() {
-  redirect("/");
+  redirect("/agents");
 }

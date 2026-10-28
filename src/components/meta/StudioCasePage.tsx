@@ -5,7 +5,7 @@ import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { StudioCaseFlows } from "@/components/meta/StudioCaseFlows";
 import type { StudioCaseDetails } from "@/components/meta/studioCases";
 import { studioFontVars } from "@/components/meta/studioFonts";
-import { STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
+import { AGENT_PRICE, STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
 import { Eyebrow, GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
 function screensLabel(n: number) {
@@ -14,6 +14,12 @@ function screensLabel(n: number) {
   if (mod10 === 1 && mod100 !== 11) return `${n} экран`;
   if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return `${n} экрана`;
   return `${n} экранов`;
+}
+
+/** Метрики всех потоков агента без повторов. */
+function metricsOf(item: StudioCaseDetails) {
+  const all = item.flows.flatMap((flow) => flow.metrics);
+  return all.filter((metric, i) => all.findIndex((m) => m.title === metric.title) === i);
 }
 
 function BarTitle({ children }: { children: React.ReactNode }) {
@@ -25,11 +31,11 @@ function BarTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Страница кейса портфолио студии: галерея, проблема, что пробовали, решение по потокам. */
+/** Страница агента-товара: галерея, «Знакомо?», почему обычные способы не работают, как работает агент, что вы получаете, что изменится, цена. */
 export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide />
+      <MetaSiteHeader wide hideLogo />
       <main className={`${studioFontVars} ${sans}`}>
         <header className={`flex flex-col gap-[26px] bg-white pb-[88px] pt-[72px] ${shell}`}>
           <div className="flex flex-wrap items-center gap-[10px]">
@@ -85,7 +91,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
 
         <section className={`flex flex-wrap items-start gap-x-[6vw] gap-y-12 py-24 ${shell}`}>
           <div className="flex flex-[1_1_220px] flex-col gap-4">
-            <Eyebrow>01 · В чём проблема</Eyebrow>
+            <Eyebrow>Знакомо?</Eyebrow>
             <p className={`m-0 text-[clamp(30px,3.4vw,46px)] italic leading-[1.15] text-balance ${serif}`}>
               <span style={{ boxShadow: `inset 0 -.25em 0 ${GREEN}` }}>{item.quote}</span>
             </p>
@@ -118,7 +124,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
 
         <section className={`flex flex-col gap-10 py-24 ${shell}`}>
           <div className="flex flex-col gap-4">
-            <BarTitle>Что придумали</BarTitle>
+            <BarTitle>Как работает агент</BarTitle>
             <p className="m-0 ml-[21px] max-w-[56ch] text-[14px] leading-[1.9] text-pretty text-[#2a2a2a]">
               {item.solution}
             </p>
@@ -126,12 +132,62 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
           <StudioCaseFlows flows={item.flows} linked={item.linkedFlows} />
         </section>
 
-        <section className={`flex flex-wrap items-center justify-between gap-[30px] pb-20 ${shell}`}>
+        <section className={`flex flex-col gap-10 bg-white py-24 ${shell}`}>
+          <BarTitle>Что вы получаете</BarTitle>
+          <div className="ml-[21px] grid max-w-[1000px] gap-x-12 gap-y-8 [grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))]">
+            {item.flows.map((flow) => (
+              <div key={flow.title} className="flex flex-col gap-[6px]">
+                {item.flows.length > 1 ? (
+                  <span className="text-[9px] font-bold uppercase leading-none tracking-[.24em]">{flow.title}</span>
+                ) : null}
+                <ul className="m-0 flex list-none flex-col p-0">
+                  {flow.results.map((result) => (
+                    <li
+                      key={result}
+                      className="flex items-center gap-3 border-b border-[#e2e2e2] py-[12px] text-[13.5px] leading-[1.7] text-[#2a2a2a]"
+                    >
+                      <span className="size-[6px] flex-none rounded-full" style={{ background: GREEN }} />
+                      <span>{result}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className={`flex flex-col gap-10 py-24 ${shell}`}>
+          <BarTitle>Что изменится</BarTitle>
+          <ul className="m-0 ml-[21px] grid max-w-[1000px] list-none gap-5 p-0 [grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))]">
+            {metricsOf(item).map((metric) => (
+              <li key={metric.title} className="flex flex-col gap-3 border-t-[3px] border-[#00e37a] bg-white px-6 py-6">
+                <span className="text-[28px] font-light leading-none text-[#00b862]">{metric.dir === "up" ? "↑" : "↓"}</span>
+                <span className="text-[11px] font-bold uppercase leading-[1.4] tracking-[.14em]">{metric.title}</span>
+                <span className="text-[12.5px] leading-[1.7] text-pretty text-[#4a4a4a]">{metric.text}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section
+          id="buy"
+          className={`flex flex-wrap items-center justify-between gap-10 border-t border-[#e2e2e2] bg-white py-[70px] ${shell}`}
+        >
+          <div className="flex flex-col gap-[10px]">
+            <Eyebrow>Разработка агента</Eyebrow>
+            <div className="flex items-baseline gap-2">
+              <span className="text-[52px] font-light leading-none">{AGENT_PRICE.value}</span>
+              <span className="text-[10px] font-medium tracking-[.05em] text-[#8a8a8a]">{AGENT_PRICE.unit}</span>
+            </div>
+            <p className="m-0 max-w-[46ch] text-[12px] leading-[1.8] text-pretty text-[#4a4a4a]">
+              Соберём такого агента под ваши процессы и методологию.
+            </p>
+          </div>
           <a
             href={STUDIO_TG_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#00e37a] px-[52px] py-[18px] text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#0a0a0a] hover:text-white"
+            className="whitespace-nowrap bg-[#0a0a0a] px-[52px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] text-white transition-colors duration-[250ms] hover:bg-[#00e37a] hover:text-[#0a0a0a]"
           >
             {item.cta}
           </a>

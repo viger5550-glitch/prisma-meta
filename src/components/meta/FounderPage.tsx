@@ -1,16 +1,26 @@
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
-import { STUDIO_TEAM, STUDIO_TG_URL } from "@/components/meta/studioHome";
+import { AGENTS_FOUNDER, STUDIO_TEAM, STUDIO_TG_URL } from "@/components/meta/studioHome";
 import { studioFontVars } from "@/components/meta/studioFonts";
 import { Eyebrow, GREEN, SectionTitle, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
-/** Профиль основателя студии — те же данные, что в карточке команды на /business. */
+/** Профиль основателя студии — те же данные, что в карточке команды на /agents. */
 const FOUNDER = STUDIO_TEAM[0];
 
 /** Блок «Профиль» временно скрыт — чтобы вернуть, поставить true. См. docs/hidden-blocks.md. */
 const SHOW_PROFILE = false;
 
-function Hero() {
+type Variant = "studio" | "agents";
+
+/** Тексты hero: /founder — про health-продукты, /agents/founder — про анализ и архитектуру агентов. */
+function heroText(variant: Variant) {
+  return variant === "agents"
+    ? { role: AGENTS_FOUNDER.role, bio: AGENTS_FOUNDER.lead, about: AGENTS_FOUNDER.about }
+    : { role: FOUNDER.role, bio: FOUNDER.bio, about: FOUNDER.about ?? [FOUNDER.bio] };
+}
+
+function Hero({ variant }: { variant: Variant }) {
+  const t = heroText(variant);
   return (
     <header
       className={`grid items-center gap-x-[5vw] gap-y-12 bg-white pb-24 pt-12 ${shell} [grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))]`}
@@ -24,14 +34,14 @@ function Hero() {
             </h1>
           </div>
           <p className="m-0 text-[11px] uppercase leading-[1.4] tracking-[.36em]" style={{ color: VIOLET }}>
-            {FOUNDER.role}
+            {t.role}
           </p>
         </div>
         <p className={`m-0 max-w-[26ch] text-[clamp(22px,2.2vw,28px)] leading-[1.3] text-balance ${serif}`}>
-          {FOUNDER.bio}
+          {t.bio}
         </p>
         <div className="flex max-w-[52ch] flex-col gap-4">
-          {(FOUNDER.about ?? [FOUNDER.bio]).map((paragraph) => (
+          {t.about.map((paragraph) => (
             <p key={paragraph} className="m-0 text-[14px] leading-[1.8] text-pretty text-[#4a4a4a]">
               {paragraph}
             </p>
@@ -103,13 +113,13 @@ function Contact() {
   );
 }
 
-/** Страница основателя: hero с фото, блоки профиля, контакт. */
-export function FounderPage() {
+/** Страница основателя: hero с фото, блоки профиля, контакт. variant="agents" — версия для лендинга агентов. */
+export function FounderPage({ variant = "studio" }: { variant?: Variant } = {}) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide />
+      <MetaSiteHeader wide hideLogo={variant === "agents"} />
       <main className={`${studioFontVars} ${sans}`}>
-        <Hero />
+        <Hero variant={variant} />
         {SHOW_PROFILE ? <Profile /> : null}
         <Contact />
       </main>

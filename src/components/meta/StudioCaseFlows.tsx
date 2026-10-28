@@ -5,7 +5,7 @@ import { useState } from "react";
 import type { StudioCaseFlow } from "@/components/meta/studioCases";
 import { GREEN, VIOLET, lift, serif } from "@/components/meta/studioUi";
 
-const MORE_LABEL = "Как это работает · результат · метрики";
+const MORE_LABEL = "Как это работает";
 
 function FlowCard({
   flow,
@@ -22,7 +22,6 @@ function FlowCard({
   const line = dark ? "border-[#2a2a2a]" : "border-[#e2e2e2]";
   const muted = dark ? "text-[#bdbdbd]" : "text-[#4a4a4a]";
   const num = dark ? "text-[#8a8a8a]" : "text-[#a8a8a8]";
-  const strong = dark ? "text-white" : "text-[#0a0a0a]";
   const heading = "text-[9px] font-bold uppercase leading-none tracking-[.24em]";
   const row = `border-b py-[10px] text-[12.5px] leading-[1.7] ${line}`;
 
@@ -83,33 +82,6 @@ function FlowCard({
             </ol>
           </div>
 
-          <div className="flex flex-col gap-[6px]">
-            <span className={heading}>{flow.resultsTitle ?? "Что получил клиент"}</span>
-            <ul className="m-0 flex list-none flex-col p-0">
-              {flow.results.map((result) => (
-                <li key={result} className={`flex items-center gap-3 ${row}`}>
-                  <span className="size-[6px] flex-none rounded-full" style={{ background: GREEN }} />
-                  <span>{result}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-[6px]">
-            <span className={heading}>На какие метрики влияет</span>
-            <ul className="m-0 flex list-none flex-col p-0">
-              {flow.metrics.map((metric) => (
-                <li key={metric.title} className={`grid grid-cols-[28px_minmax(0,1fr)] gap-2 ${row} ${muted}`}>
-                  <span className="text-[11px] font-semibold" style={{ color: dark ? GREEN : "#00b862" }}>
-                    {metric.dir === "up" ? "↑" : "↓"}
-                  </span>
-                  <span>
-                    <b className={`font-semibold ${strong}`}>{metric.title}</b> — {metric.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       ) : null}
     </article>
