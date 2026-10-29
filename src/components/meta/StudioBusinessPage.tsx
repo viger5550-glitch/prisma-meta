@@ -2,6 +2,7 @@ import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import {
   AGENTS_FOUNDER,
+  AGENTS_PAINS,
   AGENTS_MARQUEE,
   STUDIO_MARQUEE,
   STUDIO_SMART,
@@ -265,6 +266,39 @@ function Contact() {
   );
 }
 
+/** Карточки боли: на десктопе разбросаны и наезжают друг на друга, на телефоне — стопкой с наклоном. */
+const CHAOS_CARDS = [
+  { cls: "lg:left-[1%] lg:top-[8%] lg:w-[34%] -rotate-[4deg]", tone: "bg-white text-[#0a0a0a]" },
+  { cls: "lg:left-[30%] lg:top-[30%] lg:w-[34%] rotate-[3deg] lg:z-10", tone: "bg-[#0a0a0a] text-white" },
+  { cls: "lg:right-[2%] lg:top-[6%] lg:w-[33%] rotate-[5deg]", tone: "text-white" },
+  { cls: "lg:left-[6%] lg:bottom-[2%] lg:w-[32%] -rotate-[2deg]", tone: "bg-white text-[#0a0a0a]" },
+];
+
+function AgentsPain() {
+  return (
+    <section className={`flex flex-col gap-10 overflow-hidden bg-white py-[100px] ${shell}`}>
+      <SectionTitle eyebrow="Знакомо?" title="Когда бизнес — это вы" />
+      <div className="relative flex flex-col gap-6 lg:block lg:h-[540px]">
+        {AGENTS_PAINS.map((pain, i) => {
+          const card = CHAOS_CARDS[i % CHAOS_CARDS.length];
+          return (
+            <article
+              key={pain.title}
+              className={`flex flex-col gap-3 px-7 py-7 shadow-[0_18px_40px_rgba(0,0,0,.12)] transition-transform duration-300 hover:z-20 hover:rotate-0 lg:absolute ${card.cls} ${card.tone}`}
+              style={card.tone.includes("text-white") && !card.tone.includes("bg-") ? { background: VIOLET } : undefined}
+            >
+              <span className={`text-[24px] italic leading-[1.15] ${serif}`}>{pain.title}</span>
+              <p className={`m-0 text-[12.5px] leading-[1.75] text-pretty ${card.tone.includes("text-white") ? "text-white/80" : "text-[#4a4a4a]"}`}>
+                {pain.text}
+              </p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 /** CTA страницы агентов: бесплатная демо-встреча — стандартный агент или кастомный. */
 function AgentsDemo() {
   return (
@@ -309,6 +343,7 @@ export function StudioBusinessPage({ variant = "home" }: { variant?: Variant } =
       <main className={`${studioFontVars} ${sans}`}>
         <Hero variant={variant} />
         <Marquee words={variant === "agents" ? AGENTS_MARQUEE : STUDIO_MARQUEE} />
+        {variant === "agents" ? <AgentsPain /> : null}
         {SHOW_SMART ? <Smart /> : null}
         {SHOW_TEAM ? <Team /> : null}
         <StudioPortfolio only={variant === "agents" ? "business" : "health"} />

@@ -5,6 +5,8 @@ import { useState } from "react";
 
 import { HEALTH_CASES } from "@/components/meta/healthTech";
 import {
+  AGENT_GROUPS,
+  type AgentGroupId,
   STUDIO_CASE_TABS,
   STUDIO_CASES,
   type StudioCase,
@@ -74,7 +76,7 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
           </div>
         ) : null}
         {item.href ? (
-          <span className="mt-auto pt-2 text-[9px] font-bold leading-none tracking-[.24em]">MORE →</span>
+          <span className="mt-auto pt-2 text-[9px] font-bold leading-none tracking-[.24em]">ПОДРОБНЕЕ →</span>
         ) : null}
       </div>
     </>
@@ -98,10 +100,21 @@ const ALL_CASES = (["business", "health"] as const).flatMap((category) =>
   [...STUDIO_CASES, ...HEALTH_CASES].filter((item) => item.category === category),
 );
 
+function CaseGrid({ items }: { items: { item: StudioCase; index: number }[] }) {
+  return (
+    <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))]">
+      {items.map(({ item }, i) => (
+        <CaseCard key={item.title} item={{ ...item, violet: i % 2 === 1 }} index={i} />
+      ))}
+    </div>
+  );
+}
+
 /** only — показать одно направление без вкладок (главная — Apps, /agents — Agents). */
 export function StudioPortfolio({ only }: { only?: StudioCase["category"] } = {}) {
   const [selected, setTab] = useState<StudioCaseTab>("all");
   const tab: StudioCaseTab = only ?? selected;
+  const [group, setGroup] = useState<AgentGroupId>("process");
   // Цвет обложек чередуется по порядку в выбранной вкладке, а не задаётся в данных.
   const visible = ALL_CASES.map((item, index) => ({ item, index }))
     .filter(({ item }) => tab === "all" || item.category === tab)
@@ -110,7 +123,7 @@ export function StudioPortfolio({ only }: { only?: StudioCase["category"] } = {}
   return (
     <section id="portfolio" className={`flex flex-col gap-12 py-[100px] ${shell}`}>
       {only === "business" ? (
-        <SectionTitle eyebrow="Store" title="Готовые агенты под ваши процессы" />
+        <SectionTitle eyebrow="Решение" title="Команда ИИ-помощников под ваши процессы" />
       ) : (
         <SectionTitle eyebrow="Портфолио" title="За каждым продуктом — авторский метод" />
       )}
@@ -135,11 +148,39 @@ export function StudioPortfolio({ only }: { only?: StudioCase["category"] } = {}
         })}
       </div>
       )}
-      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))]">
-        {visible.map(({ item, index }) => (
-          <CaseCard key={item.title} item={item} index={index} />
-        ))}
-      </div>
+      {only === "business" ? (
+        <>
+          <p className="-mt-4 m-0 max-w-[62ch] text-[14px] leading-[1.9] text-pretty text-[#2a2a2a]">
+            В любом бизнесе есть две большие задачи: наладить внутренние процессы и улучшить клиентский опыт. Это
+            позволяет минимальными усилиями достигать максимального результата.
+          </p>
+          <div className="flex flex-wrap gap-[10px]" role="tablist">
+            {AGENT_GROUPS.map((g) => {
+              const active = g.id === group;
+              return (
+                <button
+                  key={g.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => setGroup(g.id)}
+                  className={`cursor-pointer px-[22px] py-[13px] text-[8.5px] font-bold uppercase leading-none tracking-[.22em] transition-colors duration-[250ms] ${
+                    active ? "bg-[#0a0a0a] text-white" : "bg-[#e6e6e6] text-[#0a0a0a] hover:bg-[#dadada]"
+                  }`}
+                >
+                  {g.title}
+                </button>
+              );
+            })}
+          </div>
+          <p className="-mt-6 m-0 max-w-[62ch] text-[12.5px] leading-[1.7] text-pretty text-[#4a4a4a]">
+            {AGENT_GROUPS.find((g) => g.id === group)?.text}
+          </p>
+          <CaseGrid items={visible.filter(({ item }) => item.group === group)} />
+        </>
+      ) : (
+        <CaseGrid items={visible} />
+      )}
     </section>
   );
 }
