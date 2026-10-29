@@ -18,9 +18,9 @@ type Variant = "home" | "agents";
 const HERO = {
   home: {
     eyebrow: "AI native продукты для помогающих практиков",
-    lead: "Помогаем вашим клиентам идти к большой цели",
-    accent: "маленькими шагами",
-    tail: "",
+    lead: "Помогаем вашим клиентам идти к",
+    accent: "большой цели",
+    tail: "маленькими шагами",
     cta: "ОБСУДИТЬ ПРОЕКТ",
   },
   agents: {
@@ -239,25 +239,19 @@ function Contact() {
   return (
     <section id="contact" className={`flex flex-wrap items-center justify-between gap-10 bg-white py-[90px] ${shell}`}>
       <div className="flex flex-col gap-3">
-        <Eyebrow>Разбор методологии</Eyebrow>
-        <h2 className={`m-0 text-[30px] leading-[1.2] ${serif}`}>Чек-ап: какой AI-продукт вырастет из вашей методологии</h2>
+        <Eyebrow>Демо-встреча</Eyebrow>
+        <h2 className={`m-0 text-[30px] leading-[1.2] ${serif}`}>Какой продукт может вырасти из вашей методологии</h2>
         <div className="flex items-baseline gap-[10px]">
           <span className="text-[72px] font-light leading-none" style={{ boxShadow: `inset 0 -.18em 0 ${GREEN}` }}>
-            60
+            30
           </span>
           <span className="text-[10px] font-medium leading-none tracking-[.05em] text-[#8a8a8a]">
-            минут · разбор методологии
+            минут · free
           </span>
         </div>
         <p className="m-0 max-w-[46ch] text-[12px] leading-[1.8] text-pretty text-[#4a4a4a]">
-          Разберём вашу методологию, найдём, что в ней можно передать агенту или приложению, и сформулируем, каким будет продукт и как измерить его результат.
+          Вы расскажете про свою методологию и клиентский опыт, а я покажу кейсы, как это можно упаковать в продукт.
         </p>
-        <div className="flex max-w-[46ch] flex-wrap items-baseline gap-x-4 gap-y-2 border-t border-[#e2e2e2] pt-[14px]">
-          <span className={`text-[26px] leading-none ${serif}`}>7 000 ₽</span>
-          <span className="text-[11px] leading-[1.6] text-[#4a4a4a]">
-            Засчитаем в стоимость проекта, если пойдём в работу
-          </span>
-        </div>
       </div>
       <a
         href={STUDIO_TG_URL}
