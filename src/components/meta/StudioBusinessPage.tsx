@@ -50,7 +50,7 @@ const HERO = {
 function Hero({ variant }: { variant: Variant }) {
   const t = HERO[variant];
   return (
-    <header className={`bg-white pb-24 pt-12 ${shell}`}>
+    <header className={`pb-24 pt-12 ${variant === "home" ? "bg-[#f1f1f1]" : "bg-white"} ${shell}`}>
       <div className="flex flex-col gap-[34px]">
         <div className="flex flex-col items-start gap-[22px]">
           <div className="flex items-center gap-[26px]">
@@ -312,7 +312,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className={`flex flex-wrap items-center justify-between gap-10 bg-[#f1f1f1] py-[90px] ${shell}`}
+      className={`flex flex-wrap items-center justify-between gap-10 bg-white py-[90px] ${shell}`}
     >
       <div className="flex flex-col gap-6">
         <SectionTitle

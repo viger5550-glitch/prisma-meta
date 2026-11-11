@@ -135,11 +135,11 @@ const FOUNDER_PATH = [
 /** Блок основателя на главной: фото + имя и опыт. */
 export function FounderSection() {
   return (
-    <section id="founder" className={`bg-[#f1f1f1] py-[100px] ${shell}`}>
+    <section id="founder" className={`bg-white py-[100px] ${shell}`}>
       <div className="flex flex-col gap-12">
         <SectionTitle eyebrow="Product Architect" title={FOUNDER.name} />
         <div className="grid items-start gap-x-[5vw] gap-y-10 md:grid-cols-[minmax(0,420px)_1fr]">
-          <div className="aspect-[4/5] w-full max-w-[420px] overflow-hidden border-[6px] border-white bg-[#e2e2e2] shadow-[0_1px_6px_rgba(0,0,0,.08)]">
+          <div className="aspect-[4/5] w-full max-w-[420px] overflow-hidden bg-[#e2e2e2]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={FOUNDER.photo}

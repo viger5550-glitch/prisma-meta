@@ -1,12 +1,15 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { StudioCaseFlows } from "@/components/meta/StudioCaseFlows";
+import { HEALTH_CASES } from "@/components/meta/healthTech";
+import { CaseCard } from "@/components/meta/StudioPortfolio";
 import type { StudioCaseDetails } from "@/components/meta/studioCases";
 import { studioFontVars } from "@/components/meta/studioFonts";
-import { AGENT_PRICE, STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
-import { Eyebrow, GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
+import { AGENT_PRICE, STUDIO_CASES, STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
+import { Eyebrow, GREEN, SectionTitle, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
 function screensLabel(n: number) {
   const mod10 = n % 10;
@@ -28,6 +31,34 @@ function BarTitle({ children }: { children: React.ReactNode }) {
       <span className="block h-[34px] w-[3px] flex-none bg-[#0a0a0a]" />
       <h2 className={`m-0 text-[30px] leading-[1.2] ${serif}`}>{children}</h2>
     </div>
+  );
+}
+
+/** «Другие продукты» внизу кейса: остальные карточки того же портфолио и ссылка на весь блок. */
+function OtherCases({ item }: { item: StudioCaseDetails }) {
+  const isApp = item.kind === "app";
+  const pool = isApp ? HEALTH_CASES : STUDIO_CASES.filter((c) => c.category === "business");
+  const others = pool.filter((c) => c.href && c.href !== `/cases/${item.slug}`).slice(0, 3);
+  if (others.length === 0) return null;
+  const allHref = isApp ? "/#portfolio" : "/agents#portfolio";
+
+  return (
+    <section className={`flex flex-col gap-12 py-24 ${shell}`}>
+      <div className="flex flex-wrap items-end justify-between gap-6">
+        <SectionTitle eyebrow="Портфолио" title={isApp ? "Другие продукты" : "Другие агенты"} />
+        <Link
+          href={allHref}
+          className="text-[9px] font-bold uppercase leading-none tracking-[.24em] hover:opacity-70"
+        >
+          Всё портфолио →
+        </Link>
+      </div>
+      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))]">
+        {others.map((c, i) => (
+          <CaseCard key={c.title} item={{ ...c, violet: i % 2 === 1 }} index={pool.indexOf(c)} />
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -208,6 +239,8 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
             {item.cta}
           </a>
         </section>
+
+        <OtherCases item={item} />
       </main>
       <MetaSiteFooter wide />
     </div>

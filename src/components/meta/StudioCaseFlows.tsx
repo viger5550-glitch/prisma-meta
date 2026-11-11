@@ -97,8 +97,11 @@ export function StudioCaseFlows({ flows, linked }: { flows: StudioCaseFlow[]; li
       return linked ? prev.map(() => next) : prev.map((value, i) => (i === index ? next : value));
     });
 
+  // Одинаковая высота, пока карточки в одном состоянии; раскрытая по отдельности растёт одна.
+  const same = open.every((value) => value === open[0]);
+
   return (
-    <div className={`flex flex-wrap gap-6 ${linked ? "items-stretch" : "items-start"}`}>
+    <div className={`flex flex-wrap gap-6 ${linked || same ? "items-stretch" : "items-start"}`}>
       {flows.map((flow, i) => (
         <FlowCard
           key={flow.title}

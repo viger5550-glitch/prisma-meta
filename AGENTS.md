@@ -6,7 +6,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Навигация: хедер, без стрелки «назад»
 
-Пункты `MetaSiteHeader` заданы списком `NAV_ITEMS` в самом компоненте: сейчас там один пункт «Agents» → `/agents`. На профиль основателя `/founder` ведёт кликабельная ава в hero главной. На всех страницах в шапке слева логотип **PRISMA** (ведёт на главную `/`), справа меню. Главная `/` — кейсы Apps (`StudioBusinessPage`, `variant="home"`). `/agents` — лендинг агентов (`variant="agents"`) со страницами `/cases/*`. `/business` и `/health-tech` редиректят на `/agents` и `/`.
+Пункты `MetaSiteHeader` заданы списком `NAV_ITEMS` в самом компоненте: сейчас там «Портфолио» → `/#portfolio` и «Agents» → `/agents`. Внизу каждой страницы `/cases/*` — блок «Другие продукты/агенты» с карточками и ссылкой «Всё портфолио». На профиль основателя `/founder` ведёт кликабельная ава в hero главной. На всех страницах в шапке слева логотип **PRISMA** (ведёт на главную `/`), справа меню. Главная `/` — кейсы Apps (`StudioBusinessPage`, `variant="home"`). `/agents` — лендинг агентов (`variant="agents"`) со страницами `/cases/*`. `/business` и `/health-tech` редиректят на `/agents` и `/`.
 
 ## Стиль страниц-лендингов
 
