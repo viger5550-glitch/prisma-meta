@@ -39,9 +39,12 @@ export const HEALTH_WHY: { title: string; text: string; dark?: boolean }[] = [
   },
 ];
 
+/** Карточка Collaborative Care в портфолио главной. Скрыта, см. docs/hidden-blocks.md; страница /cases/collaborative-care работает. */
+const SHOW_COLLABORATIVE_CARE = false;
+
 /** Портфолио Apps на главной. */
 export const HEALTH_CASES: StudioCase[] = [
-  {
+  ...(SHOW_COLLABORATIVE_CARE ? [{
     category: "health",
     direction: "Health",
     word: "Collaborative Care",
@@ -50,7 +53,7 @@ export const HEALTH_CASES: StudioCase[] = [
     title: "Collaborative Care",
     text: "Два AI-помощника на одной базе данных: companion ведёт участника по вашей программе, co-pilot показывает вам динамику и сигналы.",
     href: "/cases/collaborative-care",
-  },
+  } satisfies StudioCase] : []),
   {
     category: "health",
     direction: "Health",

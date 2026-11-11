@@ -10,5 +10,6 @@
 | Команда | Главная `/` | `SHOW_TEAM` в [StudioBusinessPage.tsx](../src/components/meta/StudioBusinessPage.tsx) | Блок команды (`Team`) | — |
 | «Мой метод» (Companion-app / Co-pilot, Behavioral Change Design) | Главная `/` | `SHOW_METHOD` в [StudioPortfolio.tsx](../src/components/meta/StudioPortfolio.tsx) | Компактные карточки, данные в `HEALTH_METHOD` ([healthTech.ts](../src/components/meta/healthTech.ts)); на его месте — «Портфолио» | 2026-11-11 |
 | Backstage продукта (Threads + «Задонатить») | `/foody` | `SHOW_BACKSTAGE` в [FoodyPage.tsx](../src/components/meta/FoodyPage.tsx) | Тёмная карточка в блоке «Статус продукта», ссылки `FOODY_THREADS_URL`, `FOODY_DONATE_URL` | 2026-11-11 |
+| Карточка Collaborative Care | Главная `/`, портфолио | `SHOW_COLLABORATIVE_CARE` в [healthTech.ts](../src/components/meta/healthTech.ts) | Карточка в `HEALTH_CASES`; страница `/cases/collaborative-care` остаётся по прямой ссылке | 2026-11-11 |
 
 Когда скрываешь новый блок, добавь его в эту таблицу.
