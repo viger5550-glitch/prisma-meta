@@ -12,6 +12,8 @@ import {
 } from "@/components/meta/studioHome";
 import { studioFontVars } from "@/components/meta/studioFonts";
 import { StudioPortfolio } from "@/components/meta/StudioPortfolio";
+import { StudioCaseFlows } from "@/components/meta/StudioCaseFlows";
+import { getStudioCaseBySlug } from "@/components/meta/studioCases";
 import {
   Dot,
   Eyebrow,
@@ -308,11 +310,33 @@ function Team() {
   );
 }
 
+/** «Мой подход» на главной: Companion + Co-pilot из кейса Collaborative Care. */
+function Approach() {
+  const flows = getStudioCaseBySlug("collaborative-care")?.flows ?? [];
+  return (
+    <section id="approach" className={`flex flex-col gap-12 bg-[#f1f1f1] py-[100px] ${shell}`}>
+      <div className="flex flex-col gap-6">
+        <SectionTitle eyebrow="Мой подход" title="Behavioral Change Design" />
+        <p className="m-0 max-w-[62ch] text-[14px] leading-[1.9] text-pretty text-[#2a2a2a]">
+          Дизайн изменения поведения (Behavioral Change Design) — это
+          междисциплинарный подход на стыке поведенческой науки, UX-дизайна и
+          продуктового менеджмента. Он изучает, как с
+          помощью проектирования цифровой среды и
+          пользовательских сценариев помогать людям менять привычки, принимать
+          более выгодные для них решения и совершать целевые действия без
+          жёсткого принуждения.
+        </p>
+      </div>
+      <StudioCaseFlows flows={flows} />
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section
       id="contact"
-      className={`flex flex-wrap items-center justify-between gap-10 bg-white py-[90px] ${shell}`}
+      className={`flex flex-wrap items-center justify-between gap-10 bg-[#f1f1f1] py-[90px] ${shell}`}
     >
       <div className="flex flex-col gap-6">
         <SectionTitle
@@ -466,6 +490,7 @@ export function StudioBusinessPage({
         {SHOW_SMART ? <Smart /> : null}
         {SHOW_TEAM ? <Team /> : null}
         {variant === "home" ? <FounderSection /> : null}
+        {variant === "home" ? <Approach /> : null}
         <StudioPortfolio only={variant === "agents" ? "business" : "health"} />
         {variant === "agents" ? <AgentsDemo /> : <Contact />}
       </main>

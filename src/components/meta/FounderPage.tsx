@@ -111,13 +111,18 @@ const FOUNDER_ABOUT_ME: ReactNode[] = [
   </>,
 ];
 
-/** Пункты «Как я работаю» в блоке основателя на главной. */
+/** Пункты «Как мы будем работать» в блоке основателя на главной. */
 const FOUNDER_PATH = [
   {
     title: "Дискавери",
-    text: ["Разбираю путь вашего клиента: где он сходит с пути и почему."],
+    text: [
+      "Вы приносите мне свою методологию и все текущие сценарии, а я разбираю путь вашего клиента: где он сходит с пути и почему.",
+    ],
   },
-  { title: "Гипотезы", text: ["Формулирую гипотезы для проверки."] },
+  {
+    title: "Гипотезы",
+    text: ["Предлагаю гипотезы, и мы вместе решаем, какую берём в работу."],
+  },
   {
     title: "MVP",
     text: [
@@ -165,18 +170,20 @@ export function FounderSection() {
             </div>
             <div className="flex max-w-[60ch] flex-col gap-4">
               <span className={`text-[22px] italic leading-[1.15] ${serif}`}>
-                Как я работаю
+                Как мы будем работать
               </span>
-              <ul className="m-0 flex list-none flex-col gap-3 p-0">
-                {FOUNDER_PATH.map((step) => (
+              <ol className="m-0 flex list-none flex-col gap-3 p-0">
+                {FOUNDER_PATH.map((step, i) => (
                   <li
                     key={step.title}
                     className="flex items-baseline gap-3 text-[14px] leading-[1.8] text-pretty text-[#4a4a4a]"
                   >
                     <span
-                      className="h-[6px] w-[6px] flex-none -translate-y-px rounded-full"
-                      style={{ background: VIOLET }}
-                    />
+                      className="w-4 flex-none font-semibold"
+                      style={{ color: VIOLET }}
+                    >
+                      {i + 1}.
+                    </span>
                     <span>
                       <span className="font-semibold text-[#0a0a0a]">
                         {step.title}.
@@ -185,7 +192,7 @@ export function FounderSection() {
                     </span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           </div>
         </div>

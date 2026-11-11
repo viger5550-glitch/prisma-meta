@@ -255,7 +255,7 @@ export function StudioPortfolio({
   return (
     <section
       id="portfolio"
-      className={`flex flex-col gap-12 py-[100px] ${only === "health" ? "bg-[#f1f1f1]" : ""} ${shell}`}
+      className={`flex flex-col gap-12 py-[100px] ${only === "health" ? "bg-white" : ""} ${shell}`}
     >
       {only === "business" ? (
         <SectionTitle
@@ -344,7 +344,7 @@ export function StudioPortfolio({
           items={HEALTH_METHOD.map((item, index) => ({ item, index }))}
         />
       ) : (
-        <CaseGrid items={visible} />
+        <CaseGrid items={visible} onWhite={only === "health"} />
       )}
     </section>
   );
