@@ -5,9 +5,8 @@ import { usePathname } from "next/navigation";
 
 import { shell as studioShell } from "./studioUi";
 
-/** Меню шапки: портфолио на главной и лендинг агентов. На /founder ведёт ава в hero главной. */
+/** Меню шапки: лендинг агентов. На /founder ведёт ава в hero главной. */
 const NAV_ITEMS: { id: string; title: string; href: string }[] = [
-  { id: "portfolio", title: "Портфолио", href: "/#portfolio" },
   { id: "agents", title: "Agents", href: "/agents" },
 ];
 

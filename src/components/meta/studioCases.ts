@@ -15,6 +15,17 @@ export type StudioCaseFlow = {
   metrics: StudioCaseMetric[];
   /** Тёмная карточка с фиолетовой полосой. */
   dark?: boolean;
+  /** Ссылка на живой продукт — кнопка «Посмотреть продукт» в карточке. */
+  url?: string;
+};
+
+export type StudioCaseTeamMember = {
+  name: string;
+  image: string;
+  archetype: string;
+  role: string;
+  tools: string;
+  useWhen: string;
 };
 
 export type StudioCaseDetails = {
@@ -41,6 +52,8 @@ export type StudioCaseDetails = {
   buyText?: string;
   /** Ссылка на живой продукт — кнопка «Попробовать» в шапке кейса. */
   tryUrl?: string;
+  /** Команда вместо карточек потоков в «Как это работает»; flows остаются для «Что вы получаете» и метрик. */
+  team?: { members: StudioCaseTeamMember[]; cta: string; url: string };
 };
 
 const gallery = (slug: string, captions: string[]) =>
@@ -771,6 +784,7 @@ STUDIO_CASE_DETAILS.push({
     {
       label: "Участник",
       title: "Соло-трекер",
+      url: "https://t.me/zzzzzzz5550bot",
       text: "Личный помощник: присылает материалы, собирает рефлексию, показывает прогресс и в конце пути даёт рекомендацию по продуктовой концепции.",
       steps: [
         "Присылает материал следующего шага из базы знаний — в ритме участника.",
@@ -790,6 +804,7 @@ STUDIO_CASE_DETAILS.push({
     {
       label: "Контент",
       title: "База знаний",
+      url: "https://www.prisma-knowledge.ru/",
       text: "Специально разработанная платформа, где хранятся статьи методологии.",
       steps: [
         "Каждая статья — шаг методологии создания авторского продукта.",
@@ -808,6 +823,44 @@ STUDIO_CASE_DETAILS.push({
 
 STUDIO_CASE_DETAILS.push({
   slug: "triz",
+  team: {
+    cta: "Попробовать продукт",
+    url: "https://t.me/triz_team_bot",
+    members: [
+      {
+        name: "Конфликтолог Сава",
+        image: "/triz/sava.webp",
+        archetype: "Мудрец",
+        role: "Решает конфликты и находит элегантное решение без компромиссов.",
+        tools: "40 приёмов ТРИЗ.",
+        useWhen: "система тянет в разные стороны, а компромиссы — не выход.",
+      },
+      {
+        name: "Идеалист Иль",
+        image: "/triz/il.webp",
+        archetype: "Визионер",
+        role: "Видит, как система может работать сама, идеально.",
+        tools: "76 стандартов, модель идеальности ИКР (идеальный конечный результат).",
+        useWhen: "хочется элегантного решения, которое работает «как по волшебству».",
+      },
+      {
+        name: "Максимизатор Макс",
+        image: "/triz/max.webp",
+        archetype: "Хакер",
+        role: "Находит скрытые ресурсы, выжимает максимум из того, что есть.",
+        tools: "Вещественно-полевые ресурсы, пересборка систем.",
+        useWhen: "нет времени и бюджета, но нужен результат.",
+      },
+      {
+        name: "Интегратор Илона",
+        image: "/triz/ilona.webp",
+        archetype: "Мастер системы",
+        role: "Собирает всё, что было найдено ранее, и превращает в работающий механизм. Проверяет, усиливает, готовит к внедрению. Встраивает решения в контекст и в сценарии роста.",
+        tools: "Чек-листы проверки, тудушки, шаблоны оценки, сценарии применения и масштабирования.",
+        useWhen: "нужно выбрать лучшее из сгенерированных решений.",
+      },
+    ],
+  },
   kind: "app",
   badge: "Education",
   tryUrl: "https://t.me/triz_team_bot",

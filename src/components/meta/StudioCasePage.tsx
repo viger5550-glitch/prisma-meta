@@ -4,12 +4,10 @@ import Link from "next/link";
 import { MetaSiteFooter } from "@/components/meta/MetaSiteFooter";
 import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { StudioCaseFlows } from "@/components/meta/StudioCaseFlows";
-import { HEALTH_CASES } from "@/components/meta/healthTech";
-import { CaseCard } from "@/components/meta/StudioPortfolio";
 import type { StudioCaseDetails } from "@/components/meta/studioCases";
 import { studioFontVars } from "@/components/meta/studioFonts";
-import { AGENT_PRICE, STUDIO_CASES, STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
-import { Eyebrow, GREEN, SectionTitle, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
+import { AGENT_PRICE, STUDIO_TG_URL, getCaseHeading } from "@/components/meta/studioHome";
+import { Eyebrow, GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
 
 function screensLabel(n: number) {
   const mod10 = n % 10;
@@ -34,31 +32,46 @@ function BarTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** «Другие продукты» внизу кейса: остальные карточки того же портфолио и ссылка на весь блок. */
-function OtherCases({ item }: { item: StudioCaseDetails }) {
-  const isApp = item.kind === "app";
-  const pool = isApp ? HEALTH_CASES : STUDIO_CASES.filter((c) => c.category === "business");
-  const others = pool.filter((c) => c.href && c.href !== `/cases/${item.slug}`).slice(0, 3);
-  if (others.length === 0) return null;
-  const allHref = isApp ? "/#portfolio" : "/agents#portfolio";
-
+/** «Как это работает» для кейса с командой: строки с аватаром и описанием, кнопка на продукт. */
+function TeamBlock({ team }: { team: NonNullable<StudioCaseDetails["team"]> }) {
+  const fields = (m: NonNullable<StudioCaseDetails["team"]>["members"][number]) => [
+    ["Архетип", `${m.archetype}.`],
+    ["Роль", m.role],
+    ["Оружие", m.tools],
+    ["Используй, когда", m.useWhen],
+  ];
   return (
-    <section className={`flex flex-col gap-12 py-24 ${shell}`}>
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <SectionTitle eyebrow="Портфолио" title={isApp ? "Другие продукты" : "Другие агенты"} />
-        <Link
-          href={allHref}
-          className="text-[9px] font-bold uppercase leading-none tracking-[.24em] hover:opacity-70"
+    <div className="flex flex-col gap-4">
+      {team.members.map((m) => (
+        <article
+          key={m.name}
+          className="grid gap-x-10 gap-y-5 bg-white px-8 py-7 sm:grid-cols-[140px_minmax(0,1fr)]"
         >
-          Всё портфолио →
-        </Link>
-      </div>
-      <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))]">
-        {others.map((c, i) => (
-          <CaseCard key={c.title} item={{ ...c, violet: i % 2 === 1 }} index={pool.indexOf(c)} />
-        ))}
-      </div>
-    </section>
+          <div className="flex flex-col items-start gap-3">
+            <div className="relative size-[96px] overflow-hidden rounded-[14px] bg-[#f1f1f1]">
+              <Image src={m.image} alt={m.name} fill unoptimized className="object-cover" />
+            </div>
+            <span className="text-[12px] font-medium leading-[1.4]">{m.name}</span>
+          </div>
+          <dl className="m-0 flex max-w-[70ch] flex-col gap-2">
+            {fields(m).map(([label, text]) => (
+              <div key={label} className="text-[13px] leading-[1.7] text-pretty text-[#4a4a4a]">
+                <dt className="inline font-semibold text-[#0a0a0a]">{label}:</dt> <dd className="inline m-0">{text}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      ))}
+      <a
+        href={team.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 self-start whitespace-nowrap px-[52px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#0a0a0a] hover:text-white"
+        style={{ background: GREEN }}
+      >
+        {team.cta} →
+      </a>
+    </div>
   );
 }
 
@@ -70,18 +83,18 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
       <MetaSiteHeader wide />
       <main className={`${studioFontVars} ${sans}`}>
         <header className={`flex flex-col gap-[26px] bg-white pb-[88px] pt-[72px] ${shell}`}>
+          <Link
+            href={isApp ? "/#portfolio" : "/agents#portfolio"}
+            className="self-start text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] hover:opacity-70"
+          >
+            ← Всё портфолио
+          </Link>
           <div className="flex flex-wrap items-center gap-[10px]">
             <span
               className="rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#005522]"
               style={{ background: GREEN }}
             >
               {isApp ? (item.badge ?? "Health") : "AI-агенты"}
-            </span>
-            <span
-              className="text-[9px] font-semibold uppercase leading-[1.4] tracking-[.2em]"
-              style={{ color: VIOLET }}
-            >
-              {item.stack}
             </span>
           </div>
           <div className="flex items-start gap-4">
@@ -172,7 +185,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               {item.solution}
             </p>
           </div>
-          <StudioCaseFlows flows={item.flows} linked={item.linkedFlows} />
+          {item.team ? <TeamBlock team={item.team} /> : <StudioCaseFlows flows={item.flows} linked={item.linkedFlows} />}
         </section>
 
         <section className={`flex flex-col gap-10 bg-white py-24 ${shell}`}>
@@ -240,7 +253,6 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
           </a>
         </section>
 
-        <OtherCases item={item} />
       </main>
       <MetaSiteFooter wide />
     </div>

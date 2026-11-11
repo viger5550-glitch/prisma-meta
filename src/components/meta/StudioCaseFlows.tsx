@@ -48,6 +48,20 @@ function FlowCard({
         <p className={`m-0 text-[13px] leading-[1.8] text-pretty ${dark ? "text-[#d8d8d8]" : "text-[#2a2a2a]"}`}>
           {flow.text}
         </p>
+        {flow.url ? (
+          <a
+            href={flow.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`mt-3 self-start px-8 py-[13px] text-[9px] font-bold uppercase leading-none tracking-[.24em] transition-colors duration-[250ms] ${
+              dark
+                ? "bg-white text-[#0a0a0a] hover:bg-[#00e37a]"
+                : "bg-[#0a0a0a] text-white hover:bg-[#00e37a] hover:text-[#0a0a0a]"
+            }`}
+          >
+            Посмотреть продукт →
+          </a>
+        ) : null}
       </div>
 
       <button

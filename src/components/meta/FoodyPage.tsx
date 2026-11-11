@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 
 import {
@@ -18,6 +19,9 @@ import { MetaSiteHeader } from "@/components/meta/MetaSiteHeader";
 import { studioFontVars } from "@/components/meta/studioFonts";
 import { STUDIO_TG_URL } from "@/components/meta/studioHome";
 import { GREEN, VIOLET, sans, serif, shell } from "@/components/meta/studioUi";
+
+/** Карточка «Backstage продукта» (Threads + донат) в блоке статуса. Скрыта, см. docs/hidden-blocks.md. */
+const SHOW_BACKSTAGE = false;
 
 const btn = "px-[52px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] whitespace-nowrap transition-colors duration-[250ms]";
 const cardLabel = "text-[10px] font-semibold leading-none tracking-[.19em]";
@@ -81,6 +85,12 @@ export function FoodyPage() {
       <MetaSiteHeader wide />
       <main className={`${studioFontVars} ${sans}`}>
         <section className={`flex flex-col items-start gap-6 bg-white pb-[100px] pt-[70px] ${shell}`}>
+          <Link
+            href="/#portfolio"
+            className="text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] hover:opacity-70"
+          >
+            ← Всё портфолио
+          </Link>
           <Pill>{FOODY_HERO.tag}</Pill>
           <div className="flex items-start gap-[26px]">
             <span className="block w-[3px] flex-none self-stretch bg-[#0a0a0a]" />
@@ -90,9 +100,6 @@ export function FoodyPage() {
           </div>
           <p className="m-0 max-w-[66ch] text-[12.5px] leading-[1.9] text-pretty text-[#4a4a4a]">{FOODY_HERO.lead}</p>
           <div className="mt-[22px] flex flex-wrap gap-3">
-            <a href="#status" className={`${btn} bg-[#0a0a0a] text-white hover:bg-[#00e37a] hover:text-[#0a0a0a]`}>
-              Помочь проекту
-            </a>
             <a href="#approach" className={`${btn} border border-[#0a0a0a] text-[#0a0a0a] hover:bg-[#f1f1f1]`}>
               Как работает программа
             </a>
@@ -172,7 +179,7 @@ export function FoodyPage() {
             ))}
           </div>
 
-          <div className="mt-[14px] grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))]">
+          <div className={`mt-[14px] grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))] ${SHOW_BACKSTAGE ? "" : "max-w-[640px]"}`}>
             <article className="flex flex-col gap-[14px] bg-white px-[26px] py-7">
               <span className={cardLabel} style={{ color: VIOLET }}>
                 Исследование
@@ -191,6 +198,7 @@ export function FoodyPage() {
                 Записаться на интервью
               </a>
             </article>
+            {SHOW_BACKSTAGE ? (
             <article className="flex flex-col gap-[14px] bg-[#0a0a0a] px-[26px] py-7 text-white">
               <span className={cardLabel} style={{ color: GREEN }}>
                 Поддержка
@@ -222,6 +230,7 @@ export function FoodyPage() {
                 </a>
               </div>
             </article>
+            ) : null}
           </div>
         </section>
       </main>
