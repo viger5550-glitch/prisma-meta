@@ -3,7 +3,7 @@ import { shell as studioShell } from "./studioUi";
 const PRIVACY_URL = "https://knowledge.productodel.ru/legal/privacy";
 const OFFER_URL = "https://knowledge.productodel.ru/legal/offer";
 const SUPPORT_TG_URL = "https://t.me/vigerman";
-const THREADS_URL = "https://www.threads.com/?hl=ru";
+const THREADS_URL = "https://www.threads.com/@viger_on?hl=ru";
 const CHANNEL_TG_URL = "https://t.me/viger_onn";
 
 const interSans = "font-[family-name:var(--font-manifest-inter),system-ui,sans-serif]";

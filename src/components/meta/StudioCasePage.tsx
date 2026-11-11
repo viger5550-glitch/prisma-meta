@@ -108,7 +108,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               href={item.tryUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-[19px] self-start whitespace-nowrap px-[44px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#0a0a0a] hover:text-white"
+              className="self-start whitespace-nowrap px-[44px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#0a0a0a] hover:text-white"
               style={{ background: GREEN }}
             >
               Попробовать →
