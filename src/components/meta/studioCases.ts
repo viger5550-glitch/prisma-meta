@@ -737,7 +737,6 @@ STUDIO_CASE_DETAILS.push({
       dark: true,
     },
   ],
-  linkedFlows: true,
   cta: "Обсудить проект",
 });
 
@@ -804,7 +803,6 @@ STUDIO_CASE_DETAILS.push({
       dark: true,
     },
   ],
-  linkedFlows: true,
   cta: "Обсудить проект",
 });
 
@@ -878,7 +876,6 @@ STUDIO_CASE_DETAILS.push({
       dark: true,
     },
   ],
-  linkedFlows: true,
   cta: "Обсудить проект",
 });
 

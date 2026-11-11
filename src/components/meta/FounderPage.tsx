@@ -269,7 +269,7 @@ export function FounderPage({
 }: { variant?: Variant } = {}) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide hideLogo={variant === "agents"} />
+      <MetaSiteHeader wide />
       <main className={`${studioFontVars} ${sans}`}>
         <Hero variant={variant} />
         {SHOW_PROFILE ? <Profile /> : null}

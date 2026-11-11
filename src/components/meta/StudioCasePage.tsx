@@ -36,7 +36,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
   const isApp = item.kind === "app";
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide hideLogo={!isApp} />
+      <MetaSiteHeader wide />
       <main className={`${studioFontVars} ${sans}`}>
         <header className={`flex flex-col gap-[26px] bg-white pb-[88px] pt-[72px] ${shell}`}>
           <div className="flex flex-wrap items-center gap-[10px]">
