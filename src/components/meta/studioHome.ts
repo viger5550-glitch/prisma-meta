@@ -1,3 +1,4 @@
+import { HEALTH_CASES } from "@/components/meta/healthTech";
 /** Контент направления «Для бизнеса» (макет «PRISMA - главная студия»). */
 
 export const STUDIO_TG_URL = "https://t.me/vigerman";
@@ -334,5 +335,8 @@ export const STUDIO_CASES: StudioCase[] = [
 
 /** Заголовок страницы кейса = надпись с обложки карточки портфолио. */
 export function getCaseHeading(slug: string, fallback: string): string {
-  return STUDIO_CASES.find((item) => item.href === `/cases/${slug}`)?.word ?? fallback;
+  return (
+    [...STUDIO_CASES, ...HEALTH_CASES].find((item) => item.href === `/cases/${slug}`)?.word ??
+    fallback
+  );
 }

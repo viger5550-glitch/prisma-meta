@@ -33,9 +33,10 @@ function BarTitle({ children }: { children: React.ReactNode }) {
 
 /** Страница агента-товара: галерея, «Знакомо?», почему обычные способы не работают, как работает агент, что вы получаете, что изменится, цена. */
 export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
+  const isApp = item.kind === "app";
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f1f1f1] text-[#0a0a0a] antialiased">
-      <MetaSiteHeader wide hideLogo />
+      <MetaSiteHeader wide hideLogo={!isApp} />
       <main className={`${studioFontVars} ${sans}`}>
         <header className={`flex flex-col gap-[26px] bg-white pb-[88px] pt-[72px] ${shell}`}>
           <div className="flex flex-wrap items-center gap-[10px]">
@@ -43,7 +44,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               className="rounded-full px-[10px] py-1 text-[7.5px] font-bold uppercase leading-none tracking-[.16em] text-[#005522]"
               style={{ background: GREEN }}
             >
-              AI-агенты
+              {isApp ? (item.badge ?? "Health") : "AI-агенты"}
             </span>
             <span
               className="text-[9px] font-semibold uppercase leading-[1.4] tracking-[.2em]"
@@ -58,6 +59,17 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
               {getCaseHeading(item.slug, item.title)}
             </h1>
           </div>
+          {item.tryUrl ? (
+            <a
+              href={item.tryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-[19px] self-start whitespace-nowrap px-[44px] py-4 text-[9px] font-bold uppercase leading-none tracking-[.24em] text-[#0a0a0a] transition-colors duration-[250ms] hover:bg-[#0a0a0a] hover:text-white"
+              style={{ background: GREEN }}
+            >
+              Попробовать →
+            </a>
+          ) : null}
           {item.gallery.length > 0 && (
           <div className="mt-[26px] flex flex-col gap-3">
             <span className="text-[8px] font-medium uppercase leading-none tracking-[.24em] text-[#8a8a8a]">
@@ -124,7 +136,7 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
 
         <section className={`flex flex-col gap-10 py-24 ${shell}`}>
           <div className="flex flex-col gap-4">
-            <BarTitle>Как работает агент</BarTitle>
+            <BarTitle>{isApp ? "Как это работает" : "Как работает агент"}</BarTitle>
             <p className="m-0 ml-[21px] max-w-[56ch] text-[14px] leading-[1.9] text-pretty text-[#2a2a2a]">
               {item.solution}
             </p>
@@ -174,13 +186,17 @@ export function StudioCasePage({ item }: { item: StudioCaseDetails }) {
           className={`flex flex-wrap items-center justify-between gap-10 border-t border-[#e2e2e2] bg-white py-[70px] ${shell}`}
         >
           <div className="flex flex-col gap-[10px]">
-            <Eyebrow>Разработка агента</Eyebrow>
-            <div className="flex items-baseline gap-2">
-              <span className="text-[52px] font-light leading-none">{AGENT_PRICE.value}</span>
-              <span className="text-[10px] font-medium tracking-[.05em] text-[#8a8a8a]">{AGENT_PRICE.unit}</span>
-            </div>
+            <Eyebrow>{isApp ? "Разработка продукта" : "Разработка агента"}</Eyebrow>
+            {isApp ? null : (
+              <div className="flex items-baseline gap-2">
+                <span className="text-[52px] font-light leading-none">{AGENT_PRICE.value}</span>
+                <span className="text-[10px] font-medium tracking-[.05em] text-[#8a8a8a]">{AGENT_PRICE.unit}</span>
+              </div>
+            )}
             <p className="m-0 max-w-[46ch] text-[12px] leading-[1.8] text-pretty text-[#4a4a4a]">
-              Соберём такого агента под ваши процессы и методологию.
+              {isApp
+                ? item.buyText ?? "Начнём с простого — бота и дашборда — и будем развивать продукт под вашу методологию."
+                : "Соберём такого агента под ваши процессы и методологию."}
             </p>
           </div>
           <a

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-import { HEALTH_CASES } from "@/components/meta/healthTech";
+import { HEALTH_CASES, HEALTH_METHOD } from "@/components/meta/healthTech";
 import {
   AGENT_GROUPS,
   type AgentGroupId,
@@ -22,7 +22,16 @@ import {
   shell,
 } from "@/components/meta/studioUi";
 
-export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
+/** onWhite — карточка стоит на белой секции: подложка серая, чтобы не сливалась. */
+export function CaseCard({
+  item,
+  index,
+  onWhite,
+}: {
+  item: StudioCase;
+  index: number;
+  onWhite?: boolean;
+}) {
   const body = (
     <>
       <div
@@ -106,8 +115,7 @@ export function CaseCard({ item, index }: { item: StudioCase; index: number }) {
     </>
   );
 
-  const base =
-    "flex flex-col border-b-[3px] border-transparent bg-white text-[#0a0a0a]";
+  const base = `flex flex-col border-b-[3px] border-transparent text-[#0a0a0a] ${onWhite ? "bg-[#F2F2F2]" : "bg-white"}`;
   if (!item.href) return <div className={base}>{body}</div>;
 
   return (
@@ -127,7 +135,13 @@ const ALL_CASES = (["business", "health"] as const).flatMap((category) =>
   ),
 );
 
-function CaseGrid({ items }: { items: { item: StudioCase; index: number }[] }) {
+function CaseGrid({
+  items,
+  onWhite,
+}: {
+  items: { item: StudioCase; index: number }[];
+  onWhite?: boolean;
+}) {
   return (
     <div className="grid gap-6 [grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr))]">
       {items.map(({ item }, i) => (
@@ -135,6 +149,7 @@ function CaseGrid({ items }: { items: { item: StudioCase; index: number }[] }) {
           key={item.title}
           item={{ ...item, violet: i % 2 === 1 }}
           index={i}
+          onWhite={onWhite}
         />
       ))}
     </div>
@@ -219,6 +234,9 @@ function CompactCaseGrid({
   );
 }
 
+/** Блок «Мой метод» (Companion-app / Co-pilot) на главной вместо портфолио. Скрыт, см. docs/hidden-blocks.md. */
+const SHOW_METHOD = false;
+
 /** only — показать одно направление без вкладок (главная — Apps, /agents — Agents). */
 export function StudioPortfolio({
   only,
@@ -244,13 +262,18 @@ export function StudioPortfolio({
           eyebrow="Решение"
           title="Команда ИИ-помощников под ваши процессы"
         />
-      ) : (
+      ) : only === "health" && SHOW_METHOD ? (
         <SectionTitle
           eyebrow="Мой метод"
           title="Маленькими шагами к большой цели"
         />
+      ) : (
+        <SectionTitle
+          eyebrow="Портфолио"
+          title="За каждым продуктом — авторский метод"
+        />
       )}
-      {only === "health" ? (
+      {only === "health" && SHOW_METHOD ? (
         <p className="-mt-4 m-0 max-w-[62ch] text-[14px] leading-[1.9] text-pretty text-[#2a2a2a]">
           Работаю в подходе Behavioral Change Design (проектирование изменения
           поведения). Мои продукты рассчитаны на командную работу в изменениях:
@@ -316,10 +339,12 @@ export function StudioPortfolio({
             items={visible.filter(({ item }) => item.group === group)}
           />
         </>
-      ) : only === "health" ? (
-        <CompactCaseGrid items={visible} />
+      ) : only === "health" && SHOW_METHOD ? (
+        <CompactCaseGrid
+          items={HEALTH_METHOD.map((item, index) => ({ item, index }))}
+        />
       ) : (
-        <CaseGrid items={visible} />
+        <CaseGrid items={visible} onWhite={only === "health"} />
       )}
     </section>
   );
